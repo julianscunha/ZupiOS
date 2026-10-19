@@ -15,6 +15,7 @@ Esta área registra o trabalho em andamento: decisões, hipóteses, pesquisas, r
 
 - [[planning/Roadmap|Roadmap]]
 - [[planning/Backlog|Backlog]]
+- [[planning/Next-Steps|Próximos passos e continuidade]]
 - [[planning/decisions/0001-nome-e-objetivo|Decisão 0001 — Nome e objetivo]]
 - [[planning/decisions/0002-politica-de-licenciamento|Decisão 0002 — Licenciamento]]
 - [[planning/decisions/0003-organizacao-do-repositorio|Decisão 0003 — Organização do repositório]]
