@@ -24,6 +24,7 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 - **Sistema:** deve preservar, sempre que tecnicamente possível, uma experiência consistente, APIs estáveis e compatibilidade de aplicações entre modalidades de implantação.
 - **Implementação:** deve detectar e avaliar o hardware e o ambiente disponíveis, apresentar ao usuário os caminhos viáveis e permitir que ele escolha como prosseguir.
 - **Adaptação:** a avaliação deve considerar capacidades reais, não apenas marca ou modelo. Exemplos incluem arquitetura do processador, memória, armazenamento, drivers, conectividade e métodos de boot suportados.
+- **Detecção e seleção de drivers:** durante a instalação, a implementação deve detectar automaticamente o hardware e suas capacidades. Drivers específicos só devem ser selecionados quando sua compatibilidade estiver verificada. Quando disponíveis e compatíveis, drivers genéricos devem servir como alternativa, priorizando funcionamento básico e estabilidade. A escolha manual deve ser oferecida quando a detecção falhar, houver alternativas relevantes ou o usuário quiser intervir. Marca e modelo, isoladamente, não comprovam compatibilidade.
 - **Modalidades desejadas:** boot por USB, execução a partir de USB, instalação pela rede local, inicialização pela rede e instalação remota iniciada pelo usuário a partir do site oficial do ZupiOS, por meio de um pacote baixado na própria Smart TV quando navegador, firmware e mecanismos de segurança permitirem.
 - **Dispositivos sem USB:** o processo deve considerar caminhos alternativos por rede, quando suportados pelo hardware e firmware.
 - **Origem dos arquivos:** a implementação deve poder orientar a configuração de rede para localizar e obter arquivos de inicialização ou implementação de uma fonte local ou remota, conforme as opções disponíveis.
@@ -39,6 +40,9 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 ## Implicações
 
 - A detecção de capacidades e a apresentação das opções viáveis são responsabilidades da implementação; a escolha entre alternativas compatíveis cabe ao usuário.
+- A seleção de drivers deve se basear em compatibilidade verificada, não apenas em identificadores de marca/modelo.
+- Drivers genéricos são fallback apenas quando forem tecnicamente compatíveis; não se deve presumir que exista um driver genérico funcional para todo componente.
+- A escolha manual complementa a detecção automática e não deve exigir que todos os usuários conheçam detalhes técnicos.
 - Diferenças de implantação e desempenho não devem criar diferenças desnecessárias no contrato das APIs ou no comportamento das aplicações.
 - A implementação deve reconhecer capacidades ausentes e limitações, em vez de presumir suporte universal.
 - O fluxo de rede pode ocorrer antes de o ambiente normal do ZupiOS estar disponível; portanto, não pode depender exclusivamente de sua interface principal.
@@ -54,6 +58,8 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 
 - A arquitetura futura distingue claramente o contrato do sistema dos mecanismos de implantação.
 - Existe um processo de descoberta/avaliação de capacidades do dispositivo.
+- A seleção automática de drivers usa compatibilidade verificada e contempla drivers genéricos compatíveis como fallback.
+- O usuário pode escolher manualmente quando a detecção falhar, houver alternativas relevantes ou desejar intervir.
 - As opções apresentadas ao usuário refletem as capacidades e limitações verificadas.
 - O processo prevê alternativas para dispositivos sem USB, incluindo caminhos de rede quando tecnicamente disponíveis.
 - Antes da instalação, o processo avalia a viabilidade de preservar uma opção local de retorno ao sistema anterior.
