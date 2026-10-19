@@ -9,15 +9,15 @@ tags:
 
 # Planejamento do ZupiOS
 
-Esta área registra o trabalho em andamento: decisões, hipóteses, pesquisas, roadmap e backlog. Ela não substitui a documentação oficial em [[../docs/Home|docs/Home]].
+Esta área registra o trabalho em andamento: decisões, hipóteses, pesquisas, roadmap e backlog. Ela não substitui a documentação de referência em [[docs/Home|docs/Home]].
 
 ## Índices
 
-- [[Roadmap]]
-- [[Backlog]]
-- [[decisions/0001-nome-e-objetivo|Decisão 0001 — Nome e objetivo]]
-- [[decisions/0002-politica-de-licenciamento|Decisão 0002 — Licenciamento]]
-- [[decisions/0003-organizacao-do-repositorio|Decisão 0003 — Organização do repositório]]
+- [[planning/Roadmap|Roadmap]]
+- [[planning/Backlog|Backlog]]
+- [[planning/decisions/0001-nome-e-objetivo|Decisão 0001 — Nome e objetivo]]
+- [[planning/decisions/0002-politica-de-licenciamento|Decisão 0002 — Licenciamento]]
+- [[planning/decisions/0003-organizacao-do-repositorio|Decisão 0003 — Organização do repositório]]
 
 ## Regras de manutenção
 
