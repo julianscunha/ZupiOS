@@ -39,16 +39,18 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 
 ## Decisão adicional — formatos de distribuição
 
-
-- **Distribuição de pacotes:** o ZupiOS deve oferecer um modelo híbrido de distribuição: pacote genérico menor, pacotes customizados para famílias/configurações de hardware com compatibilidade verificada e pacote full/offline com os componentes necessários para instalação sem conexão confiável. A instalação genérica deve fornecer o conjunto básico de funcionalidades compatível com o dispositivo, ainda que algumas capacidades ou periféricos permaneçam indisponíveis até a aplicação de componentes adicionais.
-- **Atualização de genérico para customizado:** depois de instalado e iniciado, o ZupiOS deve permitir que o usuário aplique um pacote customizado como uma atualização, desde que o dispositivo e a versão instalada sejam compatíveis. O fluxo deve verificar dependências e compatibilidade antes de alterar o sistema e informar claramente quando a atualização não puder ser aplicada.
-- **Base compartilhada e componentes modulares:** os formatos de distribuição devem reutilizar a mesma base do sistema e o mesmo mecanismo de instalação/atualização sempre que possível. Componentes e drivers devem ser versionados, declarar dependências e ter sua integridade verificada. Pacotes customizados devem incluir somente componentes cuja compatibilidade tenha sido validada; não é necessário produzir uma imagem distinta para cada modelo quando uma família de hardware puder compartilhar um perfil.
+- **Distribuição de pacotes:** o ZupiOS deve oferecer um modelo híbrido de distribuição: pacote genérico menor, pacotes customizados para famílias/configurações de hardware com compatibilidade verificada e pacote full/offline com os componentes necessários para instalação sem conexão confiável.
+- **Pacote genérico:** deve permitir instalação independente e fornecer o conjunto básico de funcionalidades compatível com o dispositivo. Algumas capacidades ou periféricos podem permanecer indisponíveis até a instalação de componentes adicionais.
+- **Pacote customizado:** também deve ser uma distribuição completa e independente, inicializável/instalável por si só, voltada a uma família ou configuração de hardware cuja compatibilidade tenha sido verificada. Além disso, deve poder atuar como atualização de uma instalação genérica existente, substituindo ou complementando drivers e componentes para habilitar suporte específico, desde que haja compatibilidade com o dispositivo e a versão instalada. Isso inclui instalações antigas realizadas antes de existir suporte específico, quando o sistema usava drivers genéricos. Não se deve exigir reinstalação completa quando a atualização segura for tecnicamente viável.
+- **Pacote full/offline:** deve reunir os componentes selecionados necessários para instalação sem depender de uma conexão confiável durante o processo.
+- **Base compartilhada e componentes modulares:** os formatos devem reutilizar a mesma base do sistema e o mesmo mecanismo de instalação/atualização sempre que possível. Componentes e drivers devem ser versionados, declarar dependências e ter integridade verificada. Pacotes customizados devem incluir somente componentes com compatibilidade validada; não é necessário produzir uma imagem distinta para cada modelo quando uma família de hardware puder compartilhar um perfil.
 
 ## Implicações
 
 - A detecção de capacidades e a apresentação das opções viáveis são responsabilidades da implementação; a escolha entre alternativas compatíveis cabe ao usuário.
 - A seleção de drivers deve se basear em compatibilidade verificada, não apenas em identificadores de marca/modelo.
 - A distribuição deve oferecer pacotes genérico, customizado e full/offline, com uma base compartilhada e componentes modulares.
+- O pacote customizado deve ser completo e independente, além de poder atualizar instalações genéricas existentes, inclusive as instaladas antes de haver suporte específico para o hardware.
 - Um sistema instalado pelo pacote genérico deve poder receber componentes customizados posteriormente por um fluxo de atualização compatível, sem exigir reinstalação completa quando tecnicamente viável.
 - O gerenciador de pacotes/atualizações deve validar versão, dependências, integridade e compatibilidade antes de aplicar componentes.
 - Drivers genéricos são fallback apenas quando forem tecnicamente compatíveis; não se deve presumir que exista um driver genérico funcional para todo componente.
@@ -70,6 +72,7 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 - Existe um processo de descoberta/avaliação de capacidades do dispositivo.
 - A seleção automática de drivers usa compatibilidade verificada e contempla drivers genéricos compatíveis como fallback.
 - Os formatos genérico, customizado e full/offline compartilham a mesma base sempre que possível.
+- O pacote customizado funciona como distribuição independente e pode atualizar uma instalação genérica existente quando houver compatibilidade verificada.
 - Há um caminho documentado para instalar componentes customizados após a instalação genérica, com validação de compatibilidade, dependências e integridade.
 - O usuário pode escolher manualmente quando a detecção falhar, houver alternativas relevantes ou desejar intervir.
 - As opções apresentadas ao usuário refletem as capacidades e limitações verificadas.
