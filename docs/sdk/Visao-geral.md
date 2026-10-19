@@ -29,5 +29,5 @@ Não documentar uma API como disponível até que sua especificação, implement
 
 ## Próximas referências
 
-- [[../architecture/README|Estado da arquitetura]]
-- Acompanhe o backlog de descoberta em `planning/Backlog.md`.
+- [[docs/architecture/README|Estado da arquitetura]]
+- Acompanhe o backlog de descoberta em [[planning/Backlog|planning/Backlog]].
