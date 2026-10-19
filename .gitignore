@@ -3,6 +3,12 @@
 Thumbs.db
 .vscode/
 .idea/
+*.swp
+
+# Obsidian local workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
 
 # Secrets and local configuration
 .env
