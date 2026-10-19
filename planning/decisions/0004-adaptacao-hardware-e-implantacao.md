@@ -37,10 +37,20 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 - **Ação Restaurar:** quando o usuário acionar essa opção nas configurações, o ZupiOS deverá consultar o repositório e, se encontrar arquivos potencialmente compatíveis, tentar restaurar os componentes necessários e refazer a inicialização original. A operação é uma tentativa e pode falhar por ausência de imagem, incompatibilidade, limitações de acesso ou particularidades do firmware/hardware.
 - **Limites gerais:** as modalidades de implantação e recuperação são objetivos de compatibilidade, não garantias universais. A estratégia concreta dependerá do hardware, firmware, armazenamento e recursos disponíveis.
 
+## Decisão adicional — formatos de distribuição
+
+
+- **Distribuição de pacotes:** o ZupiOS deve oferecer um modelo híbrido de distribuição: pacote genérico menor, pacotes customizados para famílias/configurações de hardware com compatibilidade verificada e pacote full/offline com os componentes necessários para instalação sem conexão confiável. A instalação genérica deve fornecer o conjunto básico de funcionalidades compatível com o dispositivo, ainda que algumas capacidades ou periféricos permaneçam indisponíveis até a aplicação de componentes adicionais.
+- **Atualização de genérico para customizado:** depois de instalado e iniciado, o ZupiOS deve permitir que o usuário aplique um pacote customizado como uma atualização, desde que o dispositivo e a versão instalada sejam compatíveis. O fluxo deve verificar dependências e compatibilidade antes de alterar o sistema e informar claramente quando a atualização não puder ser aplicada.
+- **Base compartilhada e componentes modulares:** os formatos de distribuição devem reutilizar a mesma base do sistema e o mesmo mecanismo de instalação/atualização sempre que possível. Componentes e drivers devem ser versionados, declarar dependências e ter sua integridade verificada. Pacotes customizados devem incluir somente componentes cuja compatibilidade tenha sido validada; não é necessário produzir uma imagem distinta para cada modelo quando uma família de hardware puder compartilhar um perfil.
+
 ## Implicações
 
 - A detecção de capacidades e a apresentação das opções viáveis são responsabilidades da implementação; a escolha entre alternativas compatíveis cabe ao usuário.
 - A seleção de drivers deve se basear em compatibilidade verificada, não apenas em identificadores de marca/modelo.
+- A distribuição deve oferecer pacotes genérico, customizado e full/offline, com uma base compartilhada e componentes modulares.
+- Um sistema instalado pelo pacote genérico deve poder receber componentes customizados posteriormente por um fluxo de atualização compatível, sem exigir reinstalação completa quando tecnicamente viável.
+- O gerenciador de pacotes/atualizações deve validar versão, dependências, integridade e compatibilidade antes de aplicar componentes.
 - Drivers genéricos são fallback apenas quando forem tecnicamente compatíveis; não se deve presumir que exista um driver genérico funcional para todo componente.
 - A escolha manual complementa a detecção automática e não deve exigir que todos os usuários conheçam detalhes técnicos.
 - Diferenças de implantação e desempenho não devem criar diferenças desnecessárias no contrato das APIs ou no comportamento das aplicações.
@@ -59,6 +69,8 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 - A arquitetura futura distingue claramente o contrato do sistema dos mecanismos de implantação.
 - Existe um processo de descoberta/avaliação de capacidades do dispositivo.
 - A seleção automática de drivers usa compatibilidade verificada e contempla drivers genéricos compatíveis como fallback.
+- Os formatos genérico, customizado e full/offline compartilham a mesma base sempre que possível.
+- Há um caminho documentado para instalar componentes customizados após a instalação genérica, com validação de compatibilidade, dependências e integridade.
 - O usuário pode escolher manualmente quando a detecção falhar, houver alternativas relevantes ou desejar intervir.
 - As opções apresentadas ao usuário refletem as capacidades e limitações verificadas.
 - O processo prevê alternativas para dispositivos sem USB, incluindo caminhos de rede quando tecnicamente disponíveis.
