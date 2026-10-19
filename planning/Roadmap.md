@@ -1,0 +1,50 @@
+---
+title: Roadmap do ZupiOS
+type: planning
+status: draft
+tags:
+  - zupios
+  - roadmap
+---
+
+# Roadmap do ZupiOS
+
+> [!warning] Rascunho
+> O roadmap apresenta fases de descoberta, não datas prometidas. A arquitetura e o hardware-alvo ainda não foram aprovados.
+
+## Fase 0 — Fundamentos e decisões
+
+- [x] Definir o nome do sistema como ZupiOS.
+- [x] Definir objetivos iniciais de licenciamento e monetização para avaliação jurídica.
+- [x] Separar documentação, planejamento e código no repositório.
+- [ ] Definir o hardware de referência e recolher informações verificáveis.
+- [ ] Definir os requisitos prioritários de compatibilidade.
+- [ ] Escolher a base técnica após a análise de viabilidade.
+
+## Fase 1 — Prova de viabilidade
+
+- [ ] Validar um caminho reproduzível para executar software próprio no hardware escolhido.
+- [ ] Documentar limites de boot, firmware, drivers, vídeo, áudio, rede e entrada.
+- [ ] Registrar a decisão arquitetural com evidências e riscos.
+
+## Fase 2 — Contrato e SDK
+
+- [ ] Definir o contrato inicial das APIs públicas.
+- [ ] Definir como as aplicações declaram versão e capacidades necessárias.
+- [ ] Criar uma aplicação de exemplo e testes de contrato.
+
+## Fase 3 — Runtime e validação de dispositivo
+
+- [ ] Implementar o runtime de acordo com a arquitetura aprovada.
+- [ ] Criar o primeiro perfil de dispositivo suportado.
+- [ ] Executar testes de conformidade e estabilidade.
+
+## Fase 4 — Serviços opcionais
+
+- [ ] Especificar atualização automática e identificação de instalações.
+- [ ] Definir privacidade, consentimento, retenção e telemetria antes da coleta real.
+- [ ] Especificar marketplace e promoção paga de aplicações.
+
+## Critério para avançar entre fases
+
+Uma fase avança quando seus resultados são documentados e os critérios de aceite são demonstrados. O roadmap deve ser revisto após cada decisão técnica importante.
