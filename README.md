@@ -1,26 +1,36 @@
-# Zupi
+# ZupiOS
 
-Zupi é um projeto em estágio inicial para desenvolver uma plataforma de software para televisores, com um SDK próprio para aplicações e foco em compatibilidade entre dispositivos.
+O ZupiOS é um projeto em estágio inicial para desenvolver uma plataforma de software para televisores, com SDK próprio para aplicações e foco em compatibilidade entre dispositivos.
 
-## Objetivos iniciais
+## Estado atual
 
-- Definir um contrato de APIs estável e versionado para aplicações Zupi.
-- Investigar suporte a dispositivos e documentar capacidades e limitações verificadas.
-- Construir uma plataforma modular, testável e adequada a recursos de hardware variados.
-- Receber contribuições da comunidade mediante revisão e aprovação do mantenedor.
-- Oferecer serviços opcionais, como atualização automática e divulgação de aplicações, sem cobrar pelo uso básico do sistema.
+O projeto está na fase de definição e descoberta. O hardware de referência, a arquitetura técnica, os dispositivos suportados e a licença definitiva ainda não foram aprovados.
 
-## Estado do projeto
+## Estrutura do repositório
 
-O projeto está na fase de definição. A arquitetura de execução, os dispositivos suportados e a licença definitiva ainda não foram aprovados. Não presuma suporte a um modelo específico de TV até que exista uma prova técnica documentada.
+- **[docs/](docs/Home.md)** — documentação de referência em Markdown, compatível com Obsidian.
+- **[planning/](planning/README.md)** — decisões, roadmap, backlog e hipóteses em andamento.
+- **[src/](src/README.md)** — reservado ao código da plataforma.
+- **[sdk/](sdk/README.md)** — reservado à implementação do SDK.
+- **[tests/](tests/README.md)** — reservado aos testes automatizados e de conformidade.
+- **[device-profiles/](device-profiles/README.md)** — perfis de dispositivos e capacidades verificadas.
 
-## Documentação
+A organização de pastas não determina ainda linguagem, sistema-base, runtime nem arquitetura interna.
 
-- [Decisões do projeto](docs/decisions/)
-- [Política de licenciamento planejada](docs/decisions/0002-licensing-policy.md)
-- [Arquitetura](docs/architecture/)
+## Por onde começar
+
+- [Página inicial da documentação](docs/Home.md)
+- [Mapa da documentação](docs/_index/Mapa-da-documentacao.md)
+- [Roadmap](planning/Roadmap.md)
+- [Backlog](planning/Backlog.md)
 - [Como contribuir](CONTRIBUTING.md)
+
+## Obsidian
+
+Para navegar usando links internos [[Nome da nota]], abra a **raiz deste repositório** como vault no Obsidian. A página inicial da documentação é [docs/Home.md](docs/Home.md).
 
 ## Licença
 
-A licença definitiva ainda está em avaliação. A publicação deste repositório, por si só, não concede permissões além das previstas pela legislação aplicável. Consulte `docs/decisions/0002-licensing-policy.md` para conhecer os objetivos de licenciamento ainda não formalizados juridicamente.
+A licença definitiva ainda não foi escolhida. Não existe arquivo LICENSE neste momento. A publicação pública do repositório não deve ser interpretada como concessão automática de direitos gerais de uso, modificação ou redistribuição.
+
+Consulte [o estado da licença](docs/licensing/Estado-da-licenca.md) e a [decisão de planejamento sobre licenciamento](planning/decisions/0002-politica-de-licenciamento.md).
