@@ -20,12 +20,12 @@ tags:
 
 O repositório será organizado como estrutura de longo prazo, com separação explícita entre:
 
-- `docs/`: documentação de referência do projeto, em Markdown compatível com Obsidian.
-- `planning/`: planejamento em andamento, backlog, roadmap e registros de decisão.
-- `src/`: código da plataforma, quando a implementação começar.
-- `sdk/`: implementação e artefatos de desenvolvimento do SDK, quando definidos.
-- `tests/`: testes automatizados e de conformidade.
-- `device-profiles/`: perfis documentados de dispositivos e respectivas capacidades verificadas.
+- docs/: documentação de referência do projeto, em Markdown compatível com Obsidian.
+- planning/: planejamento em andamento, backlog, roadmap e registros de decisão.
+- src/: código da plataforma, quando a implementação começar.
+- sdk/: implementação e artefatos de desenvolvimento do SDK, quando definidos.
+- tests/: testes automatizados e de conformidade.
+- device-profiles/: perfis documentados de dispositivos e respectivas capacidades verificadas.
 
 A presença inicial de diretórios de código não determina linguagem, sistema-base, runtime ou arquitetura interna.
 
@@ -33,11 +33,11 @@ A presença inicial de diretórios de código não determina linguagem, sistema-
 
 - Markdown UTF-8.
 - Frontmatter YAML no início das notas.
-- Links internos Obsidian no formato `[[Nome da nota]]`.
+- Links internos Obsidian no formato [[Nome da nota]].
 - Índices de navegação para documentação e planejamento.
 - Estados explícitos para distinguir decidido, proposto, pendente e implementado.
-- Cada decisão aceita deve receber um registro numerado no diretório `planning/decisions/`.
-- Documentação de referência descreve o comportamento confirmado; hipóteses e trabalho futuro ficam em `planning/`.
+- Cada decisão aceita deve receber um registro numerado no diretório planning/decisions/.
+- Documentação de referência descreve o comportamento confirmado; hipóteses e trabalho futuro ficam em planning/.
 
 ## Critérios de aceite
 
@@ -48,5 +48,5 @@ A presença inicial de diretórios de código não determina linguagem, sistema-
 
 ## Documentos relacionados
 
-- [[0001-nome-e-objetivo]]
-- [[0002-politica-de-licenciamento]]
+- [[planning/decisions/0001-nome-e-objetivo]]
+- [[planning/decisions/0002-politica-de-licenciamento]]
