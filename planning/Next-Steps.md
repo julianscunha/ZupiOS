@@ -17,7 +17,7 @@ Este documento é o ponto de retomada do trabalho. Atualize-o ao concluir uma de
 - [[planning/decisions/0001-nome-e-objetivo|Decisão 0001 — Nome e objetivo]]: nome e objetivo do projeto.
 - [[planning/decisions/0002-politica-de-licenciamento|Decisão 0002 — Política de licenciamento]]: diretrizes desejadas para uso, derivados e serviços comerciais; a licença jurídica definitiva continua pendente.
 - [[planning/decisions/0003-organizacao-do-repositorio|Decisão 0003 — Organização do repositório]]: separação entre documentação, planejamento, código, SDK, testes e perfis de dispositivos.
-- [[planning/decisions/0004-adaptacao-hardware-e-implantacao|Decisão 0004 — Adaptação ao hardware e à implantação]]: implantação flexível, detecção de capacidades, alternativas de boot, tentativa de recuperação local/externa/rede e opção permanente “Restaurar sistema original” nas configurações do ZupiOS. Recuperação depende do dispositivo e não é garantida.
+- [[planning/decisions/0004-adaptacao-hardware-e-implantacao|Decisão 0004 — Adaptação ao hardware e à implantação]]: implantação flexível, detecção de capacidades, alternativas de boot, instalação remota iniciada pelo site oficial quando o dispositivo permitir, tentativa de recuperação local/externa/rede e opção permanente “Restaurar sistema original” nas configurações do ZupiOS. Recuperação depende do dispositivo e não é garantida.
 
 ## Pendências conhecidas
 
@@ -29,9 +29,11 @@ Este documento é o ponto de retomada do trabalho. Atualize-o ao concluir uma de
 
 ## Próxima decisão em andamento
 
-**Definir o dispositivo de referência do ZupiOS.**
+**Definir a política de detecção e seleção de drivers durante a instalação.**
 
-A próxima informação necessária é a marca e o modelo exatos da TV já disponível. Essa identificação permitirá pesquisar suas capacidades reais antes de decidir sistema-base, estratégia de boot, runtime ou linguagem.
+Proposta a confirmar: detectar automaticamente o hardware e suas capacidades, selecionar drivers específicos somente quando houver compatibilidade verificada, usar drivers genéricos compatíveis como fallback e oferecer escolha manual quando a detecção falhar, houver alternativas relevantes ou o usuário quiser intervir. Não assumir que marca/modelo, por si só, garantem compatibilidade.
+
+Depois dessa decisão, identificar a marca e o modelo exatos da TV de referência para validar as opções com hardware real.
 
 ## Instruções para continuidade
 
