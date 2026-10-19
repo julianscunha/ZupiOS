@@ -16,7 +16,7 @@ tags:
 
 ## Decisão
 
-O nome oficial do sistema e do projeto será **ZupiOS**. O repositório principal é `julianscunha/ZupiOS`.
+O nome oficial do sistema e do projeto será **ZupiOS**. O repositório principal é julianscunha/ZupiOS.
 
 ## Objetivo aprovado até aqui
 
@@ -31,5 +31,5 @@ Construir uma plataforma de software para televisores com SDK próprio para apli
 
 ## Documentos relacionados
 
-- [[0002-politica-de-licenciamento]]
-- [[0003-organizacao-do-repositorio]]
+- [[planning/decisions/0002-politica-de-licenciamento]]
+- [[planning/decisions/0003-organizacao-do-repositorio]]
