@@ -30,6 +30,6 @@ O ZupiOS pretende oferecer uma plataforma de software para televisores com um SD
 
 ## Documentos relacionados
 
-- [[../sdk/Visao-geral|Visão geral do SDK]]
-- [[../devices/Matriz-de-suporte|Matriz de suporte a dispositivos]]
-- [[../services/Servicos-opcionais|Serviços opcionais]]
+- [[docs/sdk/Visao-geral|Visão geral do SDK]]
+- [[docs/devices/Matriz-de-suporte|Matriz de suporte a dispositivos]]
+- [[docs/services/Servicos-opcionais|Serviços opcionais]]
