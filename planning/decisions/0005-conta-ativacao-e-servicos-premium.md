@@ -23,12 +23,15 @@ O ZupiOS deve permanecer utilizável sem ativação Premium. Uma contribuição 
 - **Token e contra-token:** o fluxo proposto usa um token apresentado pela instalação e um contra-token emitido pelo site. Formato, segurança, validade, renovação, revogação e recuperação ainda precisam ser especificados.
 - **Serviços Premium pretendidos:** atualização automática; sincronização de perfil e preferências; marketplace oficial; agendamento remoto de desligamento; controles parentais remotos; visualização e gestão das instalações vinculadas/ativas na conta; e acesso a repositórios de bootloaders ou arquivos de recuperação quando houver disponibilidade, compatibilidade e autorização para distribuição.
 - **Aplicativos:** instalar aplicativos por outros meios suportados, como pendrive, não deve exigir Premium, mesmo que o marketplace oficial seja um benefício Premium.
-- **Finalidade da contribuição:** apoiar a operação e manutenção dos serviços online. A redação pública e o modelo jurídico/financeiro devem ser revisados antes do lançamento.
+- **Finalidade da contribuição:** apoiar o projeto, incluindo a operação e manutenção dos serviços online. A contribuição também pode ser motivada pelo apoio ao projeto, sem expectativa de uso dos serviços online. A redação pública e o modelo jurídico/financeiro devem ser revisados antes do lançamento.
+- **Premium em instalações offline:** uma instalação sem conectividade pode manter o reconhecimento local de seu estado Premium, desde que a licença possa ser validada localmente. Benefícios locais — por exemplo, proteções de tela e personalização — podem ser considerados para que o Premium tenha valor mesmo sem serviços online; o conjunto exato desses recursos ainda não está decidido.
 - **Limites:** serviços dependentes de conectividade, servidores, compatibilidade ou direitos de distribuição são condicionais; não se deve prometer disponibilidade universal.
 
 ## Implicações
 
-- A arquitetura deve separar recursos locais básicos dos serviços online Premium.
+- A arquitetura deve separar recursos locais básicos, benefícios Premium locais e serviços online Premium.
+- O estado Premium deve poder ser reconhecido localmente em instalações offline, se a licença tiver sido validada; isso não implica disponibilidade de serviços que dependam de rede.
+- A lista de benefícios locais Premium, como proteções de tela e personalização, permanece em aberto.
 - Autenticação da conta e ativação Premium são estados distintos.
 - O Premium é verificado por instalação, não apenas por conta.
 - Ausência, expiração ou invalidação do token retira os benefícios Premium sem bloquear o uso básico.
