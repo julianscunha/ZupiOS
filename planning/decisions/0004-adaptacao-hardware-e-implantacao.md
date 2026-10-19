@@ -27,7 +27,10 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 - **Modalidades desejadas:** boot por USB, execução a partir de USB, instalação pela rede e inicialização pela rede.
 - **Dispositivos sem USB:** o processo deve considerar caminhos alternativos por rede, quando suportados pelo hardware e firmware.
 - **Origem dos arquivos:** a implementação deve poder orientar a configuração de rede para localizar e obter arquivos de inicialização ou implementação de uma fonte local ou remota, conforme as opções disponíveis.
-- **Limites:** essas modalidades são objetivos de compatibilidade, não uma garantia de suporte em todos os dispositivos. A estratégia concreta dependerá do hardware, firmware e ambiente disponíveis.
+- **Reversão após instalação:** sempre que tecnicamente viável, o processo de instalação deve preservar um caminho para retornar ao sistema anterior, caso a instalação falhe ou o usuário decida voltar atrás. As estratégias podem incluir dual boot, snapshot ou outro mecanismo compatível com o dispositivo.
+- **Verificação prévia de recuperação:** antes de alterar o sistema, a implementação deve avaliar se há espaço de armazenamento e suporte técnico suficientes para manter uma forma recuperável do sistema anterior.
+- **Limitação de recuperação:** se não for possível preservar uma forma de recuperação, o usuário deve receber um aviso claro antes de prosseguir, explicando que a reversão poderá não ser possível por limitações do hardware ou do armazenamento. Não se deve prometer recuperação garantida quando ela não puder ser assegurada.
+- **Limites gerais:** essas modalidades são objetivos de compatibilidade, não uma garantia de suporte em todos os dispositivos. A estratégia concreta dependerá do hardware, firmware, armazenamento e ambiente disponíveis.
 
 ## Implicações
 
@@ -36,6 +39,8 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 - A implementação deve reconhecer capacidades ausentes e limitações, em vez de presumir suporte universal.
 - O fluxo de rede pode ocorrer antes de o ambiente normal do ZupiOS estar disponível; portanto, não pode depender exclusivamente de sua interface principal.
 - A localização dos arquivos, a configuração de rede e a inicialização/instalação são etapas distintas.
+- Dual boot, snapshot e outros mecanismos de recuperação não são equivalentes nem universalmente suportados; a implementação deve escolher ou oferecer somente estratégias compatíveis com o dispositivo.
+- A verificação de espaço e a viabilidade de recuperação devem ocorrer antes de operações potencialmente destrutivas.
 - Tecnologias, bootloader, sistema-base e mecanismos específicos permanecem pendentes; esta decisão não os escolhe.
 
 ## Critérios de aceite
@@ -44,6 +49,8 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 - Existe um processo de descoberta/avaliação de capacidades do dispositivo.
 - As opções apresentadas ao usuário refletem as capacidades e limitações verificadas.
 - O processo prevê alternativas para dispositivos sem USB, incluindo caminhos de rede quando tecnicamente disponíveis.
+- Antes da instalação, o processo avalia a viabilidade de preservar uma opção de retorno ao sistema anterior.
+- Se não houver um caminho de recuperação viável, o usuário é avisado antes de alterações potencialmente destrutivas.
 - As diferenças inevitáveis entre dispositivos são documentadas em perfis de dispositivo.
 
 ## Documentos relacionados
