@@ -38,11 +38,11 @@ tags:
 
 ## Nota importante
 
-Este registro expressa objetivos do projeto; não é uma licença nem aconselhamento jurídico. Não criar um arquivo `LICENSE` até que a licença seja escolhida e revisada. Sem licença explícita, a publicação do código não concede automaticamente permissões gerais de uso, modificação ou redistribuição.
+Este registro expressa objetivos do projeto; não é uma licença nem aconselhamento jurídico. Não criar um arquivo LICENSE até que a licença seja escolhida e revisada. Sem licença explícita, a publicação do código não concede automaticamente permissões gerais de uso, modificação ou redistribuição.
 
 O modelo pretendido é *source-available* com restrições comerciais, não uma licença open source convencional.
 
 ## Documentos relacionados
 
-- [[0001-nome-e-objetivo]]
-- [[0003-organizacao-do-repositorio]]
+- [[planning/decisions/0001-nome-e-objetivo]]
+- [[planning/decisions/0003-organizacao-do-repositorio]]
