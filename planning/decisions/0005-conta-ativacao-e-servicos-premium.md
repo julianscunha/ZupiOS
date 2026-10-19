@@ -32,7 +32,7 @@ O ZupiOS deve permanecer utilizável sem ativação Premium. Uma contribuição 
 - Autenticação da conta e ativação Premium são estados distintos.
 - O Premium é verificado por instalação, não apenas por conta.
 - Ausência, expiração ou invalidação do token retira os benefícios Premium sem bloquear o uso básico.
-- A prevenção contra cópia indevida de tokens entre instalações e o tratamento de reinstalações permanecem decisões técnicas pendentes.
+- A prevenção contra cópia indevida de tokens entre instalações, o tratamento de reinstalações e o comportamento de transferência permanecem decisões técnicas pendentes.
 - Ações remotas que afetem a TV exigem autenticação, autorização e proteções contra uso indevido.
 - O escopo dos benefícios e a política de continuidade caso os serviços online sejam encerrados deverão ser documentados antes do lançamento.
 
