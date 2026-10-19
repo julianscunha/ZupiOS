@@ -18,6 +18,7 @@ Esta área registra o trabalho em andamento: decisões, hipóteses, pesquisas, r
 - [[planning/decisions/0001-nome-e-objetivo|Decisão 0001 — Nome e objetivo]]
 - [[planning/decisions/0002-politica-de-licenciamento|Decisão 0002 — Licenciamento]]
 - [[planning/decisions/0003-organizacao-do-repositorio|Decisão 0003 — Organização do repositório]]
+- [[planning/decisions/0004-adaptacao-hardware-e-implantacao|Decisão 0004 — Adaptação ao hardware e à implantação]]
 
 ## Regras de manutenção
 
