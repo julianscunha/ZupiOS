@@ -60,6 +60,7 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
   - O carregador valida ou limita o tamanho do payload e trata explicitamente falhas de leitura/carga.
   - Uma prova reproduzível demonstra a transferência de controle ao payload e registra um marcador observável.
   - O teste declara claramente o que não valida sobre hardware físico, drivers ou arquitetura final.
+- **Progresso:** contrato e prova de três setores implementados em `tests/boot-poc/`; manter pendente até confirmar a execução repetida no GitHub Actions e, depois, cobrir explicitamente uma falha induzida de leitura.
 - **Fonte de procedimento e evidências:** [[planning/validation-roadmap|plano de validação técnica]] e [[tests/boot-poc/README|prova de boot em QEMU]].
 
 ## Fora do backlog de implementação por enquanto
