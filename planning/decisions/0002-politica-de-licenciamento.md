@@ -36,17 +36,11 @@ tags:
 - Política de marca e uso do nome/logotipo ZupiOS.
 - Relação entre o código publicamente visível, os direitos de uso e as permissões legais concedidas.
 
-## Estado atual da licença
+## Estado e fonte de verdade
 
-Foi adicionada ao repositório a **ZupiOS Source-Available License (ZSL) 0.1**, em caráter provisório e sem revisão jurídica. A minuta procura permitir uso comercial interno gratuito, cópia gratuita de versões não modificadas, redistribuição não comercial de versões modificadas e comercialização de aplicações independentes que não incorporem o Software. A distribuição comercial de versões derivadas exige autorização escrita.
+Este ADR registra os objetivos e requisitos de licenciamento aprovados pelo projeto. Para o texto vigente, as limitações e o estado da minuta, consulte [LICENSE](../../LICENSE) e [[docs/licensing/Estado-da-licenca|Estado da licença]]. A ZSL 0.1 é provisória, não foi revisada juridicamente e não deve ser apresentada como licença open source convencional.
 
-A minuta não deve ser apresentada como licença open source convencional. As definições e restrições precisam de revisão jurídica antes de uma versão estável. Alterações futuras não revogam automaticamente direitos já concedidos a cópias distribuídas sob uma versão anterior.
-
-## Nota importante
-
-Este registro descreve os objetivos do projeto e o estado da minuta; não é aconselhamento jurídico. Consulte o arquivo LICENSE e a página de estado da licença para os termos provisórios vigentes.
-
-O modelo pretendido é *source-available* com restrições comerciais, não uma licença open source convencional.
+Este registro não é aconselhamento jurídico. A publicação de uma minuta não resolve automaticamente os direitos sobre contribuições externas nem substitui a revisão jurídica.
 
 ## Documentos relacionados
 
