@@ -42,7 +42,8 @@ O contrato experimental fixa o endereço de carga e de entrada em `0000:9000` e 
 - O segundo estágio e o payload cabem cada um em um setor de 512 bytes.
 - A imagem gerada tem exatamente 1.536 bytes e o QEMU executa o payload do terceiro setor.
 - O console de depuração recebe `ZupiOS: payload minimo carregado e executado`, emitido pelo payload independente.
-- Não aparece o marcador de erro de leitura do payload.
+- No caso positivo, não aparece o marcador de erro de leitura do payload.
+- No caso negativo, uma imagem sem o terceiro setor induz erro de leitura: o carregador emite o marcador de falha e o payload não é executado.
 - O processo termina pelo limite de tempo esperado (timeout de cinco segundos, código 124), pois o payload para a CPU após emitir a mensagem.
 - Nenhum firmware ou dispositivo físico é alterado; os artefatos são temporários e removidos ao final.
 
