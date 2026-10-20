@@ -98,6 +98,17 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 - A opção Restaurar consulta o repositório de recuperação e informa o usuário se a imagem não estiver disponível ou se a tentativa falhar.
 - As diferenças inevitáveis entre dispositivos são documentadas em perfis de dispositivo.
 
+## Evidências adicionais — placa BN41-02353B
+
+- Um manual de serviço da família J6400 confirma a plataforma de software `tztv-2.2.1-hawk-m-fhd_2015` e documenta diagnósticos de fábrica. Isso identifica a família de software, mas não descreve um mecanismo suportado para executar um sistema operacional alternativo. Fonte: [manual de serviço C-ES-02286-1](https://www.scribd.com/document/802354187/UWK50-UNxxJ6400AG-1).
+- Um registro de reparo para UN40J6400 associa a placa BN41-02353B ao conjunto BN94-09096Z e identifica o SoC SDP1415, eMMC e EEPROM SPI. É evidência técnica secundária útil, não confirmação da revisão instalada na unidade. Fonte: [EletrônicaBR — BIOS/EEPROM UN40J6400](https://eletronicabr.com/en/topic/274293-bios-and-eeprom-samsung-un40j6400-j5500-j6300/).
+- Registros de placas BN41-02353B em modelos próximos mencionam `THGBMBG5D1KBAIT`, `W25Q40CL` e RAM DDR3 com configurações diferentes. Não extrapolar a quantidade total de RAM entre modelos/revisões. Fonte: [OneTV — placa Hawk-M FHD](https://onetv-srt.com/downloads/?b=144).
+- Há material de reparo com dumps de eMMC e diagramas ISP para a família. Isso demonstra que técnicos conseguem acessar a memória em bancada com ferramentas apropriadas; **não demonstra** que exista boot alternativo, desbloqueio do bootloader ou UART/JTAG acessível para executar ZupiOS. Não usar dumps de terceiros nem gravar a memória da TV como experimento.
+
+### Avaliação provisória de viabilidade
+
+O hardware parece ser uma plataforma proprietária de Smart TV da geração 2015, com SoC Samsung SDP1415 e armazenamento eMMC, mas a correspondência exata da placa e a configuração de RAM da unidade permanecem não verificadas. A documentação pública consultada não prova um caminho seguro e repetível para iniciar um sistema operacional independente. A recomendação é tratar a TV como alvo experimental não confirmado e não como plataforma de desenvolvimento principal até existir prova de boot controlável e um método de recuperação validado.
+
 ## Documentos relacionados
 
 - [[planning/decisions/0003-organizacao-do-repositorio]]
