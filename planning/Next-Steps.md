@@ -28,7 +28,8 @@ Este documento é o ponto de retomada do trabalho. Atualize-o ao concluir uma de
 - Especificar formato, assinatura/integridade, versionamento, dependências e fluxo de atualização dos pacotes modulares.
 - Avaliar viabilidade de execução nativa e, depois, estabelecer a arquitetura sem presumir sistema-base, runtime, linguagem ou bootloader.
 - Definir a licença jurídica final e revisar as implicações de distribuição de imagens de sistemas originais.
-- Detalhar privacidade, consentimento, minimização e retenção para telemetria futura.
+- Detalhar privacidade, consentimento, minimização e retenção para telemetria futura, incluindo a contribuição opcional de dados técnicos ao catálogo público de compatibilidade.
+- Definir critérios verificáveis para os estados do catálogo de hardware: vinculado, instalado e compatibilidade verificada; não tratar vínculo de conta como homologação.
 
 ## Próxima decisão em andamento
 
