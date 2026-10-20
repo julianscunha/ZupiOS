@@ -16,6 +16,6 @@ _start:
     hlt
     jmp 3b
 msg:
-    .asciz "ZupiOS QEMU boot OK\r\n"
+    .asciz "ZupiOS: inicialização no QEMU aprovada\r\n"
 .org 510
 .word 0xaa55

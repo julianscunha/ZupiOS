@@ -28,5 +28,5 @@ set -e
 
 printf '%s\n' "$output"
 [[ "$qemu_rc" == "124" ]] || { echo "FAIL: era esperado que o sistema convidado parasse até o tempo limite; código de saída do QEMU=$qemu_rc" >&2; exit 1; }
-grep -Fq "ZupiOS QEMU boot OK" <<< "$output" || { echo "FAIL: mensagem de inicialização não encontrada" >&2; exit 1; }
+grep -Fq "ZupiOS: inicialização no QEMU aprovada" <<< "$output" || { echo "FAIL: mensagem de inicialização não encontrada" >&2; exit 1; }
 echo "APROVADO: setor de inicialização BIOS de 512 bytes executado no QEMU; assinatura=55aa"
