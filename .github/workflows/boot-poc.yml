@@ -1,0 +1,25 @@
+name: Boot proof of concept
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qemu-boot-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install boot-test dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes binutils qemu-system-x86 coreutils
+      - name: Check development environment
+        run: bash scripts/dev-check.sh
+      - name: Validate QEMU boot proof repeatedly
+        run: bash tests/boot-poc/repeat.sh 5

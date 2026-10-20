@@ -80,3 +80,8 @@ Em execuções anteriores, houve uma falha isolada em que o marcador não foi en
 ## Verificador de repetibilidade da prova QEMU
 
 Foi criado `tests/boot-poc/repeat.sh`, que executa a prova individual cinco vezes por padrao (ou uma quantidade positiva fornecida como argumento), interrompe na primeira falha e informa o numero da tentativa e as aprovacoes anteriores. Isso padroniza a verificacao de repetibilidade e melhora a localizacao de falhas intermitentes; nao prova ausencia de falhas nem identifica automaticamente sua causa.
+
+
+## Integração contínua da prova de boot
+
+Foi adicionado .github/workflows/boot-poc.yml para instalar as dependências em um runner Ubuntu, executar scripts/dev-check.sh e repetir a prova QEMU cinco vezes em pushes para main, pull requests e acionamento manual. A configuração local será validada no contêiner; o resultado efetivo do runner hospedado só poderá ser confirmado após o GitHub Actions executar o workflow.

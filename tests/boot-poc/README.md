@@ -22,6 +22,8 @@ bash tests/boot-poc/repeat.sh
 
 E possivel informar outra quantidade positiva, por exemplo `bash tests/boot-poc/repeat.sh 10`. O relatorio identifica a tentativa que falhou e quantas aprovacoes ocorreram antes dela; cada execucao individual mantem os diagnosticos do `run.sh`.
 
+O workflow .github/workflows/boot-poc.yml executa a verificação de ambiente e cinco provas QEMU em pushes para main, pull requests e acionamento manual. O resultado hospedado só pode ser confirmado após o GitHub Actions executar o workflow.
+
 O script informa a versão do QEMU e os parâmetros configurados para a máquina virtual: máquina pc, CPU qemu64 e 128 MiB de RAM. Esses valores são argumentos fornecidos ao emulador, não medições detectadas pelo código convidado.
 
 ## Critérios de aprovação
