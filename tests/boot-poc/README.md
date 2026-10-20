@@ -4,7 +4,7 @@ Este teste reproduz uma inicialização BIOS legado em uma máquina x86 emulada.
 
 ## Requisitos
 
-GNU Binutils (as e ld), QEMU para x86 (qemu-system-x86_64) e timeout.
+GNU Binutils (as e ld), QEMU para x86 (qemu-system-x86_64) e timeout, além de dd para montar a imagem temporária.
 
 ## Execução
 
@@ -14,24 +14,25 @@ A partir da raiz do repositório, execute:
 bash tests/boot-poc/run.sh
 ```
 
-Para executar a prova repetidamente e interromper na primeira falha, use o verificador de repetibilidade (cinco execucoes por padrao):
+Para executar a prova repetidamente e interromper na primeira falha, use o verificador de repetibilidade (cinco execuções por padrão):
 
 ```sh
 bash tests/boot-poc/repeat.sh
 ```
 
-E possivel informar outra quantidade positiva, por exemplo `bash tests/boot-poc/repeat.sh 10`. O relatorio identifica a tentativa que falhou e quantas aprovacoes ocorreram antes dela; cada execucao individual mantem os diagnosticos do `run.sh`.
+É possível informar outra quantidade positiva, por exemplo `bash tests/boot-poc/repeat.sh 10`. O relatório identifica a tentativa que falhou e quantas aprovações ocorreram antes dela; cada execução individual mantém os diagnósticos do `run.sh`.
 
-O workflow .github/workflows/boot-poc.yml executa a verificação de ambiente e cinco provas QEMU em pushes para main, pull requests e acionamento manual. O resultado hospedado só pode ser confirmado após o GitHub Actions executar o workflow.
+O workflow `.github/workflows/boot-poc.yml` executa a verificação de ambiente e cinco provas QEMU em pushes para `main`, pull requests e acionamento manual. O resultado hospedado só pode ser confirmado após o GitHub Actions executar o workflow.
 
-O script informa a versão do QEMU e os parâmetros configurados para a máquina virtual: máquina pc, CPU qemu64 e 128 MiB de RAM. Esses valores são argumentos fornecidos ao emulador, não medições detectadas pelo código convidado.
+O script informa a versão do QEMU e os parâmetros configurados para a máquina virtual: máquina `pc`, CPU `qemu64` e 128 MiB de RAM. Esses valores são argumentos fornecidos ao emulador, não medições detectadas pelo código convidado.
 
 ## Critérios de aprovação
 
-- A imagem gerada tem exatamente 512 bytes.
-- Os dois bytes finais da imagem correspondem à assinatura BIOS 55 aa.
-- O QEMU executa a imagem e o console de depuração recebe a mensagem de inicialização esperada em português.
-- O processo termina pelo limite de tempo esperado (timeout de cinco segundos, código 124), pois o setor de teste para a CPU.
+- A imagem de disco gerada tem exatamente 1024 bytes: um setor de boot e um setor para o segundo estágio.
+- O setor de boot tem exatamente 512 bytes e os dois bytes finais correspondem à assinatura BIOS `55 aa`.
+- O primeiro setor lê o segundo setor usando a interrupção de disco BIOS `int 13h` e transfere a execução para `0000:8000`.
+- O console de depuração recebe a mensagem emitida pelo segundo estágio, confirmando que ele foi carregado e executado.
+- O processo termina pelo limite de tempo esperado (timeout de cinco segundos, código 124), pois o segundo estágio para a CPU após emitir a mensagem.
 - Nenhum firmware ou dispositivo físico é alterado; os artefatos são temporários e removidos ao final.
 
-Uma aprovação comprova somente esse caminho mínimo de inicialização BIOS legado no QEMU. Não comprova kernel, drivers, desempenho, boot alternativo ou compatibilidade com a Samsung UN40J6400AGXZD.
+Uma aprovação comprova somente esse caminho mínimo de inicialização BIOS legado em QEMU. Não comprova kernel, drivers, desempenho, boot alternativo ou compatibilidade com a Samsung UN40J6400AGXZD.
