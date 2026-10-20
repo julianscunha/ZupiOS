@@ -49,10 +49,11 @@ Critérios cobertos pelo script:
 - limite de 512 bytes para segundo estágio e payload;
 - tamanho total da imagem e layout de três setores;
 - transferência de controle ao payload, observada por marcador;
-- ausência do marcador de falha e timeout esperado após a parada da CPU;
+- caso positivo: marcador de execução do payload e timeout esperado após a parada da CPU;
+- caso negativo com imagem truncada: marcador de falha de leitura e ausência do marcador do payload;
 - execução repetida pelo verificador de repetibilidade.
 
-Esta prova não implementa kernel, drivers, sistema-base ou runtime, e não comprova compatibilidade com a Samsung. O caminho de erro está implementado, mas sua execução induzida não é validada pela prova positiva atual.
+Esta prova não implementa kernel, drivers, sistema-base ou runtime, e não comprova compatibilidade com a Samsung. O script agora contém um caso negativo com a imagem truncada para induzir falha de leitura. A execução efetiva desse cenário ainda depende de ambiente com GNU Binutils e QEMU; a implementação do teste, por si só, não é evidência de aprovação.
 
 ## Etapa 3 — Perfil da TV de referência
 
