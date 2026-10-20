@@ -4,7 +4,7 @@
 
 [![Status](https://img.shields.io/badge/status-early%20development-orange)](planning/Next-Steps.md)
 [![Documentation](https://img.shields.io/badge/docs-in%20progress-blue)](docs/Home.md)
-[![License](https://img.shields.io/badge/license-not%20selected-lightgrey)](docs/licensing/Estado-da-licenca.md)
+[![License](https://img.shields.io/badge/license-ZSL%200.1%20provisional-orange)](LICENSE)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen)](CONTRIBUTING.md)
 
 **Uma plataforma de software para televisores, com SDK próprio e foco em compatibilidade entre dispositivos.**
@@ -25,7 +25,7 @@ O projeto ainda está na fase de definição, pesquisa de hardware e decisões a
 - **Dispositivo de referência em investigação:** Samsung UN40J6400AGXZD. A viabilidade de execução nativa ainda não foi confirmada.
 - **Arquitetura:** sistema-base, runtime, linguagem, SDK e método de inicialização ainda não foram definidos.
 - **Compatibilidade:** nenhum dispositivo deve ser considerado suportado sem evidências e testes documentados.
-- **Licença:** ainda não selecionada. Consulte [Estado da licença](docs/licensing/Estado-da-licenca.md) antes de reutilizar o conteúdo.
+- **Licença:** ZupiOS Source-Available License (ZSL) 0.1, provisória e ainda não revisada juridicamente. Leia [LICENSE](LICENSE) antes de reutilizar o conteúdo.
 
 ## Estrutura do repositório
 
@@ -59,6 +59,6 @@ Não publique vulnerabilidades exploráveis, credenciais, tokens ou dados pessoa
 
 ## Licença e marca
 
-A licença jurídica definitiva ainda não foi escolhida, portanto este repositório **não possui um arquivo `LICENSE`**. A publicação pública do código não deve ser interpretada como concessão automática de direitos de uso, modificação ou redistribuição. Consulte [Estado da licença](docs/licensing/Estado-da-licenca.md) e [ADR 0002](planning/decisions/0002-politica-de-licenciamento.md).
+O repositório inclui uma minuta provisória, [ZupiOS Source-Available License (ZSL) 0.1](LICENSE), que busca refletir os objetivos registrados no ADR 0002. Ela ainda não foi revisada juridicamente e poderá ser alterada antes de uma versão estável. Não a trate como licença open source convencional. Consulte também [Estado da licença](docs/licensing/Estado-da-licenca.md).
 
 O nome e a identidade visual ZupiOS também não implicam autorização para sugerir endosso oficial. A política de marca ainda será definida.
