@@ -49,3 +49,8 @@ Com os dados confirmados, avaliar a viabilidade de execução nativa e as opçõ
 4. Atualize índices e links Obsidian quando criar documentos.
 5. Não declare implementação concluída quando houver apenas uma decisão ou requisito documentado.
 6. Ao salvar alterações, faça commit no Git e informe o link do commit e dos arquivos alterados.
+
+
+## Resultado da investigação documental da TV
+
+A pesquisa encontrou manual de serviço da família J6400 e registros técnicos secundários que associam a placa BN41-02353B/BN94-09096Z ao UN40J6400 e identificam o SoC SDP1415, eMMC `THGBMBG5D1KBAIT` e flash SPI `W25Q40CL`. A configuração de RAM varia entre placas relacionadas e não está confirmada nesta unidade. Dumps de eMMC/diagramas ISP para reparo não demonstram que seja possível iniciar um sistema operacional alternativo. A viabilidade de boot do ZupiOS na TV permanece **não comprovada**. Próximo passo: não fazer modificações; decidir se o projeto precisa manter esta TV como alvo prioritário ou adotar uma plataforma de desenvolvimento controlável para prototipagem, mantendo a TV como alvo de compatibilidade posterior.
