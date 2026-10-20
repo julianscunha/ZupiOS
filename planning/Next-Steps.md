@@ -22,7 +22,7 @@ Este documento é o ponto de retomada do trabalho. Atualize-o ao concluir uma de
 
 ## Pendências conhecidas
 
-- Avaliar a TV de referência identificada pelo usuário: Samsung UN40J6400AG (confirmar o sufixo regional completo na etiqueta).
+- Avaliar a TV de referência identificada pelo usuário: Samsung UN40J6400AGXZD (sufixo regional XZD confirmado pelo usuário).
 - Levantar SoC/CPU e arquitetura, RAM, armazenamento, firmware/plataforma, cadeia de boot, restrições de assinatura e opções seguras de recuperação; a possibilidade de instalação nativa ainda não está confirmada.
 - Definir requisitos de compatibilidade a partir do hardware real.
 - Especificar formato, assinatura/integridade, versionamento, dependências e fluxo de atualização dos pacotes modulares.
@@ -32,7 +32,7 @@ Este documento é o ponto de retomada do trabalho. Atualize-o ao concluir uma de
 
 ## Próxima decisão em andamento
 
-**Investigar o hardware e a cadeia de boot da Samsung UN40J6400AG.**
+**Investigar o hardware e a cadeia de boot da Samsung UN40J6400AGXZD.**
 
 O modelo foi informado pelo usuário. A página oficial da Samsung lista firmware de atualização via USB, mas isso não prova que a TV aceite um sistema operacional alternativo. Confirmar o sufixo regional e a placa principal da unidade real; levantar SoC/CPU, arquitetura, RAM, armazenamento, plataforma/firmware, mecanismos de assinatura e caminhos de recuperação. Priorizar documentação e inspeção não destrutiva; não presumir que seja possível iniciar código arbitrário.
 
