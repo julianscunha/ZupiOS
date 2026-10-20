@@ -29,6 +29,6 @@ Para vulnerabilidades, siga [SECURITY.md](SECURITY.md), em vez de abrir uma issu
 
 ## Direitos sobre contribuições e licença
 
-A licença definitiva do projeto e os termos jurídicos para contribuições externas ainda estão em definição. Não presuma que a visibilidade pública concede permissão geral de uso, modificação ou redistribuição. Antes de enviar código, confirme que você tem os direitos necessários para compartilhá-lo. O projeto poderá definir um CLA ou instrumento equivalente antes de aceitar contribuições sob a política final.
+O repositório inclui a [ZSL 0.1 provisória](LICENSE), ainda sem revisão jurídica. Leia os termos antes de usar ou redistribuir o Software. A licença não resolve automaticamente os direitos sobre contribuições externas; antes de enviar código, confirme que você tem os direitos necessários para compartilhá-lo. O projeto poderá definir um CLA ou instrumento equivalente.
 
 Consulte [Estado da licença](docs/licensing/Estado-da-licenca.md) e [ADR 0002](planning/decisions/0002-politica-de-licenciamento.md).
