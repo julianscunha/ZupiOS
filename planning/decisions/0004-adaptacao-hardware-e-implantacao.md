@@ -45,6 +45,13 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 - **Pacote full/offline:** deve reunir os componentes selecionados necessários para instalação sem depender de uma conexão confiável durante o processo.
 - **Base compartilhada e componentes modulares:** os formatos devem reutilizar a mesma base do sistema e o mesmo mecanismo de instalação/atualização sempre que possível. Componentes e drivers devem ser versionados, declarar dependências e ter integridade verificada. Pacotes customizados devem incluir somente componentes com compatibilidade validada; não é necessário produzir uma imagem distinta para cada modelo quando uma família de hardware puder compartilhar um perfil.
 
+## Dispositivo de referência inicial
+
+- **Modelo informado:** Samsung UN40J6400AG (linha J6400, 40 polegadas).
+- Este aparelho será o primeiro alvo de investigação de hardware e implantação do ZupiOS, não uma confirmação de compatibilidade ou de viabilidade de instalação nativa.
+- A documentação pública da Samsung disponibiliza firmware de atualização por USB para o modelo. Isso confirma um mecanismo de atualização oficial, mas não demonstra que seja possível iniciar código arbitrário ou substituir o sistema operacional.
+- Antes de qualquer alteração, identificar o código completo da etiqueta (incluindo sufixo regional), versão de firmware e placa principal efetivamente instalada. Investigar CPU/SoC, arquitetura, RAM, armazenamento, cadeia de boot, assinatura de firmware, interfaces de depuração e possibilidades de recuperação. Não gravar firmware modificado nem alterar opções de serviço durante a fase de levantamento.
+
 ## Implicações
 
 - A detecção de capacidades e a apresentação das opções viáveis são responsabilidades da implementação; a escolha entre alternativas compatíveis cabe ao usuário.
