@@ -47,7 +47,7 @@ O ZupiOS deve separar o comportamento do sistema da forma como ele é inicializa
 
 ## Dispositivo de referência inicial
 
-- **Modelo informado:** Samsung UN40J6400AG (linha J6400, 40 polegadas).
+- **Modelo informado:** Samsung UN40J6400AGXZD (linha J6400, 40 polegadas; código de modelo base na página de suporte: UN40J6400AG).
 - Este aparelho será o primeiro alvo de investigação de hardware e implantação do ZupiOS, não uma confirmação de compatibilidade ou de viabilidade de instalação nativa.
 - A documentação pública da Samsung disponibiliza firmware de atualização por USB para o modelo. Isso confirma um mecanismo de atualização oficial, mas não demonstra que seja possível iniciar código arbitrário ou substituir o sistema operacional.
 - Antes de qualquer alteração, identificar o código completo da etiqueta (incluindo sufixo regional), versão de firmware e placa principal efetivamente instalada. Investigar CPU/SoC, arquitetura, RAM, armazenamento, cadeia de boot, assinatura de firmware, interfaces de depuração e possibilidades de recuperação. Não gravar firmware modificado nem alterar opções de serviço durante a fase de levantamento.
