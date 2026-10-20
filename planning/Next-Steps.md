@@ -59,3 +59,8 @@ A pesquisa encontrou manual de serviço da família J6400 e registros técnicos 
 ## Próxima etapa após a investigação da TV
 
 Foi registrado o plano [[planning/validation-roadmap]] para separar a prototipagem da investigação de hardware. Próxima ação: escolher um ambiente de desenvolvimento controlável (máquina virtual ou computador x86-64, conforme os recursos disponíveis) e executar uma prova mínima de inicialização antes de selecionar sistema-base, linguagem ou runtime. A Samsung UN40J6400AGXZD continua como alvo experimental; não há comprovação de que aceite boot alternativo.
+
+
+## Ambiente de desenvolvimento local
+
+Foi adicionada a configuração inicial de VS Code Dev Containers com Docker em [[planning/development-environment]]. O ambiente usa uma imagem base Ubuntu e executa `scripts/dev-check.sh` para validar o contêiner. Próxima ação: o usuário deve abrir o repositório local no VS Code, executar **Dev Containers: Reopen in Container** e informar se a construção funcionou e qual sistema operacional hospeda o Docker. Isso não implementa ainda o sistema operacional ZupiOS nem comprova compatibilidade com a TV.
