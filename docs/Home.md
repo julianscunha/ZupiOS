@@ -19,6 +19,7 @@ Esta é a página inicial da documentação de referência do ZupiOS. Para que o
 - [[docs/devices/Matriz-de-suporte|Matriz de suporte a dispositivos]]
 - [[docs/services/Servicos-opcionais|Serviços opcionais]]
 - [[docs/licensing/Estado-da-licenca|Estado da licença]]
+- [[tests/boot-poc/README|Prova experimental de boot no QEMU]]: escopo e limites da prova técnica atual.
 
 - [[planning/decisions/0006-politica-de-idioma-e-localizacao|Política de idioma e localização]]: pt-BR como padrão e idioma principal da documentação.
 
@@ -27,4 +28,4 @@ Esta é a página inicial da documentação de referência do ZupiOS. Para que o
 Consulte o [[docs/_index/Mapa-da-documentacao|mapa da documentação]] para encontrar tópicos por área.
 
 > [!note] Limite atual
-> O projeto está em fase de definição. Esta documentação não declara compatibilidade com dispositivos, APIs ou plataformas ainda não validadas. Consulte [[planning/README|planejamento]] para roadmap, backlog e decisões em aberto.
+> O projeto está em fase de definição. A prova experimental em QEMU não é um kernel funcional e não declara compatibilidade com a TV Samsung. Esta documentação não declara compatibilidade com dispositivos, APIs ou plataformas ainda não validadas. Consulte [[planning/README|planejamento]] para roadmap, backlog e decisões em aberto.

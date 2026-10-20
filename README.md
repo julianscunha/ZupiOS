@@ -22,8 +22,9 @@ O projeto ainda está na fase de definição, pesquisa de hardware e decisões a
 ## Estado atual
 
 - **Fase:** descoberta técnica, documentação e planejamento.
+- **Prova experimental:** existe uma prova de boot BIOS legado em QEMU que carrega e executa um segundo setor. Isso não é um kernel nem um sistema operacional funcional; veja [procedimento e limites](tests/boot-poc/README.md).
 - **Dispositivo de referência em investigação:** Samsung UN40J6400AGXZD. A viabilidade de execução nativa ainda não foi confirmada.
-- **Arquitetura:** sistema-base, runtime, linguagem, SDK e método de inicialização ainda não foram definidos.
+- **Arquitetura:** sistema-base, runtime, linguagem, SDK e método de inicialização para o produto ainda não foram definidos.
 - **Compatibilidade:** nenhum dispositivo deve ser considerado suportado sem evidências e testes documentados.
 - **Licença:** ZupiOS Source-Available License (ZSL) 0.1, provisória e ainda não revisada juridicamente. Leia [LICENSE](LICENSE) antes de reutilizar o conteúdo.
 
@@ -32,10 +33,10 @@ O projeto ainda está na fase de definição, pesquisa de hardware e decisões a
 | Caminho | Conteúdo |
 | --- | --- |
 | [docs/](docs/Home.md) | Documentação de referência em Markdown, compatível com Obsidian |
-| [planning/](planning/README.md) | Decisões, roadmap, backlog e hipóteses em andamento |
+| [planning/](planning/README.md) | Decisões, roadmap, backlog e próximos passos |
 | [src/](src/README.md) | Estrutura reservada ao código da plataforma |
 | [sdk/](sdk/README.md) | Estrutura reservada ao SDK |
-| [tests/](tests/README.md) | Estrutura reservada a testes e verificações de conformidade |
+| [tests/](tests/README.md) | Provas experimentais e testes automatizados |
 | [device-profiles/](device-profiles/README.md) | Perfis de dispositivos e capacidades verificadas |
 
 A organização atual não determina linguagem, sistema-base, runtime, bootloader ou arquitetura interna.

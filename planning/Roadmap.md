@@ -23,9 +23,13 @@ tags:
 
 ## Fase 1 — Prova de viabilidade
 
+- [x] Criar uma prova experimental de boot BIOS legado em QEMU, incluindo leitura e execução de um segundo setor.
+- [ ] Definir e demonstrar o contrato de carregamento de um payload/kernel mínimo no ambiente de prototipagem.
 - [ ] Validar um caminho reproduzível para executar software próprio no hardware escolhido.
-- [ ] Documentar limites de boot, firmware, drivers, vídeo, áudio, rede e entrada.
+- [ ] Documentar limites de boot, firmware, drivers, vídeo, áudio, rede e entrada no hardware escolhido.
 - [ ] Registrar a decisão arquitetural com evidências e riscos.
+
+A prova em QEMU valida apenas o fluxo mínimo do emulador; não conta como validação da TV Samsung nem como kernel funcional. Consulte [[tests/boot-poc/README|procedimento e limites da prova]].
 
 ## Fase 2 — Contrato e SDK
 
