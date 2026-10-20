@@ -31,21 +31,28 @@ Critérios do ambiente:
 
 ## Etapa 2 — Prova mínima de inicialização
 
-A prova atual em `tests/boot-poc/` monta uma imagem raw de 1.024 bytes com dois setores. O setor inicial de 512 bytes contém a assinatura BIOS `55 aa`, lê o segundo setor via `int 13h` e transfere a execução para `0000:8000`. O segundo estágio emite um marcador no console de depuração e para a CPU. O script verifica o layout e o marcador; o verificador de repetibilidade executa cinco tentativas por padrão.
+A prova em `tests/boot-poc/` monta uma imagem raw de 1.536 bytes com três setores. O setor inicial de 512 bytes contém a assinatura BIOS `55 aa`, lê o segundo setor via `int 13h` e transfere a execução para `0000:8000`. O segundo estágio carrega o terceiro setor em `0000:9000`, trata erro de leitura e transfere o controle ao payload. O payload independente emite um marcador no console de depuração e para a CPU.
 
-Critérios já cobertos pelo teste:
+### Contrato experimental do payload
+
+- **Endereço de carga:** segmento:offset `0000:9000` (endereço físico `0x9000` em modo real).
+- **Ponto de entrada:** `0000:9000`; o carregador faz salto distante para esse endereço.
+- **Limite de tamanho:** exatamente um setor reservado, com máximo de 512 bytes. O teste de construção rejeita payload maior que esse limite.
+- **Estado mínimo:** modo real BIOS de 16 bits; o payload não depende de stack, heap, interrupções ou serviços de sistema. O carregador inicializa `DS` e `ES` a zero e preserva o identificador de unidade BIOS em `DL` durante a leitura; o payload deve inicializar os segmentos de que precisar.
+- **Falha de carga:** a leitura BIOS do setor 3 verifica o carry flag e emite `ZupiOS: falha ao carregar payload` antes de parar a CPU.
+- **Evidência de sucesso:** o payload escreve `ZupiOS: payload minimo carregado e executado` no console de depuração do QEMU.
+
+O carregador atual lê um setor fixo; não lê metadados, não suporta payloads maiores ou de tamanho variável e não define um formato executável. O endereço e o estado acima são apenas o contrato desta prova, não a arquitetura final de kernel.
+
+Critérios cobertos pelo script:
 - tamanho e assinatura do setor de boot;
-- tamanho máximo do segundo estágio e tamanho total da imagem;
-- transferência de controle ao segundo estágio, observada por marcador;
-- timeout esperado após a parada da CPU;
-- execução repetida sem falha nas tentativas realizadas.
+- limite de 512 bytes para segundo estágio e payload;
+- tamanho total da imagem e layout de três setores;
+- transferência de controle ao payload, observada por marcador;
+- ausência do marcador de falha e timeout esperado após a parada da CPU;
+- execução repetida pelo verificador de repetibilidade.
 
-Próximos critérios técnicos a desenvolver:
-- validar explicitamente o caminho de erro de leitura de disco;
-- conferir preservação do identificador da unidade BIOS e limites do layout da imagem;
-- decidir e documentar o contrato para carregar um payload/kernel mínimo.
-
-Esta prova não implementa kernel, drivers, sistema-base ou runtime, e não comprova compatibilidade com a Samsung.
+Esta prova não implementa kernel, drivers, sistema-base ou runtime, e não comprova compatibilidade com a Samsung. O caminho de erro está implementado, mas sua execução induzida não é validada pela prova positiva atual.
 
 ## Etapa 3 — Perfil da TV de referência
 
