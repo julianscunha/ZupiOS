@@ -20,6 +20,7 @@ O ZupiOS deve permanecer utilizável sem ativação Premium. Uma contribuição 
 - **Conta opcional:** o usuário pode criar uma conta no site, entrar nela pela TV e vincular a instalação. Registrar-se ou vincular uma TV não ativa Premium por si só.
 - **Ativação por instalação:** é necessária uma contribuição por instalação. Os benefícios Premium só ficam disponíveis enquanto houver um token ativo para aquela instalação. Sem ele, a instalação continua utilizável, mas não usufrui dos benefícios Premium.
 - **Conta e instalações:** a conta permite administrar instalações vinculadas, mas não substitui o token nem ativa automaticamente todas as TVs associadas.
+- **Catálogo de compatibilidade:** com transparência ao usuário e controles de privacidade adequados, o vínculo de uma TV poderá contribuir com dados técnicos minimizados para um catálogo público de modelos nos quais o ZupiOS foi instalado ou testado. O vínculo, por si só, não comprova instalação nem compatibilidade. O catálogo deve distinguir aparelhos apenas vinculados, instalações identificadas e compatibilidade verificada; a classificação e as evidências exigidas precisam ser especificadas.
 - **Token e contra-token:** o fluxo proposto usa um token apresentado pela instalação e um contra-token emitido pelo site. Formato, segurança, validade, renovação, revogação e recuperação ainda precisam ser especificados.
 - **Serviços Premium pretendidos:** atualização automática; sincronização de perfil e preferências; marketplace oficial; agendamento remoto de desligamento; controles parentais remotos; visualização e gestão das instalações vinculadas/ativas na conta; e acesso a repositórios de bootloaders ou arquivos de recuperação quando houver disponibilidade, compatibilidade e autorização para distribuição.
 - **Aplicativos:** instalar aplicativos por outros meios suportados, como pendrive, não deve exigir Premium, mesmo que o marketplace oficial seja um benefício Premium.
@@ -38,6 +39,8 @@ O ZupiOS deve permanecer utilizável sem ativação Premium. Uma contribuição 
 - Ausência, expiração ou invalidação do token retira os benefícios Premium sem bloquear o uso básico.
 - A prevenção contra cópia indevida de tokens entre instalações, o tratamento de reinstalações e o comportamento de transferência permanecem decisões técnicas pendentes.
 - Ações remotas que afetem a TV exigem autenticação, autorização e proteções contra uso indevido.
+- A coleta para o catálogo de compatibilidade deve ser transparente, limitada ao necessário e não deve expor identificadores de conta, tokens de licença ou dados pessoais no catálogo público.
+- A homologação não deve ser inferida apenas do vínculo da conta; requer evidências técnicas e critérios publicados.
 - O escopo dos benefícios e a política de continuidade caso os serviços online sejam encerrados deverão ser documentados antes do lançamento.
 
 ## Critérios de aceite
