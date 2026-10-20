@@ -17,9 +17,10 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
 - **Estado:** pendente
 - **Objetivo:** registrar modelo exato, revisão e versão de firmware do dispositivo inicial.
 - **Critérios de aceite:**
-  - Modelo completo e firmware registrados.
-  - Especificações conhecidas ligadas a fontes verificáveis.
-  - Dados desconhecidos marcados como pendentes, sem suposições apresentadas como fatos.
+  - [x] Modelo completo e versão de firmware registrados; firmware informado pelo usuário e identificação física distinguida dos dados inferidos.
+  - [ ] Especificações conhecidas ligadas a fontes verificáveis.
+  - [ ] Dados desconhecidos marcados como pendentes, sem suposições apresentadas como fatos.
+- **Progresso:** identificação básica registrada em [[planning/validation-roadmap|plano de validação técnica]]; tarefa permanece pendente até concluir a verificação das especificações e incertezas.
 
 ### ZUPI-002 — Definir requisitos de compatibilidade
 - **Estado:** pendente
