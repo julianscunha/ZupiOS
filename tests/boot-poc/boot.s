@@ -13,6 +13,7 @@ _start:
     mov boot_drive, %dl
     int $0x13
     jc disk_error
+    mov boot_drive, %dl
     ljmp $0x0000, $0x8000
 
 disk_error:
