@@ -51,7 +51,7 @@ Na primeira execução, o Docker precisa baixar a imagem base, portanto é neces
 
 ## Próxima etapa
 
-Depois de abrir o contêiner com sucesso, registrar o sistema operacional hospedeiro e a arquitetura do computador. Em seguida, selecionar a primeira prova de conceito técnica sem assumir prematuramente uma linguagem ou sistema-base.
+Depois de abrir o contêiner com sucesso, consulte o [[tests/boot-poc/README|procedimento da prova de inicialização]] para executar ou reproduzir a prova técnica já existente. Use o [[planning/validation-roadmap|plano de validação técnica]] para entender o alcance dos resultados e os critérios seguintes. A prova em QEMU não demonstra compatibilidade com a TV; a prioridade atual está registrada em [[planning/Next-Steps]].
 
 ## Segurança e reprodutibilidade
 
