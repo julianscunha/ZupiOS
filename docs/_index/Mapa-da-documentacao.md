@@ -24,6 +24,8 @@ tags:
 - [[docs/services/Servicos-opcionais|Serviços opcionais]]
 - [[docs/licensing/Estado-da-licenca|Estado da licença]]
 
+- [[planning/decisions/0006-politica-de-idioma-e-localizacao|Política de idioma e localização]]
+
 ## Planejamento
 
 Roadmap, backlog e decisões de projeto estão em [[planning/README|planning]], fora da documentação de referência.

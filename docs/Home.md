@@ -20,6 +20,8 @@ Esta é a página inicial da documentação de referência do ZupiOS. Para que o
 - [[docs/services/Servicos-opcionais|Serviços opcionais]]
 - [[docs/licensing/Estado-da-licenca|Estado da licença]]
 
+- [[planning/decisions/0006-politica-de-idioma-e-localizacao|Política de idioma e localização]]: pt-BR como padrão e idioma principal da documentação.
+
 ## Navegação
 
 Consulte o [[docs/_index/Mapa-da-documentacao|mapa da documentação]] para encontrar tópicos por área.

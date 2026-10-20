@@ -14,6 +14,8 @@ Este documento é o ponto de retomada do trabalho. Atualize-o ao concluir uma de
 
 ## Estado documentado
 
+- [[planning/decisions/0006-politica-de-idioma-e-localizacao|Decisão 0006 — Política de idioma e localização]]: sistema multilíngue, idioma padrão pt-BR e documentação oficial em português brasileiro.
+
 - [[planning/decisions/0001-nome-e-objetivo|Decisão 0001 — Nome e objetivo]]: nome e objetivo do projeto.
 - [[planning/decisions/0002-politica-de-licenciamento|Decisão 0002 — Política de licenciamento]]: diretrizes desejadas para uso, derivados e serviços comerciais; a licença jurídica definitiva continua pendente.
 - [[planning/decisions/0003-organizacao-do-repositorio|Decisão 0003 — Organização do repositório]]: separação entre documentação, planejamento, código, SDK, testes e perfis de dispositivos.
