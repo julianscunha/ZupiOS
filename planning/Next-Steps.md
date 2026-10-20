@@ -37,7 +37,7 @@ Este documento é o ponto de retomada do trabalho. Atualize-o ao concluir uma de
 
 **Investigar o hardware e a cadeia de boot da Samsung UN40J6400AGXZD.**
 
-O usuário confirmou que a versão instalada é 1550.0, correspondente à versão mais recente listada na página de suporte da Samsung consultada (pacote USB modificado em 21/01/2021). Isso confirma o número de firmware relatado, mas não prova que a TV aceite um sistema operacional alternativo. O próximo passo é identificar a placa principal e levantar SoC/CPU, arquitetura, RAM, armazenamento, plataforma, mecanismos de assinatura e caminhos de recuperação. Priorizar documentação e inspeção não destrutiva; não presumir que seja possível iniciar código arbitrário.
+O usuário confirmou o firmware 1550.0. A pesquisa documental encontrou um manual de serviço da família J6400 que identifica a plataforma de software como `tztv-2.2.1-hawk-m-fhd-2015` e catálogos que associam a placa BN41-02353B ao modelo UN40J6400AGXZD. A placa ainda não foi confirmada fisicamente nesta unidade. O SoC/CPU, arquitetura, RAM, armazenamento, mecanismos de assinatura e cadeia de boot continuam sem confirmação. Próximo passo: buscar especificações técnicas adicionais em documentação de serviço; se não houver evidência suficiente, solicitar inspeção visual da placa por técnico qualificado. Não presumir que seja possível iniciar código arbitrário.
 
 Com os dados confirmados, avaliar a viabilidade de execução nativa e as opções de implantação antes de escolher tecnologias específicas. Em seguida, definir requisitos técnicos dos pacotes e do mecanismo de atualização modular.
 
