@@ -22,7 +22,8 @@ Este documento é o ponto de retomada do trabalho. Atualize-o ao concluir uma de
 
 ## Pendências conhecidas
 
-- Identificar o modelo exato da TV de referência.
+- Avaliar a TV de referência identificada pelo usuário: Samsung UN40J6400AG (confirmar o sufixo regional completo na etiqueta).
+- Levantar SoC/CPU e arquitetura, RAM, armazenamento, firmware/plataforma, cadeia de boot, restrições de assinatura e opções seguras de recuperação; a possibilidade de instalação nativa ainda não está confirmada.
 - Definir requisitos de compatibilidade a partir do hardware real.
 - Especificar formato, assinatura/integridade, versionamento, dependências e fluxo de atualização dos pacotes modulares.
 - Avaliar viabilidade de execução nativa e, depois, estabelecer a arquitetura sem presumir sistema-base, runtime, linguagem ou bootloader.
@@ -31,11 +32,11 @@ Este documento é o ponto de retomada do trabalho. Atualize-o ao concluir uma de
 
 ## Próxima decisão em andamento
 
-**Identificar a marca e o modelo exatos da TV de referência.**
+**Investigar o hardware e a cadeia de boot da Samsung UN40J6400AG.**
 
-Essa informação permitirá verificar o hardware real, os recursos de boot e instalação, as arquiteturas e os componentes para os quais será necessário investigar suporte de drivers. Não presumir compatibilidade apenas pela marca ou pelo nome comercial.
+O modelo foi informado pelo usuário. A página oficial da Samsung lista firmware de atualização via USB, mas isso não prova que a TV aceite um sistema operacional alternativo. Confirmar o sufixo regional e a placa principal da unidade real; levantar SoC/CPU, arquitetura, RAM, armazenamento, plataforma/firmware, mecanismos de assinatura e caminhos de recuperação. Priorizar documentação e inspeção não destrutiva; não presumir que seja possível iniciar código arbitrário.
 
-Depois de identificar o aparelho, avaliar a viabilidade de execução nativa e os caminhos de instalação disponíveis antes de escolher tecnologias específicas. Em seguida, definir os requisitos técnicos dos pacotes e do mecanismo de atualização modular.
+Com os dados confirmados, avaliar a viabilidade de execução nativa e as opções de implantação antes de escolher tecnologias específicas. Em seguida, definir requisitos técnicos dos pacotes e do mecanismo de atualização modular.
 
 ## Instruções para continuidade
 
