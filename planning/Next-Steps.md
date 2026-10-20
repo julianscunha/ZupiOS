@@ -60,7 +60,7 @@ A pesquisa encontrou manual de serviço da família J6400 e registros técnicos 
 
 ## Resultado da primeira prova de inicialização
 
-O contêiner foi validado em Ubuntu 26.04 x86_64 com scripts/dev-check.sh. A prova experimental 	ests/boot-poc/ passou no QEMU 10.2.1: imagem BIOS de 512 bytes, assinatura 55aa e mensagem no console de depuração verificadas. Isso comprova somente o fluxo mínimo no QEMU e não a compatibilidade com a Samsung. Próxima ação: ampliar o teste para registrar dados básicos da plataforma emulada e definir critérios reproduzíveis de validação, sem escolher ainda sistema-base ou runtime.
+O contêiner foi validado em Ubuntu 26.04 x86_64 com scripts/dev-check.sh. A prova experimental tests/boot-poc/ verifica imagem BIOS de 512 bytes, assinatura 55aa, marcador no console de depuração e encerramento esperado por tempo limite. O script declara máquina pc, CPU qemu64 e RAM de 128 MiB, além de informar a versão do QEMU; esses parâmetros são configuração do emulador, não dados detectados pelo código convidado. A aprovação comprova somente o fluxo mínimo no QEMU e não compatibilidade com a Samsung. Critérios e limites estão documentados em tests/boot-poc/README.md.
 
 ## Próxima etapa após a investigação da TV
 
