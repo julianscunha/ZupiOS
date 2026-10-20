@@ -28,6 +28,7 @@ payload_size="$(wc -c < "$WORK/payload.bin" | tr -d ' ')"
 signature="$(od -An -tx1 -j510 -N2 "$WORK/boot.bin" | tr -d ' \n')"
 [[ "$signature" == "55aa" ]] || { echo "FAIL: invalid boot signature: $signature" >&2; exit 1; }
 
+# Positive case: three sectors, with the payload at LBA 2.
 dd if=/dev/zero of="$WORK/boot.img" bs=512 count=3 status=none
 dd if="$WORK/boot.bin" of="$WORK/boot.img" conv=notrunc status=none
 dd if="$WORK/stage2.bin" of="$WORK/boot.img" bs=512 seek=1 conv=notrunc status=none
@@ -36,20 +37,42 @@ image_size="$(wc -c < "$WORK/boot.img" | tr -d ' ')"
 [[ "$image_size" == "1536" ]] || { echo "FAIL: disk image is $image_size bytes; expected 1536" >&2; exit 1; }
 
 set +e
-output="$(timeout 5s qemu-system-x86_64 \
+success_output="$(timeout 5s qemu-system-x86_64 \
   -drive "format=raw,file=$WORK/boot.img,if=ide" \
   -machine pc -cpu qemu64 -m 128M \
   -boot order=c -display none -serial none \
   -debugcon stdio -global isa-debugcon.iobase=0xe9 \
   -no-reboot -no-shutdown 2>&1)"
-qemu_rc=$?
+success_rc=$?
 set -e
-
-printf '%s\n' "$output"
-[[ "$qemu_rc" == "124" ]] || { echo "FAIL: expected guest to halt until timeout; QEMU exit code=$qemu_rc" >&2; exit 1; }
-grep -Fq "ZupiOS: payload minimo carregado e executado" <<< "$output" || { echo "FAIL: payload marker not found" >&2; exit 1; }
-if grep -Fq "ZupiOS: falha ao carregar payload" <<< "$output"; then
-  echo "FAIL: BIOS payload read reported an error" >&2
+printf '%s\n' "$success_output"
+[[ "$success_rc" == "124" ]] || { echo "FAIL: positive case expected timeout; QEMU exit code=$success_rc" >&2; exit 1; }
+grep -Fq "ZupiOS: payload minimo carregado e executado" <<< "$success_output" || { echo "FAIL: payload marker not found" >&2; exit 1; }
+if grep -Fq "ZupiOS: falha ao carregar payload" <<< "$success_output"; then
+  echo "FAIL: positive case reported payload read error" >&2
   exit 1
 fi
-echo "PASS: image=1536 bytes; boot sector=512; signature=55aa; stage2-size=$stage2_size; payload-size=$payload_size/512; load-address=0000:9000; entry=0000:9000; payload-marker=present; timeout=expected; machine=pc; CPU=qemu64; RAM=128 MiB"
+echo "PASS: positive case loaded payload at 0000:9000"
+
+# Negative case: omit LBA 2 so BIOS int 13h must report a read failure.
+dd if=/dev/zero of="$WORK/missing-payload.img" bs=512 count=2 status=none
+dd if="$WORK/boot.bin" of="$WORK/missing-payload.img" conv=notrunc status=none
+dd if="$WORK/stage2.bin" of="$WORK/missing-payload.img" bs=512 seek=1 conv=notrunc status=none
+set +e
+error_output="$(timeout 5s qemu-system-x86_64 \
+  -drive "format=raw,file=$WORK/missing-payload.img,if=ide" \
+  -machine pc -cpu qemu64 -m 128M \
+  -boot order=c -display none -serial none \
+  -debugcon stdio -global isa-debugcon.iobase=0xe9 \
+  -no-reboot -no-shutdown 2>&1)"
+error_rc=$?
+set -e
+printf '%s\n' "$error_output"
+[[ "$error_rc" == "124" ]] || { echo "FAIL: negative case expected timeout after handled read error; QEMU exit code=$error_rc" >&2; exit 1; }
+grep -Fq "ZupiOS: falha ao carregar payload" <<< "$error_output" || { echo "FAIL: induced payload read error was not reported" >&2; exit 1; }
+if grep -Fq "ZupiOS: payload minimo carregado e executado" <<< "$error_output"; then
+  echo "FAIL: payload executed despite missing sector" >&2
+  exit 1
+fi
+
+echo "PASS: image=1536 bytes; boot sector=512; signature=55aa; stage2-size=$stage2_size; payload-size=$payload_size/512; load-address=0000:9000; entry=0000:9000; positive-and-induced-error-cases=passed; machine=pc; CPU=qemu64; RAM=128 MiB"
