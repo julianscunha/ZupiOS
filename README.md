@@ -1,36 +1,64 @@
-# ZupiOS
+<div align="center">
 
-O ZupiOS é um projeto em estágio inicial para desenvolver uma plataforma de software para televisores, com SDK próprio para aplicações e foco em compatibilidade entre dispositivos.
+<img src="assets/zupios-banner.svg" alt="ZupiOS — plataforma de software para televisores" width="100%">
+
+[![Status](https://img.shields.io/badge/status-early%20development-orange)](planning/Next-Steps.md)
+[![Documentation](https://img.shields.io/badge/docs-in%20progress-blue)](docs/Home.md)
+[![License](https://img.shields.io/badge/license-not%20selected-lightgrey)](docs/licensing/Estado-da-licenca.md)
+[![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen)](CONTRIBUTING.md)
+
+**Uma plataforma de software para televisores, com SDK próprio e foco em compatibilidade entre dispositivos.**
+
+[Documentação](docs/Home.md) · [Roadmap](planning/Roadmap.md) · [Como contribuir](CONTRIBUTING.md) · [Segurança](SECURITY.md)
+
+</div>
+
+## Sobre o projeto
+
+O ZupiOS é um projeto em estágio inicial para investigar e desenvolver uma plataforma de software para televisores. O objetivo é oferecer uma experiência consistente entre dispositivos compatíveis e, futuramente, um SDK para aplicações.
+
+O projeto ainda está na fase de definição, pesquisa de hardware e decisões arquiteturais. **Ainda não há uma versão funcional publicada nem uma lista de dispositivos homologados.** A organização do repositório representa a estrutura planejada, não funcionalidades já implementadas.
 
 ## Estado atual
 
-O projeto está na fase de definição e descoberta. O hardware de referência, a arquitetura técnica, os dispositivos suportados e a licença definitiva ainda não foram aprovados.
+- **Fase:** descoberta técnica, documentação e planejamento.
+- **Dispositivo de referência em investigação:** Samsung UN40J6400AGXZD. A viabilidade de execução nativa ainda não foi confirmada.
+- **Arquitetura:** sistema-base, runtime, linguagem, SDK e método de inicialização ainda não foram definidos.
+- **Compatibilidade:** nenhum dispositivo deve ser considerado suportado sem evidências e testes documentados.
+- **Licença:** ainda não selecionada. Consulte [Estado da licença](docs/licensing/Estado-da-licenca.md) antes de reutilizar o conteúdo.
 
 ## Estrutura do repositório
 
-- **[docs/](docs/Home.md)** — documentação de referência em Markdown, compatível com Obsidian.
-- **[planning/](planning/README.md)** — decisões, roadmap, backlog e hipóteses em andamento.
-- **[src/](src/README.md)** — reservado ao código da plataforma.
-- **[sdk/](sdk/README.md)** — reservado à implementação do SDK.
-- **[tests/](tests/README.md)** — reservado aos testes automatizados e de conformidade.
-- **[device-profiles/](device-profiles/README.md)** — perfis de dispositivos e capacidades verificadas.
+| Caminho | Conteúdo |
+| --- | --- |
+| [docs/](docs/Home.md) | Documentação de referência em Markdown, compatível com Obsidian |
+| [planning/](planning/README.md) | Decisões, roadmap, backlog e hipóteses em andamento |
+| [src/](src/README.md) | Estrutura reservada ao código da plataforma |
+| [sdk/](sdk/README.md) | Estrutura reservada ao SDK |
+| [tests/](tests/README.md) | Estrutura reservada a testes e verificações de conformidade |
+| [device-profiles/](device-profiles/README.md) | Perfis de dispositivos e capacidades verificadas |
 
-A organização de pastas não determina ainda linguagem, sistema-base, runtime nem arquitetura interna.
+A organização atual não determina linguagem, sistema-base, runtime, bootloader ou arquitetura interna.
 
-## Por onde começar
+## Começar
 
-- [Página inicial da documentação](docs/Home.md)
-- [Mapa da documentação](docs/_index/Mapa-da-documentacao.md)
-- [Roadmap](planning/Roadmap.md)
-- [Backlog](planning/Backlog.md)
-- [Como contribuir](CONTRIBUTING.md)
+1. Leia a [página inicial da documentação](docs/Home.md).
+2. Consulte o [roadmap](planning/Roadmap.md), o [backlog](planning/Backlog.md) e os [registros de decisão](planning/decisions/).
+3. Antes de propor uma mudança significativa, abra uma issue para discutir escopo e abordagem.
+4. Leia as [diretrizes de contribuição](CONTRIBUTING.md) e a [política de segurança](SECURITY.md).
 
-## Obsidian
+Para navegar com links internos `[[Nome da nota]]`, abra a raiz do repositório como vault no Obsidian.
 
-Para navegar usando links internos [[Nome da nota]], abra a **raiz deste repositório** como vault no Obsidian. A página inicial da documentação é [docs/Home.md](docs/Home.md).
+## Contribuições
 
-## Licença
+Relatos reproduzíveis, documentação, pesquisa técnica e resultados de testes são úteis nesta fase. Consulte [CONTRIBUTING.md](CONTRIBUTING.md). Toda contribuição está sujeita à revisão e aprovação do mantenedor.
 
-A licença definitiva ainda não foi escolhida. Não existe arquivo LICENSE neste momento. A publicação pública do repositório não deve ser interpretada como concessão automática de direitos gerais de uso, modificação ou redistribuição.
+## Segurança
 
-Consulte [o estado da licença](docs/licensing/Estado-da-licenca.md) e a [decisão de planejamento sobre licenciamento](planning/decisions/0002-politica-de-licenciamento.md).
+Não publique vulnerabilidades exploráveis, credenciais, tokens ou dados pessoais em issues públicas. Siga o procedimento descrito em [SECURITY.md](SECURITY.md).
+
+## Licença e marca
+
+A licença jurídica definitiva ainda não foi escolhida, portanto este repositório **não possui um arquivo `LICENSE`**. A publicação pública do código não deve ser interpretada como concessão automática de direitos de uso, modificação ou redistribuição. Consulte [Estado da licença](docs/licensing/Estado-da-licenca.md) e [ADR 0002](planning/decisions/0002-politica-de-licenciamento.md).
+
+O nome e a identidade visual ZupiOS também não implicam autorização para sugerir endosso oficial. A política de marca ainda será definida.
