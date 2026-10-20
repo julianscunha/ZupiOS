@@ -21,7 +21,7 @@ signature="$(od -An -tx1 -j510 -N2 "$WORK/boot.img" | tr -d ' \n')"
 [[ "$signature" == "55aa" ]] || { echo "FAIL: assinatura de inicialização inválida: $signature" >&2; exit 1; }
 
 set +e
-output="$(timeout 3s qemu-system-x86_64 \
+output="$(timeout 5s qemu-system-x86_64 \
   -drive "format=raw,file=$WORK/boot.img,if=ide" \
   -machine pc -cpu qemu64 -m 128M \
   -boot order=c -display none -serial none \

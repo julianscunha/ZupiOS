@@ -70,3 +70,8 @@ Foi registrado o plano [[planning/validation-roadmap]] para separar a prototipag
 ## Ambiente de desenvolvimento local
 
 Foi adicionada a configuração inicial de VS Code Dev Containers com Docker em [[planning/development-environment]]. O ambiente usa uma imagem base Ubuntu e executa `scripts/dev-check.sh` para validar o contêiner. Próxima ação: o usuário deve abrir o repositório local no VS Code, executar **Dev Containers: Reopen in Container** e informar se a construção funcionou e qual sistema operacional hospeda o Docker. Isso não implementa ainda o sistema operacional ZupiOS nem comprova compatibilidade com a TV.
+
+
+## Ajuste de robustez da prova QEMU
+
+Em execuções anteriores, houve uma falha isolada em que o marcador não foi encontrado com o limite de três segundos, embora execuções diagnósticas e subsequentes tenham passado. Para reduzir a sensibilidade ao tempo de inicialização do ambiente, o limite foi ampliado para cinco segundos. A validação desta revisão deve incluir pelo menos cinco execuções consecutivas, além de `git diff --check` e `scripts/dev-check.sh`. Isso melhora a tolerância do teste, mas não substitui investigação caso a falha volte a ocorrer.
