@@ -14,7 +14,7 @@ Esta página é somente um ponto de entrada para a próxima ação. Não replica
 
 ## Próxima ação
 
-**Avançar a prova de boot em QEMU para definir e demonstrar o contrato de carregamento de um payload mínimo.** A prova existente demonstra apenas a leitura e execução do segundo setor em BIOS legado; não implementa kernel nem comprova compatibilidade com a TV.
+**Executar ZUPI-005: definir e demonstrar o contrato de carregamento de um payload mínimo em QEMU.** A prova existente demonstra apenas a leitura e execução do segundo setor em BIOS legado; não implementa kernel nem comprova compatibilidade com a TV. Os critérios de aceite estão no [[planning/Backlog#zupi-005--definir-contrato-de-carregamento-de-payload-mínimo|backlog]].
 
 ## Fonte de verdade por assunto
 
