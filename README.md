@@ -48,7 +48,7 @@ A organização atual não determina linguagem, sistema-base, runtime, bootloade
 3. Antes de propor uma mudança significativa, abra uma issue para discutir escopo e abordagem.
 4. Leia as [diretrizes de contribuição](CONTRIBUTING.md) e a [política de segurança](SECURITY.md).
 
-Para navegar com links internos `[[Nome da nota]]`, abra a raiz do repositório como vault no Obsidian.
+Para navegar com links internos do Obsidian, como `[[Nome da nota]]`, abra a raiz do repositório como vault no Obsidian.
 
 ## Contribuições
 
