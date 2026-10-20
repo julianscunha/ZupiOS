@@ -33,7 +33,7 @@ A presença inicial de diretórios de código não determina linguagem, sistema-
 
 - Markdown UTF-8.
 - Frontmatter YAML no início das notas.
-- Links internos Obsidian no formato [[Nome da nota]].
+- Links internos Obsidian no formato `[[Nome da nota]]` (exemplo de sintaxe, não um destino real).
 - Índices de navegação para documentação e planejamento.
 - Estados explícitos para distinguir decidido, proposto, pendente e implementado.
 - Cada decisão aceita deve receber um registro numerado no diretório planning/decisions/.
