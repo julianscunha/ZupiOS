@@ -12,7 +12,7 @@ tags:
 
 # Decisão 0002 — Requisitos de licenciamento
 
-- **Estado:** requisitos de produto definidos; licença jurídica ainda não escolhida
+- **Estado:** ZSL 0.1 publicada como minuta provisória; revisão jurídica pendente
 - **Data:** 2026-10-19
 
 ## Objetivos confirmados
@@ -36,9 +36,15 @@ tags:
 - Política de marca e uso do nome/logotipo ZupiOS.
 - Relação entre o código publicamente visível, os direitos de uso e as permissões legais concedidas.
 
+## Estado atual da licença
+
+Foi adicionada ao repositório a **ZupiOS Source-Available License (ZSL) 0.1**, em caráter provisório e sem revisão jurídica. A minuta procura permitir uso comercial interno gratuito, cópia gratuita de versões não modificadas, redistribuição não comercial de versões modificadas e comercialização de aplicações independentes que não incorporem o Software. A distribuição comercial de versões derivadas exige autorização escrita.
+
+A minuta não deve ser apresentada como licença open source convencional. As definições e restrições precisam de revisão jurídica antes de uma versão estável. Alterações futuras não revogam automaticamente direitos já concedidos a cópias distribuídas sob uma versão anterior.
+
 ## Nota importante
 
-Este registro expressa objetivos do projeto; não é uma licença nem aconselhamento jurídico. Não criar um arquivo LICENSE até que a licença seja escolhida e revisada. Sem licença explícita, a publicação do código não concede automaticamente permissões gerais de uso, modificação ou redistribuição.
+Este registro descreve os objetivos do projeto e o estado da minuta; não é aconselhamento jurídico. Consulte o arquivo LICENSE e a página de estado da licença para os termos provisórios vigentes.
 
 O modelo pretendido é *source-available* com restrições comerciais, não uma licença open source convencional.
 

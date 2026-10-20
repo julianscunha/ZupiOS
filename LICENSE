@@ -1,0 +1,52 @@
+ZupiOS Source-Available License (ZSL) 0.1 — PROVISÓRIA
+Copyright (c) 2026 ZupiOS contributors
+
+AVISO: Esta é uma minuta provisória para avaliação do projeto, não revisada por advogado. Não constitui aconselhamento jurídico. Alterações futuras não revogam automaticamente direitos já concedidos a cópias distribuídas sob esta versão.
+
+1. DEFINIÇÕES
+
+“Software” significa o código-fonte e código-objeto deste repositório expressamente abrangidos por esta licença. Materiais de terceiros, marcas, logotipos, firmware e imagens de sistemas operacionais não são licenciados por este texto.
+
+“Versão modificada” significa o Software ou parte substancial dele que tenha sido alterada, adaptada ou combinada para constituir uma versão derivada. “Distribuir” significa fornecer cópias a terceiros, inclusive por download, hospedagem ou incorporação em produto.
+
+2. PERMISSÕES
+
+Sujeito aos termos abaixo, é concedida autorização mundial, não exclusiva e gratuita para:
+a) acessar e estudar o Software;
+b) usar, executar, instalar, copiar e modificar o Software, inclusive para fins comerciais internos;
+c) distribuir cópias não modificadas sem cobrança, preservando esta licença e os avisos de direitos autorais;
+d) distribuir Versões modificadas sem cobrança e apenas para fins não comerciais, desde que o código-fonte correspondente seja disponibilizado, as modificações sejam identificadas de forma razoável, os avisos aplicáveis sejam preservados e a distribuição seja feita sob esta mesma licença;
+e) desenvolver, licenciar e comercializar aplicações independentes, desde que não incorporem nem redistribuam o Software ou partes substanciais dele, salvo conforme autorizado nesta licença.
+
+3. RESTRIÇÕES
+
+Sem autorização prévia, expressa e escrita do titular dos direitos aplicáveis, você não pode:
+a) vender, sublicenciar ou cobrar pelo acesso ou distribuição do Software ou de uma Versão modificada;
+b) distribuir comercialmente uma Versão modificada, inclusive como parte de produto ou serviço pago;
+c) remover avisos de direitos autorais ou licença;
+d) sugerir endosso oficial do projeto sem autorização;
+e) interpretar esta licença como autorização para distribuir firmware, imagens de sistemas originais, marcas ou materiais de terceiros.
+
+Organizações podem usar o Software em suas próprias atividades comerciais sem pagar taxa por instalação ou dispositivo. Essa permissão de uso não autoriza, por si só, a venda ou redistribuição comercial do Software ou de versões derivadas.
+
+4. CONTRIBUIÇÕES E DIREITOS DE TERCEIROS
+
+Esta licença não transfere titularidade nem concede direitos sobre patentes, marcas ou materiais de terceiros, salvo quando expressamente indicado. Quem submete contribuições declara ser responsável por possuir os direitos necessários para compartilhá-las. Contribuições externas poderão estar sujeitas a termos adicionais acordados separadamente.
+
+5. GARANTIA E RESPONSABILIDADE
+
+O SOFTWARE É FORNECIDO “NO ESTADO EM QUE SE ENCONTRA”, SEM GARANTIAS EXPRESSAS OU IMPLÍCITAS, INCLUINDO GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UMA FINALIDADE ESPECÍFICA E NÃO VIOLAÇÃO, NA MÁXIMA EXTENSÃO PERMITIDA PELA LEI.
+
+NA MÁXIMA EXTENSÃO PERMITIDA PELA LEI, OS TITULARES E COLABORADORES NÃO SERÃO RESPONSÁVEIS POR DANOS, PERDA DE DADOS, DANOS A DISPOSITIVOS, INDISPONIBILIDADE OU REIVINDICAÇÕES DECORRENTES DO USO OU DA IMPOSSIBILIDADE DE USO DO SOFTWARE.
+
+6. ENCERRAMENTO
+
+As permissões cessam para quem violar esta licença, na medida permitida pela lei aplicável. Quando a violação puder ser corrigida, as permissões poderão ser restabelecidas após sua correção, sem limitar outros direitos legais.
+
+7. VERSÃO
+
+Esta é a versão provisória 0.1. O projeto pode publicar versões futuras com termos diferentes. Salvo indicação expressa em contrário, cada cópia fica sujeita à versão que a acompanhava quando distribuída; alterações futuras não revogam automaticamente direitos já concedidos.
+
+8. LEI APLICÁVEL
+
+A jurisdição e a lei aplicável não são definidas nesta minuta e deverão ser avaliadas antes da adoção de uma versão juridicamente revisada.
