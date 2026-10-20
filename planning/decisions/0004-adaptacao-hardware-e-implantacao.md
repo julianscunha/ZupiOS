@@ -112,5 +112,5 @@ O hardware parece ser uma plataforma proprietária de Smart TV da geração 2015
 ## Documentos relacionados
 
 - [[planning/decisions/0003-organizacao-do-repositorio]]
-- [[docs/Arquitetura]]
-- [[docs/Dispositivos]]
+- [[docs/architecture/README|Estado da arquitetura]]
+- [[docs/devices/Matriz-de-suporte|Matriz de suporte a dispositivos]]
