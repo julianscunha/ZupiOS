@@ -75,3 +75,8 @@ Foi adicionada a configuração inicial de VS Code Dev Containers com Docker em 
 ## Ajuste de robustez da prova QEMU
 
 Em execuções anteriores, houve uma falha isolada em que o marcador não foi encontrado com o limite de três segundos, embora execuções diagnósticas e subsequentes tenham passado. Para reduzir a sensibilidade ao tempo de inicialização do ambiente, o limite foi ampliado para cinco segundos. A validação desta revisão deve incluir pelo menos cinco execuções consecutivas, além de `git diff --check` e `scripts/dev-check.sh`. Isso melhora a tolerância do teste, mas não substitui investigação caso a falha volte a ocorrer.
+
+
+## Verificador de repetibilidade da prova QEMU
+
+Foi criado `tests/boot-poc/repeat.sh`, que executa a prova individual cinco vezes por padrao (ou uma quantidade positiva fornecida como argumento), interrompe na primeira falha e informa o numero da tentativa e as aprovacoes anteriores. Isso padroniza a verificacao de repetibilidade e melhora a localizacao de falhas intermitentes; nao prova ausencia de falhas nem identifica automaticamente sua causa.

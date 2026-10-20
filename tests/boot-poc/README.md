@@ -14,6 +14,14 @@ A partir da raiz do repositório, execute:
 bash tests/boot-poc/run.sh
 ```
 
+Para executar a prova repetidamente e interromper na primeira falha, use o verificador de repetibilidade (cinco execucoes por padrao):
+
+```sh
+bash tests/boot-poc/repeat.sh
+```
+
+E possivel informar outra quantidade positiva, por exemplo `bash tests/boot-poc/repeat.sh 10`. O relatorio identifica a tentativa que falhou e quantas aprovacoes ocorreram antes dela; cada execucao individual mantem os diagnosticos do `run.sh`.
+
 O script informa a versão do QEMU e os parâmetros configurados para a máquina virtual: máquina pc, CPU qemu64 e 128 MiB de RAM. Esses valores são argumentos fornecidos ao emulador, não medições detectadas pelo código convidado.
 
 ## Critérios de aprovação
