@@ -70,13 +70,26 @@ Esta prova não implementa kernel, drivers, sistema-base ou runtime, e não comp
 
 ## Etapa 3 — Perfil da TV de referência
 
-Manter um perfil separado para a Samsung UN40J6400AGXZD, com estados explícitos:
-- **informado pelo usuário:** modelo e firmware 1550.0;
-- **confirmado por etiqueta:** Model Code UN40J6400AGXZD, Type No. UN40J6400, Version No. TH02;
-- **hipótese externa:** códigos de placa, SoC, memória e armazenamento mencionados por fontes secundárias;
-- **desconhecido:** cadeia de boot efetiva, política de assinatura, interfaces de depuração acessíveis, possibilidade de boot alternativo e método de recuperação validado.
+O perfil abaixo separa dados da etiqueta, informações publicadas pelo fabricante e aspectos internos ainda não verificados.
 
-Não converter hipótese em capacidade suportada sem evidência específica da revisão física instalada.
+### Dados registrados
+
+- **Modelo informado e identificado na etiqueta:** Samsung UN40J6400AGXZD.
+- **Código de modelo da página de suporte:** UN40J6400AG; a página oficial identifica a família como Smart TV J6400 Series 6 de 40 polegadas Full HD.
+- **Revisão física informada pela etiqueta:** Version No. TH02. Este identificador não deve ser interpretado como revisão de placa principal sem documentação específica.
+- **Firmware instalado:** versão 1550.0, informado pelo usuário. A página de suporte da Samsung lista um pacote de atualização USB `T-HKMFUABC`, versão 1550.0, com data de 21/01/2021; a disponibilidade do pacote não prova, por si só, qual versão está instalada atualmente.
+- **Manual oficial:** [Manual do usuário J6400-ZD, versão 02, em português](https://org.downloadcenter.samsung.com/downloadfile/ContentsFile.aspx?CDSite=UNI_BR&OriginYN=N&ModelType=N&ModelName=UN40J6400AG&CttFileID=6863041&CDCttType=EM&VPath=EM%2F201707%2F20170710124839509%2FJ6400-ZD_BN68-07048P-02-POR.pdf).
+- **Página oficial de suporte e downloads:** [Samsung Brasil — UN40J6400AGXZD](https://www.samsung.com/br/support/model/UN40J6400AGXZD/).
+
+### Dados ainda desconhecidos
+
+- fabricante, modelo e revisão exatos da placa principal instalada;
+- SoC, arquitetura de CPU, RAM e armazenamento interno confirmados para esta unidade;
+- cadeia de boot efetiva e existência de mecanismos de verificação/assinatura;
+- interfaces de depuração acessíveis e permissões necessárias;
+- possibilidade de boot alternativo e método de recuperação validado.
+
+As especificações comerciais e os documentos de suporte não confirmam esses detalhes internos. Não transferir informações de placas de variantes ou tamanhos diferentes para este aparelho sem uma fonte que corresponda à revisão física instalada.
 
 ## Etapa 4 — Portão de decisão para a TV
 
@@ -90,7 +103,7 @@ Se esses requisitos não forem atendidos, manter a TV como alvo de estudo e comp
 
 ## Critério de conclusão desta fase
 
-A prova mínima de payload em ambiente controlável foi demonstrada e repetida com sucesso. O próximo trabalho é verificar as especificações e incertezas do hardware de referência. A conclusão da prova não equivale a compatibilidade com a TV nem aprova a arquitetura final.
+A prova mínima de payload em ambiente controlável foi demonstrada e repetida com sucesso. A identificação documental básica do aparelho e as fontes oficiais disponíveis estão registradas; os detalhes internos não confirmados permanecem explicitamente desconhecidos. A conclusão da prova não equivale a compatibilidade com a TV nem aprova a arquitetura final.
 
 ## Relação com outras notas
 
