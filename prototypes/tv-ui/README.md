@@ -1,6 +1,6 @@
 # Protótipo de interface de TV — ZupiOS
 
-**Estado:** exploratório, versão 0.2. Não é a interface de produção nem define a tecnologia gráfica do sistema.
+**Estado:** exploratório, versão 0.3. Não é a interface de produção nem define a tecnologia gráfica do sistema.
 
 ## Executar
 
@@ -8,13 +8,15 @@ Abra `index.html` diretamente em um navegador moderno. Não requer instalação,
 
 ## Alterações nesta versão
 
-- Removido o texto promocional da Home; mantida uma barra superior compacta.
-- Menu principal reduzido a três destinos: TV ao vivo, Aplicações e Configurações.
+- Home mantém três menus principais: TV ao vivo, Aplicações e Configurações.
+- Abaixo dos menus existe a área **Meus atalhos**, onde é possível adicionar e remover atalhos de demonstração para aplicativos, widgets e serviços.
+- Os atalhos de mídia abrem uma tela demonstrativa; widgets e Marketplace exibem avisos de que a integração real ainda não existe.
+- A barra superior exibe hora local e avatar circular com o nome do perfil logo abaixo.
+- A tela Perfis permite alternar entre Principal e Convidado e escolher entre dez avatares ilustrativos.
+- As opções de atalhos, perfis e avatares são mantidas somente durante a sessão da página; ainda não são persistentes.
 - TV ao vivo apresenta opções para cabo, satélite e sinal digital terrestre. A sintonia é simulada, pois nenhum sintonizador real está integrado.
-- Ajuda e recuperação movida para Configurações > Sistema.
-- Barra superior exibe hora local do dispositivo, perfil atual e versão da interface demonstrativa.
-- Marca Premium demonstrada com faixa dourada sob o logotipo. A edição é configurada pela constante `EDITION` no script.
-- Perfis Principal e Convidado alternam apenas para demonstrar o indicador; não são contas persistentes.
+- Ajuda e recuperação fica em Configurações > Sistema.
+- A faixa dourada Premium permanece sob o logotipo. A edição é configurada pela constante `EDITION` no script.
 
 ## Controles
 
@@ -25,9 +27,9 @@ Abra `index.html` diretamente em um navegador moderno. Não requer instalação,
 
 ## Limites explícitos
 
-- A versão exibida é `0.2.0-prototype`, referente somente à interface demonstrativa, não a uma versão publicada do ZupiOS.
+- A versão exibida é `0.3.0-prototype`, referente somente à interface demonstrativa, não a uma versão publicada do ZupiOS.
 - O relógio usa a hora local do dispositivo de execução. A configuração de fuso/relógio durante a instalação é um requisito de produto, não implementado aqui.
-- Origem de TV, busca de canais, conectividade, perfis, diagnóstico e abertura de aplicativos são simulados.
+- Origem de TV, busca de canais, conectividade, perfis, avatares, atalhos, widgets, diagnóstico e abertura de aplicativos são simulados.
 - Não há runtime, SDK, reprodução real, sintonizador, instalação, atualizador ou recuperação real.
 - Não mede RAM, CPU, latência de hardware, taxa de quadros nem compatibilidade com TV física.
 - Paleta, tipografia e composição ainda são hipóteses revisáveis, não decisões aprovadas.
@@ -35,10 +37,11 @@ Abra `index.html` diretamente em um navegador moderno. Não requer instalação,
 ## Roteiro de revisão
 
 1. Navegar apenas com setas/Enter/Esc e verificar foco e retorno.
-2. Conferir menu TV e opções de sinal.
-3. Conferir Ajuda e recuperação dentro de Configurações.
-4. Conferir relógio, versão e troca de perfil.
-5. Conferir a faixa Premium e o comportamento da edição Base, alterando `EDITION` no script.
-6. Inspecionar janelas largas/estreitas e legibilidade à distância.
+2. Adicionar atalhos até incluir aplicativo, widget e Marketplace; abrir e remover atalhos.
+3. Abrir Perfis, alternar o perfil e escolher um avatar; conferir avatar circular e nome abaixo na barra superior.
+4. Conferir menu TV e opções de sinal.
+5. Conferir Ajuda e recuperação dentro de Configurações.
+6. Conferir relógio, versão e faixa Premium; testar a edição Base alterando `EDITION` no script.
+7. Inspecionar janelas largas/estreitas e legibilidade à distância.
 
 A revisão visual ainda não substitui testes de usuário nem validação em hardware representativo.
