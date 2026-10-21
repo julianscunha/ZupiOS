@@ -14,13 +14,13 @@ Esta página é somente um ponto de entrada para a próxima ação. Não replica
 
 ## Próxima ação
 
-**Revisar a proposta de ZUPI-002 — requisitos de compatibilidade.** O rascunho v0.2 agrupa casos de uso, requisitos não funcionais e itens fora do escopo, mas ainda não foi aprovado. Consulte [[planning/compatibility-requirements|Requisitos de compatibilidade]] e registre mudanças nessa fonte de verdade.
+**Prosseguir com a investigação de hardware de ZUPI-003, sem modificar o firmware.** A baseline de compatibilidade v1.0 foi aprovada e a análise documental de viabilidade nativa ficou inconclusiva. Próxima evidência necessária: identificação confirmada da placa principal/SoC da unidade e documentação específica da cadeia de boot, seguida de um método de recuperação validado antes de qualquer ensaio físico.
 
 ## Fonte de verdade por assunto
 
 - [[planning/Backlog|Backlog]] — tarefas, dependências e critérios de aceite.
 - [[planning/Roadmap|Roadmap]] — fases e marcos de alto nível.
-- [[planning/compatibility-requirements|Requisitos de compatibilidade]] — proposta priorizada pendente de revisão.
+- [[planning/compatibility-requirements|Requisitos de compatibilidade]] — baseline v1.0 aprovada; divisão gratuito/Premium ainda em aberto.
 - [[planning/validation-roadmap|Plano de validação técnica]] — métodos, evidências e limites dos testes.
 - [[tests/boot-poc/README|Prova de boot em QEMU]] — instruções para executar o teste atual.
 - [[docs/architecture/README|Estado da arquitetura]] — decisões arquiteturais ainda não aprovadas.
