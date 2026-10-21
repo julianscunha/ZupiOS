@@ -45,7 +45,7 @@ Essas regras orientam a análise; não selecionam kernel, sistema-base, runtime,
 
 ## Protocolo de medição
 
-Comparações devem registrar modelo e revisão do hardware quando conhecidos, firmware, versão do sistema, método de instalação, resolução, estado da rede, aplicações e serviços ativos e condições iniciais do ensaio. Executar múltiplas repetições e publicar mediana e dispersão; distinguir medições frias e aquecidas e resultados com e sem rede.
+Comparações devem registrar modelo e revisão do hardware quando conhecidos, firmware, versão do sistema, método de instalação, resolução, estado da rede, aplicações e serviços ativos e condições iniciais do ensaio. Usar o mesmo roteiro de ações em todas as execuções. Para uma primeira linha de base, coletar pelo menos 10 amostras por cenário para tempos de inicialização e pelo menos 30 amostras de resposta a entradas para estimar mediana e percentis; se o ambiente não permitir amostragem automática ou sincronizada, documentar essa limitação e não apresentar precisão inexistente. Publicar mediana, dispersão e valores extremos relevantes; distinguir inicializações frias e aquecidas e resultados com e sem rede. Para estabilidade sustentada, definir e registrar a duração do ensaio e o perfil de carga antes de executá-lo.
 
 Medir pelo menos:
 

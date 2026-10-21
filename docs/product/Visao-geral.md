@@ -24,7 +24,7 @@ O ZupiOS pretende oferecer uma plataforma de software para televisores com um SD
 ## Diretrizes de produto
 
 - **Leveza e desempenho são objetivos centrais:** buscar baixo consumo de recursos e responsividade perceptível, especialmente em hardware limitado. Metas e medições são definidas em [[docs/product/requisitos-de-desempenho|Requisitos de desempenho e leveza]].
-- A direção visual deve respeitar o orçamento de recursos e a navegação por controle remoto.
+- A direção visual deve respeitar o orçamento de recursos e a navegação por controle remoto; a proposta e os fluxos estão em [[docs/product/direcao-visual-e-interacao|Direção visual e modelo de interação]].
 
 ## Limites atuais
 

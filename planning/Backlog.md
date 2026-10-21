@@ -68,7 +68,8 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
   - Limites de QEMU e de perfis ainda não validados explicitamente registrados.
 
 ### ZUPI-006 — Definir a direção visual e o modelo de interação para TV
-- **Estado:** não iniciado
+- **Estado:** em andamento
+- **Fonte de verdade:** [[docs/product/direcao-visual-e-interacao|Direção visual e modelo de interação]].
 - **Objetivo:** estabelecer princípios visuais e de interação próprios para televisão antes de implementar a interface principal, sem antecipar tecnologia gráfica nem amarrar o design a um único modelo.
 - **Dependência:** baseline ZUPI-002; pode avançar em paralelo à investigação de hardware ZUPI-003 e à decisão de arquitetura ZUPI-004.
 - **Escopo inicial:** navegação por controle remoto e foco visível; hierarquia e densidade de conteúdo a distância; identidade visual, tipografia, escala, cores e estados; comportamento responsivo a diferentes resoluções/capacidades; estados de inicialização, instalação, atualização, erro e recuperação; acessibilidade e localização; limites entre linguagem visual comum e adaptações por perfil de dispositivo. A interface também deve respeitar o orçamento de recursos e não depender de animações, efeitos ou serviços residentes caros para permanecer utilizável.

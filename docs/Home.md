@@ -15,6 +15,7 @@ Esta é a página inicial da documentação de referência do ZupiOS. Para que o
 
 - [[docs/product/Visao-geral|Visão geral do produto]]
 - [[docs/product/requisitos-de-desempenho|Requisitos de desempenho e leveza]]
+- [[docs/product/direcao-visual-e-interacao|Direção visual e modelo de interação]]
 - [[docs/architecture/README|Estado da arquitetura]]
 - [[docs/sdk/Visao-geral|Visão geral do SDK]]
 - [[docs/devices/Matriz-de-suporte|Matriz de suporte a dispositivos]]
