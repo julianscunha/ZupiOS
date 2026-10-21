@@ -18,7 +18,7 @@ tags:
 - [x] Definir objetivos iniciais de licenciamento e monetização para avaliação jurídica.
 - [x] Separar documentação, planejamento e código no repositório.
 - [x] Registrar o hardware de referência e as especificações publicamente verificáveis, com incertezas explicitadas.
-- [ ] Definir e aprovar os requisitos prioritários de compatibilidade. A proposta v0.1 está em [[planning/compatibility-requirements|requisitos de compatibilidade]] e aguarda revisão.
+- [ ] Definir e aprovar os requisitos prioritários de compatibilidade. A proposta v0.2 está em [[planning/compatibility-requirements|requisitos de compatibilidade]] e aguarda revisão.
 - [ ] Escolher a base técnica após a análise de viabilidade.
 
 ## Fase 1 — Prova de viabilidade
