@@ -14,7 +14,9 @@ Esta página é somente um ponto de entrada para a próxima ação. Não replica
 
 ## Próxima ação
 
-**Prosseguir com a investigação de hardware de ZUPI-003, sem modificar o firmware.** A baseline de compatibilidade v1.0 foi aprovada e a análise documental de viabilidade nativa ficou inconclusiva. Próxima evidência necessária: identificação confirmada da placa principal/SoC da unidade e documentação específica da cadeia de boot, seguida de um método de recuperação validado antes de qualquer ensaio físico.
+**Definir a estratégia multiplataforma de boot e perfis de hardware sem eleger uma TV como arquitetura universal.** A Samsung UN40J6400AGXZD continua sendo um alvo experimental de compatibilidade, mas a falta de confirmação de seu SoC não deve bloquear o desenho independente do sistema, do contrato de plataforma nem o desenvolvimento host/QEMU. A imagem de boot deve ser tratada como artefato específico de uma combinação compatível de arquitetura, firmware/cadeia de boot e hardware; uma imagem única só poderá ser considerada para alvos que compartilhem requisitos comprovados.
+
+Próximo trabalho: registrar os perfis de execução/boot suportáveis como categorias ainda não selecionadas, separar componentes comuns do sistema de adaptadores específicos de arquitetura/dispositivo e definir critérios para adicionar um novo perfil. Manter a portabilidade nativa para a Samsung bloqueada até haver identificação confiável da placa/SoC, documentação da cadeia de boot e método de recuperação validado. Não modificar firmware.
 
 ## Fonte de verdade por assunto
 

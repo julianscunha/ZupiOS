@@ -9,7 +9,7 @@ tags:
 
 # Estado da arquitetura do ZupiOS
 
-A arquitetura técnica ainda não foi aprovada. A escolha da base do sistema e do runtime depende da definição do hardware de referência e de uma prova de viabilidade reproduzível.
+A arquitetura técnica ainda não foi aprovada, mas sua definição não deve depender de um único modelo de TV. O desenho multiplataforma, os contratos comuns e a separação entre sistema e mecanismos de boot podem avançar independentemente da confirmação de um alvo físico. A escolha de sistema-base, runtime e perfis concretos de boot exige critérios explícitos e evidências de viabilidade; a portabilidade nativa para cada dispositivo permanece condicionada à compatibilidade de hardware, firmware e recuperação.
 
 ## Princípios a investigar
 
