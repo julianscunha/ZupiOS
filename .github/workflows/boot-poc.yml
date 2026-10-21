@@ -18,7 +18,7 @@ jobs:
       - name: Install boot-test dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install --yes binutils qemu-system-x86 coreutils
+          sudo apt-get install --yes binutils qemu-system-x86 coreutils python3
       - name: Check development environment
         run: bash scripts/dev-check.sh
       - name: Validate QEMU boot proof repeatedly

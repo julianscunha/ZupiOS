@@ -5,7 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
-for tool in as ld qemu-system-x86_64 timeout dd; do
+for tool in as ld qemu-system-x86_64 dd python3; do
   command -v "$tool" >/dev/null || { echo "Missing dependency: $tool" >&2; exit 2; }
 done
 
@@ -37,7 +37,7 @@ image_size="$(wc -c < "$WORK/boot.img" | tr -d ' ')"
 [[ "$image_size" == "1536" ]] || { echo "FAIL: disk image is $image_size bytes; expected 1536" >&2; exit 1; }
 
 set +e
-success_output="$(timeout 5s qemu-system-x86_64 \
+success_output="$(python3 "$ROOT/tests/boot-poc/capture_marker.py" "ZupiOS: payload minimo carregado e executado" -- qemu-system-x86_64 \
   -drive "format=raw,file=$WORK/boot.img,if=ide" \
   -machine pc -cpu qemu64 -m 128M \
   -boot order=c -display none -serial none \
@@ -46,7 +46,7 @@ success_output="$(timeout 5s qemu-system-x86_64 \
 success_rc=$?
 set -e
 printf '%s\n' "$success_output"
-[[ "$success_rc" == "124" ]] || { echo "FAIL: positive case expected timeout; QEMU exit code=$success_rc" >&2; exit 1; }
+[[ "$success_rc" == "0" ]] || { echo "FAIL: positive case did not emit marker before timeout; capture exit code=$success_rc" >&2; exit 1; }
 grep -Fq "ZupiOS: payload minimo carregado e executado" <<< "$success_output" || { echo "FAIL: payload marker not found" >&2; exit 1; }
 if grep -Fq "ZupiOS: falha ao carregar payload" <<< "$success_output"; then
   echo "FAIL: positive case reported payload read error" >&2
@@ -59,7 +59,7 @@ dd if=/dev/zero of="$WORK/missing-payload.img" bs=512 count=2 status=none
 dd if="$WORK/boot.bin" of="$WORK/missing-payload.img" conv=notrunc status=none
 dd if="$WORK/stage2.bin" of="$WORK/missing-payload.img" bs=512 seek=1 conv=notrunc status=none
 set +e
-error_output="$(timeout 5s qemu-system-x86_64 \
+error_output="$(python3 "$ROOT/tests/boot-poc/capture_marker.py" "ZupiOS: falha ao carregar payload" -- qemu-system-x86_64 \
   -drive "format=raw,file=$WORK/missing-payload.img,if=ide" \
   -machine pc -cpu qemu64 -m 128M \
   -boot order=c -display none -serial none \
@@ -68,7 +68,7 @@ error_output="$(timeout 5s qemu-system-x86_64 \
 error_rc=$?
 set -e
 printf '%s\n' "$error_output"
-[[ "$error_rc" == "124" ]] || { echo "FAIL: negative case expected timeout after handled read error; QEMU exit code=$error_rc" >&2; exit 1; }
+[[ "$error_rc" == "0" ]] || { echo "FAIL: negative case did not emit error marker before timeout; capture exit code=$error_rc" >&2; exit 1; }
 grep -Fq "ZupiOS: falha ao carregar payload" <<< "$error_output" || { echo "FAIL: induced payload read error was not reported" >&2; exit 1; }
 if grep -Fq "ZupiOS: payload minimo carregado e executado" <<< "$error_output"; then
   echo "FAIL: payload executed despite missing sector" >&2

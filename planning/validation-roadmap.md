@@ -49,8 +49,8 @@ Critérios cobertos pelo script:
 - limite de 512 bytes para segundo estágio e payload;
 - tamanho total da imagem e layout de três setores;
 - transferência de controle ao payload, observada por marcador;
-- caso positivo: marcador de execução do payload e timeout esperado após a parada da CPU;
-- caso negativo com imagem truncada: marcador de falha de leitura e ausência do marcador do payload;
+- caso positivo: marcador de execução do payload capturado antes do limite de cinco segundos; o capturador encerra o QEMU e retorna código 0;
+- caso negativo com imagem truncada: marcador de falha de leitura capturado antes do limite de cinco segundos e ausência do marcador do payload;
 - execução repetida pelo verificador de repetibilidade.
 
 ### Resultado de validação local
@@ -65,6 +65,16 @@ Evidências observadas em cada execução:
 - máquina emulada: `pc`, BIOS legado, CPU `qemu64`, RAM 128 MiB; QEMU 10.2.1.
 
 Esta evidência é de execução local equivalente, não um resultado do GitHub Actions. A ausência de um resultado hospedado não invalida o critério local alternativo, mas o estado do workflow remoto não deve ser presumido.
+
+### Caracterização temporal do ensaio QEMU — 2026-10-21
+
+**Resultado: 10/10 execuções medidas aprovadas**, após uma execução separada de aquecimento. O teste `tests/boot-poc/capture_marker.py` mede com relógio monotônico o intervalo desde a criação do processo QEMU até a captura do marcador e encerra o processo assim que o marcador esperado aparece. Os logs brutos de aquecimento e das dez execuções foram preservados no ambiente de desenvolvimento em `.artifacts/perf-qemu/warmup.log` e `.artifacts/perf-qemu/measured-10.log` (artefatos locais, não versionados).
+
+- Ambiente: contêiner de desenvolvimento Ubuntu 26.04, arquitetura x86_64; GNU Binutils/as 2.46; QEMU 10.2.1; convidado `pc`, BIOS legado, CPU `qemu64`, RAM configurada de 128 MiB; commit-base `95dd31b` com alterações locais não commitadas durante o ensaio.
+- Cenário positivo, segundos por execução: `0.132994`, `0.130214`, `0.129554`, `0.124339`, `0.150612`, `0.121862`, `0.124341`, `0.174132`, `0.124995`, `0.133596`. Mediana: **0.129884 s**; mínimo: **0.121862 s**; máximo: **0.174132 s**.
+- Cenário negativo (leitura de payload ausente), segundos por execução: `0.123451`, `0.141533`, `0.170041`, `0.161089`, `0.126402`, `0.120571`, `0.150737`, `0.142873`, `0.248456`, `0.119751`. Mediana: **0.142203 s**; mínimo: **0.119751 s**; máximo: **0.248456 s**.
+
+Esses números caracterizam apenas a criação do processo QEMU e a captura do marcador neste contêiner; incluem overhead do host/emulador e não são tempo de boot do ZupiOS nem uma medição de consumo de recursos do guest. A carga do host não foi quantificada durante esta rodada, portanto a dispersão não deve ser atribuída exclusivamente ao QEMU. A amostra é pequena e dependente do ambiente, sem meta de desempenho associada. O script de teste e o workflow de CI agora exigem Python 3 para captura do marcador.
 
 Esta prova não implementa kernel, drivers, sistema-base ou runtime, e não comprova compatibilidade com a Samsung. O teste só demonstra leitura e transferência de controle para um payload de um setor em BIOS legado no QEMU configurado; não valida hardware físico, boot alternativo, desempenho, drivers ou arquitetura final.
 

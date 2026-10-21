@@ -50,3 +50,10 @@ Abra `index.html` diretamente em um navegador moderno. Não requer instalação,
 7. Inspecionar janelas largas/estreitas e legibilidade à distância.
 
 A revisão visual ainda não substitui testes de usuário nem validação em hardware representativo.
+
+
+## Cobertura automatizada do protótipo
+
+A suíte `node --test tests/ui-prototype-navigation.test.cjs` verifica a geometria da navegação direcional, o tratamento de limites, ícones SVG locais, versão/recursos sem rede externa e a presença dos fluxos prioritários e atalhos globais. Na revisão de 2026-10-21, passou em 8/8 testes.
+
+A cobertura de fluxo é uma verificação automatizada da lógica e do conteúdo-fonte, não um teste end-to-end do navegador. Ainda é necessária a passagem manual com setas/Enter/Esc, inspeção visual em janelas largas e baixas e revisão de legibilidade, textos longos, localização e comportamento de foco em cada tela. A aprovação da direção visual permanece pendente.

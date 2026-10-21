@@ -4,7 +4,7 @@ Este teste reproduz uma inicialização BIOS legado em uma máquina x86 emulada.
 
 ## Requisitos
 
-GNU Binutils (as e ld), QEMU para x86 (qemu-system-x86_64) e timeout, além de dd para montar a imagem temporária.
+GNU Binutils (as e ld), QEMU para x86 (qemu-system-x86_64), Python 3 e ferramentas POSIX `timeout`, `dd`, `od`, `wc` e `grep`.
 
 ## Execução
 
@@ -22,7 +22,7 @@ bash tests/boot-poc/repeat.sh
 
 É possível informar outra quantidade positiva, por exemplo `bash tests/boot-poc/repeat.sh 10`. O relatório identifica a tentativa que falhou e quantas aprovações ocorreram antes dela; cada execução individual mantém os diagnósticos do `run.sh`.
 
-O workflow `.github/workflows/boot-poc.yml` executa a verificação de ambiente e cinco provas QEMU em pushes para `main`, pull requests e acionamento manual. O resultado hospedado só pode ser confirmado após o GitHub Actions executar o workflow.
+O workflow `.github/workflows/boot-poc.yml` executa a verificação de ambiente e cinco provas QEMU em pushes para `main`, pull requests e acionamento manual. O resultado hospedado só pode ser confirmado após o GitHub Actions executar o workflow. A prova agora requer Python 3 para capturar o marcador e cronometrar o intervalo com relógio monotônico.
 
 O script informa a versão do QEMU e os parâmetros configurados para a máquina virtual: máquina `pc`, CPU `qemu64` e 128 MiB de RAM. Esses valores são argumentos fornecidos ao emulador, não medições detectadas pelo código convidado.
 
@@ -44,7 +44,7 @@ O contrato experimental fixa o endereço de carga e de entrada em `0000:9000` e 
 - O console de depuração recebe `ZupiOS: payload minimo carregado e executado`, emitido pelo payload independente.
 - No caso positivo, não aparece o marcador de erro de leitura do payload.
 - No caso negativo, uma imagem sem o terceiro setor induz erro de leitura: o carregador emite o marcador de falha e o payload não é executado.
-- O processo termina pelo limite de tempo esperado (timeout de cinco segundos, código 124), pois o payload para a CPU após emitir a mensagem.
+- O capturador `capture_marker.py` usa relógio monotônico do host e encerra o QEMU assim que lê o marcador esperado na saída de depuração; imprime `MARKER_ELAPSED_SECONDS` para cada cenário. Se o marcador não aparecer em cinco segundos, a captura falha com código 124. O tempo inclui inicialização do processo QEMU e captura da saída, portanto caracteriza apenas este ensaio emulado.
 - Nenhum firmware ou dispositivo físico é alterado; os artefatos são temporários e removidos ao final.
 
 Uma aprovação comprova somente a leitura e transferência de controle para um payload de um setor em BIOS legado no QEMU configurado. Não comprova kernel, drivers, proteção de memória, formatos de payload variáveis, desempenho, boot alternativo ou compatibilidade com a Samsung UN40J6400AGXZD.

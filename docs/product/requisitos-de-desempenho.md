@@ -60,6 +60,20 @@ Medir pelo menos:
 
 Comparar com o sistema original somente quando for possível realizar tarefas equivalentes no mesmo aparelho e controlar as condições. Se isso não for possível, identificar a comparação como não equivalente. Não extrapolar resultados de QEMU para TVs físicas.
 
+## Aplicação inicial do protocolo no ambiente disponível
+
+O primeiro ambiente executável disponível é a prova mínima de boot em QEMU descrita em [[planning/validation-roadmap|plano de validação técnica]] e [[tests/boot-poc/README|prova de boot em QEMU]]. Ela pode ser usada para verificar a repetibilidade do procedimento e, com `tests/boot-poc/capture_marker.py`, medir o tempo do próprio teste até o marcador de payload. **Não** representa o tempo de boot do ZupiOS, tempo até uma interface navegável, latência de controle remoto ou consumo de um sistema operacional em execução: ainda não existe kernel nem interface funcional no ambiente convidado.
+
+Para registrar uma primeira medição de ferramenta/ensaio sem confundi-la com desempenho do produto:
+
+1. Registrar commit, sistema host/contêiner, versões de QEMU e GNU Binutils, configuração da máquina convidada, comando exato e estado da carga do host.
+2. Fazer uma execução de aquecimento separada e pelo menos 10 execuções cronometradas, mantendo configuração e comando constantes. Se qualquer execução falhar, preservar a falha e os logs; não descartá-la como outlier sem causa identificada.
+3. Usar `tests/boot-poc/capture_marker.py`, que mede com relógio monotônico do host o intervalo entre o início do processo QEMU e a detecção do marcador. Registrar o valor `MARKER_ELAPSED_SECONDS`, código de saída e eventuais timeouts; reportar o cenário negativo em separado. O capturador encerra o QEMU ao detectar o marcador, evitando usar o limite de cinco segundos como duração do ensaio.
+4. Guardar valores brutos por execução e resumir mediana, mínimo, máximo e dispersão. Informar que a medida inclui overhead de host/emulador e depende do mecanismo de captura do marcador.
+5. Não atribuir RAM/CPU medidas no host ao consumo do sistema convidado. Consumo do guest só pode ser reportado quando houver uma medição específica, com ferramenta, unidade e fronteira de medição documentadas.
+
+Essas medições caracterizam apenas o ensaio e sua infraestrutura. A linha de base de desempenho do produto e a definição de metas numéricas continuam bloqueadas até existir um sistema executável com funções observáveis e um perfil de referência declarado.
+
 ## Definição de metas numéricas
 
 As metas de tempo, RAM, CPU, armazenamento e fluidez serão estabelecidas após:

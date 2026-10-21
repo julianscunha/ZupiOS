@@ -56,7 +56,7 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
   - Premissas ainda não validadas listadas.
 
 ### ZUPI-007 — Definir orçamento de desempenho e método de medição
-- **Estado:** não iniciado
+- **Estado:** em andamento — protocolo inicial e caracterização temporal do ensaio QEMU documentados; linha de base do produto pendente
 - **Objetivo:** tornar leveza, responsividade e eficiência de recursos requisitos verificáveis, sem definir metas numéricas arbitrárias antes de caracterizar um ambiente de referência.
 - **Dependência:** baseline ZUPI-002; pode avançar em paralelo à definição de arquitetura e à direção visual.
 - **Fonte de verdade:** [[docs/product/requisitos-de-desempenho|Requisitos de desempenho e leveza]].
@@ -66,21 +66,23 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
   - Metas numéricas propostas com evidências, cenários, repetições e critérios de aprovação, após caracterização do hardware.
   - Custos de processos em segundo plano, componentes opcionais e recursos gráficos considerados nas decisões arquiteturais.
   - Limites de QEMU e de perfis ainda não validados explicitamente registrados.
+- **Progresso:** captura do marcador com relógio monotônico implementada; uma execução de aquecimento e 10 execuções medidas passaram em QEMU, com valores brutos, mediana, mínimo e máximo registrados em [[planning/validation-roadmap|plano de validação técnica]]. Isso caracteriza apenas o ensaio emulado; ainda não há kernel/interface nem linha de base de desempenho do produto.
 
 ### ZUPI-006 — Definir a direção visual e o modelo de interação para TV
-- **Estado:** em andamento
+- **Estado:** em andamento — fluxos principais mapeados e cobertura automatizada ampliada; revisão interativa e validação visual ainda pendentes
 - **Fonte de verdade:** [[docs/product/direcao-visual-e-interacao|Direção visual e modelo de interação]].
 - **Objetivo:** estabelecer princípios visuais e de interação próprios para televisão antes de implementar a interface principal, sem antecipar tecnologia gráfica nem amarrar o design a um único modelo.
 - **Dependência:** baseline ZUPI-002; pode avançar em paralelo à investigação de hardware ZUPI-003 e à decisão de arquitetura ZUPI-004.
 - **Escopo inicial:** navegação por controle remoto e foco visível; hierarquia e densidade de conteúdo a distância; identidade visual, tipografia, escala, cores e estados; comportamento responsivo a diferentes resoluções/capacidades; estados de inicialização, instalação, atualização, erro e recuperação; acessibilidade e localização; limites entre linguagem visual comum e adaptações por perfil de dispositivo. A interface também deve respeitar o orçamento de recursos e não depender de animações, efeitos ou serviços residentes caros para permanecer utilizável.
 - **Critérios de aceite:**
   - [x] Protótipo exploratório autocontido cobre Home, Aplicações, Configurações, Mídia, falha de abertura e recuperação conceitual; instruções e limites estão em [[prototypes/tv-ui/README|protótipo de interface de TV]].
-  - Princípios de design e interação documentados em uma única fonte de verdade, sem duplicar requisitos de compatibilidade existentes.
-  - Fluxos prioritários mapeados, incluindo início/home, abrir e encerrar aplicação, voltar, configurações e estados de erro/recuperação.
-  - Modelo de navegação por controle remoto definido, incluindo foco, seleção, retorno e tratamento de elementos indisponíveis.
-  - Direção visual demonstrada por um conjunto pequeno de telas/fluxos representativos e revisável antes da implementação.
+  - [x] Princípios de design e interação documentados em uma única fonte de verdade, sem duplicar requisitos de compatibilidade existentes.
+  - [x] Fluxos prioritários representados no protótipo: Home, abrir aplicação, falha de abertura, retorno, configurações, indisponibilidade e recuperação conceitual.
+  - [x] Modelo de navegação por controle remoto definido, incluindo foco, seleção, retorno e tratamento de elementos indisponíveis.
+  - [x] Direção visual demonstrada por um conjunto pequeno de telas/fluxos representativos e revisável antes da implementação.
   - Regras de adaptação e limites de acessibilidade documentados, separando invariantes de variações permitidas.
   - Decisões que dependem de resolução, aceleração gráfica ou hardware específico identificadas como pendentes, não presumidas.
+- **Progresso da revisão (2026-10-21):** a suíte `node --test tests/ui-prototype-navigation.test.cjs` passou em 8/8 testes, incluindo verificações de presença dos fluxos prioritários, atalhos globais de retorno/Home, foco após renderização e estados simulados de indisponibilidade/sem rede. Esses testes inspecionam a lógica e o conteúdo do HTML; não substituem uma passagem interativa real em navegador, teste com controle remoto físico, validação de textos longos/idiomas nem avaliação em TV. ZUPI-006 permanece aberto até essas pendências serem avaliadas.
 
 ## P1 — Prova técnica em ambiente controlável
 

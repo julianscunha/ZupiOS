@@ -23,3 +23,7 @@ dist/
 build/
 coverage/
 .cache/
+__pycache__/
+
+# Local test artifacts
+.artifacts/

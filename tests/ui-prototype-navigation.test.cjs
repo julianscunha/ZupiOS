@@ -52,3 +52,23 @@ test('version is current in footer, never in header, and assets remain local', (
   assert.match(html, /prefers-reduced-motion:reduce/);
   assert.match(html, /max-height:650px/);
 });
+
+
+test('priority screen flows and remote-control recovery remain represented', () => {
+  for (const screen of ['home', 'tv', 'profiles', 'settings', 'apps', 'media', 'opening', 'recovery', 'about']) {
+    assert.match(html, new RegExp(`screen===['"]${screen}['"]`), `screen ${screen} must remain implemented`);
+  }
+  for (const action of ['tv', 'apps', 'media', 'settings', 'recovery', 'open-demo', 'retry', 'unavailable', 'network', 'check-network', 'reset-ui']) {
+    assert.match(html, new RegExp(`case['"]${action}['"]`), `action ${action} must remain wired`);
+  }
+  assert.match(html, /e\.key==='Escape'\|\|e\.key==='Backspace'/, 'Back/Esc must remain available');
+  assert.match(html, /e\.key==='h'\|\|e\.key==='H'\|\|e\.key==='Home'/, 'global Home shortcut must remain available');
+  assert.match(html, /focusSelected\(\)/, 'rendered screen must restore focus to a selectable control');
+});
+
+test('prototype exposes explicit simulated offline and failed-opening states', () => {
+  assert.match(html, /Modo sem rede simulado/);
+  assert.match(html, /A aplicação de demonstração não está instalada/);
+  assert.match(html, /recursos locais permanecem acessíveis/);
+  assert.match(html, /nenhuma operação de firmware ou reparo é executada/);
+});
