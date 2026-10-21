@@ -18,18 +18,18 @@ tags:
 - [x] Definir objetivos iniciais de licenciamento e monetização para avaliação jurídica.
 - [x] Separar documentação, planejamento e código no repositório.
 - [x] Registrar o hardware de referência e as especificações publicamente verificáveis, com incertezas explicitadas.
-- [ ] Definir e aprovar os requisitos prioritários de compatibilidade. A proposta v0.2 está em [[planning/compatibility-requirements|requisitos de compatibilidade]] e aguarda revisão.
+- [x] Definir e aprovar os requisitos prioritários de compatibilidade. A baseline v1.0 está em [[planning/compatibility-requirements|requisitos de compatibilidade]].
 - [ ] Escolher a base técnica após a análise de viabilidade.
 
 ## Fase 1 — Prova de viabilidade
 
 - [x] Criar uma prova experimental de boot BIOS legado em QEMU, incluindo leitura e execução de um segundo setor.
 - [x] Definir e demonstrar o contrato de carregamento de um payload mínimo no ambiente de prototipagem.
-- [ ] Validar um caminho reproduzível para executar software próprio no hardware escolhido.
-- [ ] Documentar limites de boot, firmware, drivers, vídeo, áudio, rede e entrada no hardware escolhido.
+- [ ] Demonstrar um caminho reproduzível e seguro para executar software próprio no hardware físico escolhido (não demonstrado; análise documental inconclusiva).
+- [x] Documentar limites conhecidos de boot e firmware; drivers, vídeo, áudio, rede e entrada continuam sem validação física.
 - [ ] Registrar a decisão arquitetural com evidências e riscos.
 
-A prova em QEMU valida apenas o fluxo mínimo do emulador; não conta como validação da TV Samsung nem como kernel funcional. Consulte [[tests/boot-poc/README|procedimento e limites da prova]] e [[planning/validation-roadmap|resultados de validação]].
+A análise documental de ZUPI-003 foi registrada como inconclusiva: não existe evidência suficiente de boot alternativo seguro na TV. A prova em QEMU valida apenas o fluxo mínimo do emulador; não conta como validação da TV Samsung nem como kernel funcional. Consulte [[tests/boot-poc/README|procedimento e limites da prova]] e [[planning/validation-roadmap|resultados de validação]].
 
 ## Fase 2 — Contrato e SDK
 
