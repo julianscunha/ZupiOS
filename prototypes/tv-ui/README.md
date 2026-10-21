@@ -1,6 +1,6 @@
 # Protótipo de interface de TV — ZupiOS
 
-**Estado:** exploratório, versão 0.4. Não é a interface de produção nem define a tecnologia gráfica do sistema.
+**Estado:** exploratório, versão 0.5. Não é a interface de produção nem define a tecnologia gráfica do sistema.
 
 ## Executar
 
@@ -8,8 +8,8 @@ Abra `index.html` diretamente em um navegador moderno. Não requer instalação,
 
 ## Alterações nesta versão
 
-- Home mantém três menus principais: TV ao vivo, Aplicações e Configurações.
-- A área de atalhos usa um bloco de adição com sinal de mais, sem instruções ou botões de remoção ocupando espaço.
+- TV ao vivo e Aplicações são as áreas principais; Configurações aparece como um botão compacto com apenas a engrenagem.
+- A área de atalhos usa um bloco de adição com sinal de mais, sem instruções ou botões de remoção ocupando espaço. Em Configurações, o usuário pode alternar entre os layouts Equilibrado, Compacto e Atalhos em destaque.
 - A Home aceita no máximo sete atalhos, mantendo o bloco de adição na grade e reservando duas linhas de quatro posições.
 - A Home é dimensionada para caber na tela sem barra de rolagem; em telas menores os cartões de atalho ficam mais compactos.
 - A barra superior exibe hora local e avatar circular com o nome do perfil logo abaixo.
@@ -28,7 +28,7 @@ Abra `index.html` diretamente em um navegador moderno. Não requer instalação,
 
 ## Limites explícitos
 
-- A versão exibida é `0.4.0-prototype`, referente somente à interface demonstrativa, não a uma versão publicada do ZupiOS.
+- A versão exibida é `0.5.0-prototype`, referente somente à interface demonstrativa, não a uma versão publicada do ZupiOS.
 - O relógio usa a hora local do dispositivo de execução. A configuração de fuso/relógio durante a instalação é um requisito de produto, não implementado aqui.
 - Origem de TV, busca de canais, conectividade, perfis, avatares, atalhos, widgets, diagnóstico e abertura de aplicativos são simulados.
 - Não há runtime, SDK, reprodução real, sintonizador, instalação, atualizador ou recuperação real.
@@ -42,7 +42,7 @@ Abra `index.html` diretamente em um navegador moderno. Não requer instalação,
 3. Abrir Perfis, alternar o perfil e escolher um avatar; conferir avatar circular e nome abaixo na barra superior.
 4. Conferir menu TV e opções de sinal.
 5. Conferir Ajuda e recuperação dentro de Configurações.
-6. Conferir relógio, versão e faixa Premium; testar a edição Base alterando `EDITION` no script.
+6. Alternar o layout da tela inicial em Configurações e conferir as três opções; conferir relógio, versão e faixa Premium; testar a edição Base alterando `EDITION` no script.
 7. Inspecionar janelas largas/estreitas e legibilidade à distância.
 
 A revisão visual ainda não substitui testes de usuário nem validação em hardware representativo.
