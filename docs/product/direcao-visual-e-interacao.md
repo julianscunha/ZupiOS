@@ -81,11 +81,11 @@ A interface é uma camada central do produto, mas não pode consumir recursos qu
 - Animações, efeitos e previews são melhorias opcionais, nunca pré-requisitos de interação ou legibilidade.
 - A degradação graciosa em perfil limitado deve preservar as funções básicas e a mesma lógica de navegação.
 
-## Protótipo exploratório v0.1
+## Protótipo exploratório v0.2
 
-Foi criado um protótipo HTML autocontido em [[prototypes/tv-ui/README|protótipo de interface de TV]]. Ele cobre Home, Aplicações, Configurações, Mídia, falha de abertura e recuperação conceitual, com navegação por setas/Enter/Esc, foco visível e estados simulados. Não usa dependências remotas nem define a tecnologia gráfica de produção.
+O protótipo HTML autocontido em [[prototypes/tv-ui/README|protótipo de interface de TV]] está na versão exploratória 0.2. A Home foi simplificada para três destinos principais — TV ao vivo, Aplicações e Configurações — e o fluxo de Ajuda e recuperação passou a ficar dentro de Configurações. A barra superior mostra horário local, perfil ativo e versão do protótipo; a edição Premium é representada por uma faixa dourada sob o logotipo. TV ao vivo demonstra escolhas de cabo, satélite e sinal digital, sem integração com sintonizador real. Não usa dependências remotas nem define a tecnologia gráfica de produção.
 
-O protótipo serve para revisar o fluxo e a hierarquia visual; não é uma implementação do ZupiOS e não demonstra consumo de recursos, compatibilidade com controle remoto físico ou desempenho em TV. A direção visual permanece em rascunho até revisão do fluxo, inspeção em diferentes tamanhos e validação em hardware representativo.
+O relógio usa a hora local do dispositivo que executa o protótipo; a configuração de horário/fuso durante a instalação continua sendo requisito de produto, não implementação concluída. Perfis, versão e edição são dados demonstrativos, não versões/contas comerciais publicadas. O protótipo serve para revisar fluxo e hierarquia visual; não é uma implementação do ZupiOS e não demonstra consumo de recursos, compatibilidade com controle remoto físico ou desempenho em TV. A direção visual permanece em rascunho até revisão do fluxo, inspeção em diferentes tamanhos e validação em hardware representativo.
 
 ## Validação necessária
 
