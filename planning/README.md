@@ -16,6 +16,7 @@ Esta área é a fonte de verdade para tarefas, fases, critérios de validação 
 - [[planning/Next-Steps|Próximos passos]] — somente a próxima ação prioritária.
 - [[planning/Backlog|Backlog]] — tarefas, dependências e critérios de aceite.
 - [[planning/Roadmap|Roadmap]] — fases e marcos de alto nível.
+- [[planning/compatibility-requirements|Requisitos de compatibilidade]] — proposta priorizada de casos de uso e requisitos, pendente de revisão.
 - [[planning/validation-roadmap|Plano de validação técnica]] — métodos, evidências e limites dos testes.
 - [[planning/development-environment|Ambiente de desenvolvimento]] — configuração local e comandos.
 
