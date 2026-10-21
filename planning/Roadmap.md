@@ -19,6 +19,7 @@ tags:
 - [x] Separar documentação, planejamento e código no repositório.
 - [x] Registrar o hardware de referência e as especificações publicamente verificáveis, com incertezas explicitadas.
 - [x] Definir e aprovar os requisitos prioritários de compatibilidade. A baseline v1.0 está em [[planning/compatibility-requirements|requisitos de compatibilidade]].
+- [ ] Definir a direção visual e o modelo de interação para TV antes de implementar a interface principal (ZUPI-006; pode avançar em paralelo à investigação de hardware).
 - [ ] Escolher a base técnica após a análise de viabilidade.
 
 ## Fase 1 — Prova de viabilidade
