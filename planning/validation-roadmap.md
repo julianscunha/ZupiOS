@@ -53,7 +53,20 @@ Critérios cobertos pelo script:
 - caso negativo com imagem truncada: marcador de falha de leitura e ausência do marcador do payload;
 - execução repetida pelo verificador de repetibilidade.
 
-Esta prova não implementa kernel, drivers, sistema-base ou runtime, e não comprova compatibilidade com a Samsung. O script agora contém um caso negativo com a imagem truncada para induzir falha de leitura. A execução efetiva desse cenário ainda depende de ambiente com GNU Binutils e QEMU; a implementação do teste, por si só, não é evidência de aprovação.
+### Resultado de validação local
+
+**Resultado: aprovado — 5 de 5 execuções consecutivas.** A execução ocorreu no contêiner de desenvolvimento Ubuntu x86_64 do repositório, com GNU Binutils e QEMU 10.2.1. O verificador `bash tests/boot-poc/repeat.sh 5` terminou com código de saída 0; cada uma das cinco execuções aprovou os cenários positivo e negativo. Também foi executado `bash scripts/dev-check.sh`, concluído com código 0.
+
+Evidências observadas em cada execução:
+- imagem raw: 1.536 bytes; setor de boot: 512 bytes; assinatura: `55aa`;
+- segundo estágio: 510 bytes; payload: 67 bytes de um máximo de 512;
+- caso positivo: marcador `ZupiOS: payload minimo carregado e executado` e transferência de controle para `0000:9000`;
+- caso negativo: marcador `ZupiOS: falha ao carregar payload` e ausência do marcador de execução do payload;
+- máquina emulada: `pc`, BIOS legado, CPU `qemu64`, RAM 128 MiB; QEMU 10.2.1.
+
+Esta evidência é de execução local equivalente, não um resultado do GitHub Actions. A ausência de um resultado hospedado não invalida o critério local alternativo, mas o estado do workflow remoto não deve ser presumido.
+
+Esta prova não implementa kernel, drivers, sistema-base ou runtime, e não comprova compatibilidade com a Samsung. O teste só demonstra leitura e transferência de controle para um payload de um setor em BIOS legado no QEMU configurado; não valida hardware físico, boot alternativo, desempenho, drivers ou arquitetura final.
 
 ## Etapa 3 — Perfil da TV de referência
 
@@ -77,7 +90,7 @@ Se esses requisitos não forem atendidos, manter a TV como alvo de estudo e comp
 
 ## Critério de conclusão desta fase
 
-A fase termina quando o ambiente controlável estiver escolhido, os critérios de teste forem registrados e uma prova reproduzível for demonstrada no alvo de prototipagem escolhido. Isso não equivale a compatibilidade com a TV. A arquitetura será definida depois, com base nos resultados e nas restrições confirmadas.
+A prova mínima de payload em ambiente controlável foi demonstrada e repetida com sucesso. O próximo trabalho é verificar as especificações e incertezas do hardware de referência. A conclusão da prova não equivale a compatibilidade com a TV nem aprova a arquitetura final.
 
 ## Relação com outras notas
 
