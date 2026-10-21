@@ -24,25 +24,27 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
 - **Limite:** a conclusão cobre identificação e documentação básica, não identifica SoC, RAM, armazenamento, placa principal, cadeia de boot nem viabilidade de execução nativa.
 
 ### ZUPI-002 — Definir requisitos de compatibilidade
-- **Estado:** em revisão do mantenedor
+- **Estado:** concluído — baseline v1.0 aprovada em 2026-10-21
 - **Objetivo:** decidir quais aplicações, recursos e comportamentos devem ser padronizados primeiro.
 - **Dependência:** ZUPI-001.
 - **Critérios de aceite:**
   - [x] Casos de uso iniciais documentados e agrupados por prioridade.
   - [x] Requisitos de compatibilidade classificados por prioridade.
   - [x] Itens fora do escopo inicial identificados explicitamente.
-  - [ ] Proposta revisada e aprovada pelo mantenedor.
-  - [ ] Dependências e critérios de teste incorporados ao backlog/roadmap após aprovação.
-- **Fonte de verdade:** [[planning/compatibility-requirements|Requisitos de compatibilidade do ZupiOS]] (rascunho v0.2). O rascunho organiza intenções existentes, mas não substitui aprovação explícita de escopo.
+  - [x] Proposta revisada e baseline v1.0 aprovada pelo mantenedor.
+  - [x] Baseline define P0/P1/P2, prioriza mídia/streaming e depois utilitários, e prioriza aplicações próprias do SDK antes de prometer compatibilidade com terceiros.
+  - [x] Questão da divisão de recursos gratuitos/Premium permanece explicitamente aberta.
+- **Fonte de verdade:** [[planning/compatibility-requirements|Requisitos de compatibilidade do ZupiOS]] (baseline aprovada v1.0).
 
 ### ZUPI-003 — Validar viabilidade de execução nativa
-- **Estado:** pendente
+- **Estado:** análise documental concluída — resultado inconclusivo; execução nativa não demonstrada
 - **Objetivo:** determinar o caminho suportado e tecnicamente verificável para executar o ZupiOS no dispositivo de referência.
 - **Dependência:** ZUPI-001.
 - **Critérios de aceite:**
-  - Evidências, restrições e riscos registrados.
-  - Nenhuma alteração potencialmente destrutiva de firmware sem plano de recuperação validado.
-  - Resultado registrado como viável, inviável com as evidências disponíveis ou inconclusivo.
+  - [x] Evidências, restrições e riscos documentais registrados em [[planning/validation-roadmap|plano de validação técnica]].
+  - [x] Nenhuma alteração potencialmente destrutiva de firmware executada; não existe plano de recuperação validado.
+  - [x] Resultado registrado como inconclusivo: não há caminho suportado de execução nativa demonstrado com as evidências disponíveis.
+- **Limite:** a análise documental não substitui inspeção qualificada da placa, identificação do SoC ou ensaio de boot seguro. A execução nativa continua não autorizada tecnicamente até que o portão de decisão do plano de validação seja satisfeito.
 
 ### ZUPI-004 — Aprovar a arquitetura inicial
 - **Estado:** bloqueado
