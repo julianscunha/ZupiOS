@@ -21,7 +21,9 @@ O ZupiOS terá um SDK próprio para que desenvolvedores construam aplicações u
 - Formato de pacote de aplicações.
 - Runtime e modelo de isolamento.
 - Ciclo de vida, permissões e acesso a recursos do dispositivo.
-- Requisitos de compatibilidade e política de versionamento.
+- Política de versionamento e estabilidade das APIs.
+
+Os casos de uso e requisitos de compatibilidade propostos para o produto estão em [[planning/compatibility-requirements|Requisitos de compatibilidade]]. A proposta v0.2 ainda não foi aprovada e não equivale a um contrato de API definido.
 
 ## Diretriz
 
@@ -30,4 +32,4 @@ Não documentar uma API como disponível até que sua especificação, implement
 ## Próximas referências
 
 - [[docs/architecture/README|Estado da arquitetura]]
-- Acompanhe o backlog de descoberta em [[planning/Backlog|planning/Backlog]].
+- [[planning/Backlog|Backlog de descoberta]]
