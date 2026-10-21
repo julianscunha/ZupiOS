@@ -12,7 +12,7 @@ Abra `index.html` diretamente em um navegador moderno. Não requer instalação,
 - A área de atalhos usa um bloco de adição com sinal de mais, sem instruções ou botões de remoção ocupando espaço. Em Configurações, o usuário pode alternar entre os layouts Equilibrado, Compacto e Atalhos em destaque.
 - A Home aceita no máximo sete atalhos, mantendo o bloco de adição na grade e reservando duas linhas de quatro posições.
 - A Home é dimensionada para caber na tela sem barra de rolagem; em telas menores os cartões de atalho ficam mais compactos.
-- A barra superior exibe hora local e avatar circular com o nome do perfil logo abaixo.
+- A barra superior exibe hora local e avatar circular com o nome do perfil logo abaixo. A versão do protótipo fica no rodapé, junto aos controles de navegação.
 - A tela Perfis permite alternar entre Principal e Convidado e escolher entre dez avatares ilustrativos.
 - As opções de atalhos, perfis e avatares são mantidas somente durante a sessão da página; ainda não são persistentes.
 - TV ao vivo apresenta opções para cabo, satélite e sinal digital terrestre. A sintonia é simulada, pois nenhum sintonizador real está integrado.
