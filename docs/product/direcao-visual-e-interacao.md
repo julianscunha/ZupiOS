@@ -81,11 +81,11 @@ A interface é uma camada central do produto, mas não pode consumir recursos qu
 - Animações, efeitos e previews são melhorias opcionais, nunca pré-requisitos de interação ou legibilidade.
 - A degradação graciosa em perfil limitado deve preservar as funções básicas e a mesma lógica de navegação.
 
-## Protótipo exploratório v0.2
+## Protótipo exploratório
 
-O protótipo HTML autocontido em [[prototypes/tv-ui/README|protótipo de interface de TV]] está na versão exploratória 0.2. A Home foi simplificada para três destinos principais — TV ao vivo, Aplicações e Configurações — e o fluxo de Ajuda e recuperação passou a ficar dentro de Configurações. A barra superior mostra horário local, perfil ativo e versão do protótipo; a edição Premium é representada por uma faixa dourada sob o logotipo. TV ao vivo demonstra escolhas de cabo, satélite e sinal digital, sem integração com sintonizador real. Não usa dependências remotas nem define a tecnologia gráfica de produção.
+O protótipo autocontido e seu estado funcional estão descritos em [[prototypes/tv-ui/README|protótipo de interface de TV]], que é a fonte de verdade para a versão demonstrativa e seus controles. A implementação atual usa HTML/CSS/JavaScript sem dependências externas, ícones SVG locais, superfícies sólidas e tipografia do sistema. A navegação por setas considera a posição dos controles; a Home permite rolagem em janelas de pouca altura e o relógio atualiza na virada do minuto.
 
-O relógio usa a hora local do dispositivo que executa o protótipo; a configuração de horário/fuso durante a instalação continua sendo requisito de produto, não implementação concluída. Perfis, versão e edição são dados demonstrativos, não versões/contas comerciais publicadas. O protótipo serve para revisar fluxo e hierarquia visual; não é uma implementação do ZupiOS e não demonstra consumo de recursos, compatibilidade com controle remoto físico ou desempenho em TV. A direção visual permanece em rascunho até revisão do fluxo, inspeção em diferentes tamanhos e validação em hardware representativo.
+O protótipo permanece uma demonstração de fluxo, não uma implementação do ZupiOS. Perfis, edição, atalhos, sintonia e recuperação são simulados; não mede consumo de recursos nem demonstra compatibilidade com controle remoto físico ou TV. A direção visual permanece em rascunho até revisão de fluxo, inspeção em diferentes tamanhos e validação em hardware representativo.
 
 ## Validação necessária
 
