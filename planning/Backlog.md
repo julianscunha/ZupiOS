@@ -55,11 +55,23 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
   - Interfaces entre componentes identificadas.
   - Premissas ainda não validadas listadas.
 
+### ZUPI-007 — Definir orçamento de desempenho e método de medição
+- **Estado:** não iniciado
+- **Objetivo:** tornar leveza, responsividade e eficiência de recursos requisitos verificáveis, sem definir metas numéricas arbitrárias antes de caracterizar um ambiente de referência.
+- **Dependência:** baseline ZUPI-002; pode avançar em paralelo à definição de arquitetura e à direção visual.
+- **Fonte de verdade:** [[docs/product/requisitos-de-desempenho|Requisitos de desempenho e leveza]].
+- **Critérios de aceite:**
+  - Métricas de inicialização, latência de entrada, RAM, CPU, armazenamento, fluidez e estabilidade sustentada definidas com métodos repetíveis.
+  - Linha de base registrada para um perfil de referência executável; comparação com o sistema original somente sob condições equivalentes.
+  - Metas numéricas propostas com evidências, cenários, repetições e critérios de aprovação, após caracterização do hardware.
+  - Custos de processos em segundo plano, componentes opcionais e recursos gráficos considerados nas decisões arquiteturais.
+  - Limites de QEMU e de perfis ainda não validados explicitamente registrados.
+
 ### ZUPI-006 — Definir a direção visual e o modelo de interação para TV
 - **Estado:** não iniciado
 - **Objetivo:** estabelecer princípios visuais e de interação próprios para televisão antes de implementar a interface principal, sem antecipar tecnologia gráfica nem amarrar o design a um único modelo.
 - **Dependência:** baseline ZUPI-002; pode avançar em paralelo à investigação de hardware ZUPI-003 e à decisão de arquitetura ZUPI-004.
-- **Escopo inicial:** navegação por controle remoto e foco visível; hierarquia e densidade de conteúdo a distância; identidade visual, tipografia, escala, cores e estados; comportamento responsivo a diferentes resoluções/capacidades; estados de inicialização, instalação, atualização, erro e recuperação; acessibilidade e localização; limites entre linguagem visual comum e adaptações por perfil de dispositivo.
+- **Escopo inicial:** navegação por controle remoto e foco visível; hierarquia e densidade de conteúdo a distância; identidade visual, tipografia, escala, cores e estados; comportamento responsivo a diferentes resoluções/capacidades; estados de inicialização, instalação, atualização, erro e recuperação; acessibilidade e localização; limites entre linguagem visual comum e adaptações por perfil de dispositivo. A interface também deve respeitar o orçamento de recursos e não depender de animações, efeitos ou serviços residentes caros para permanecer utilizável.
 - **Critérios de aceite:**
   - Princípios de design e interação documentados em uma única fonte de verdade, sem duplicar requisitos de compatibilidade existentes.
   - Fluxos prioritários mapeados, incluindo início/home, abrir e encerrar aplicação, voltar, configurações e estados de erro/recuperação.

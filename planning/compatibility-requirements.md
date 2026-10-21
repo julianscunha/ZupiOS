@@ -74,6 +74,8 @@ Esta especificação detalha requisitos derivados desses princípios e propõe p
 
 ### P0
 
+- **Desempenho e leveza:** minimizar consumo desnecessário de RAM, CPU, armazenamento e recursos gráficos; priorizar responsividade e evitar trabalho em segundo plano sem benefício demonstrável. Métricas, métodos e metas pertencem a [[docs/product/requisitos-de-desempenho|Requisitos de desempenho e leveza]]; não fixar limites sem linha de base reproduzível.
+
 - **Compatibilidade comprovável:** não declarar um perfil de dispositivo como suportado sem procedimento reproduzível e testes documentados para a combinação exata de hardware/firmware e versão do ZupiOS.
 - **Versionamento:** APIs públicas declaram versão e política de compatibilidade; nenhuma API é estável antes de especificação, implementação e testes.
 - **Capacidades explícitas:** aplicações recebem respostas claras para recursos disponíveis, ausentes ou desconhecidos.

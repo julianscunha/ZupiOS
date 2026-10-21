@@ -16,13 +16,14 @@ Esta página é somente um ponto de entrada para a próxima ação. Não replica
 
 **Definir a estratégia multiplataforma de boot e perfis de hardware sem eleger uma TV como arquitetura universal.** A Samsung UN40J6400AGXZD continua sendo um alvo experimental de compatibilidade, mas a falta de confirmação de seu SoC não deve bloquear o desenho independente do sistema, do contrato de plataforma nem o desenvolvimento host/QEMU. A imagem de boot deve ser tratada como artefato específico de uma combinação compatível de arquitetura, firmware/cadeia de boot e hardware; uma imagem única só poderá ser considerada para alvos que compartilhem requisitos comprovados.
 
-Próximo trabalho: iniciar ZUPI-006, definindo a direção visual e o modelo de interação para TV em paralelo ao trabalho de boot multiplataforma. A especificação visual deve priorizar uso por controle remoto, leitura a distância, consistência entre perfis de dispositivo e estados do sistema; deve ser demonstrada em fluxos/telas representativos antes da implementação. Em paralelo, registrar categorias de perfil de boot sem selecionar arquiteturas sem evidência. Manter a portabilidade nativa para a Samsung bloqueada até haver identificação confiável da placa/SoC, documentação da cadeia de boot e método de recuperação validado. Não modificar firmware.
+Próximo trabalho: iniciar ZUPI-007, definindo como medir leveza, responsividade e estabilidade sem inventar metas numéricas antes de caracterizar o hardware. Em paralelo, iniciar ZUPI-006, definindo a direção visual e o modelo de interação para TV; o design deve respeitar o orçamento de recursos desde o início. Ambos avançam em paralelo ao trabalho de boot multiplataforma. A especificação visual deve priorizar uso por controle remoto, leitura a distância, consistência entre perfis de dispositivo e estados do sistema; deve ser demonstrada em fluxos/telas representativos antes da implementação. Em paralelo, registrar categorias de perfil de boot sem selecionar arquiteturas sem evidência. Manter a portabilidade nativa para a Samsung bloqueada até haver identificação confiável da placa/SoC, documentação da cadeia de boot e método de recuperação validado. Não modificar firmware.
 
 ## Fonte de verdade por assunto
 
 - [[planning/Backlog|Backlog]] — tarefas, dependências e critérios de aceite.
 - [[planning/Roadmap|Roadmap]] — fases e marcos de alto nível.
 - [[planning/compatibility-requirements|Requisitos de compatibilidade]] — baseline v1.0 aprovada; divisão gratuito/Premium ainda em aberto.
+- [[docs/product/requisitos-de-desempenho|Requisitos de desempenho e leveza]] — métricas, protocolo e metas.
 - [[planning/validation-roadmap|Plano de validação técnica]] — métodos, evidências e limites dos testes.
 - [[tests/boot-poc/README|Prova de boot em QEMU]] — instruções para executar o teste atual.
 - [[docs/architecture/README|Estado da arquitetura]] — decisões arquiteturais ainda não aprovadas.

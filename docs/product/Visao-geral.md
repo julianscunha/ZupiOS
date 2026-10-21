@@ -21,6 +21,11 @@ O ZupiOS pretende oferecer uma plataforma de software para televisores com um SD
 - Doações são opcionais.
 - Os serviços comerciais planejados não devem tornar o uso básico do sistema pago.
 
+## Diretrizes de produto
+
+- **Leveza e desempenho são objetivos centrais:** buscar baixo consumo de recursos e responsividade perceptível, especialmente em hardware limitado. Metas e medições são definidas em [[docs/product/requisitos-de-desempenho|Requisitos de desempenho e leveza]].
+- A direção visual deve respeitar o orçamento de recursos e a navegação por controle remoto.
+
 ## Limites atuais
 
 - A lista de dispositivos compatíveis não está definida.
@@ -32,6 +37,7 @@ O ZupiOS pretende oferecer uma plataforma de software para televisores com um SD
 ## Documentos relacionados
 
 - [[docs/sdk/Visao-geral|Visão geral do SDK]]
-- [[planning/compatibility-requirements|Requisitos de compatibilidade — proposta v0.2]]
+- [[planning/compatibility-requirements|Requisitos de compatibilidade — baseline v1.0]]
+- [[docs/product/requisitos-de-desempenho|Requisitos de desempenho e leveza]]
 - [[docs/devices/Matriz-de-suporte|Matriz de suporte a dispositivos]]
 - [[docs/services/Servicos-opcionais|Serviços opcionais]]
