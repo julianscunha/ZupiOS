@@ -24,13 +24,16 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
 - **Limite:** a conclusão cobre identificação e documentação básica, não identifica SoC, RAM, armazenamento, placa principal, cadeia de boot nem viabilidade de execução nativa.
 
 ### ZUPI-002 — Definir requisitos de compatibilidade
-- **Estado:** pendente
+- **Estado:** em revisão do mantenedor
 - **Objetivo:** decidir quais aplicações, recursos e comportamentos devem ser padronizados primeiro.
 - **Dependência:** ZUPI-001.
 - **Critérios de aceite:**
-  - Casos de uso prioritários documentados.
-  - Requisitos classificados por prioridade.
-  - Itens fora do escopo inicial explicitamente identificados.
+  - [x] Casos de uso iniciais documentados e agrupados por prioridade.
+  - [x] Requisitos de compatibilidade classificados por prioridade.
+  - [x] Itens fora do escopo inicial identificados explicitamente.
+  - [ ] Proposta revisada e aprovada pelo mantenedor.
+  - [ ] Dependências e critérios de teste incorporados ao backlog/roadmap após aprovação.
+- **Fonte de verdade:** [[planning/compatibility-requirements|Requisitos de compatibilidade do ZupiOS]] (rascunho v0.1). O rascunho organiza intenções existentes, mas não substitui aprovação explícita de escopo.
 
 ### ZUPI-003 — Validar viabilidade de execução nativa
 - **Estado:** pendente
