@@ -14,13 +14,14 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
 ## P0 — Decisões e descoberta
 
 ### ZUPI-001 — Identificar o hardware de referência
-- **Estado:** pendente
+- **Estado:** concluído (perfil documental básico; detalhes internos do hardware permanecem desconhecidos)
 - **Objetivo:** registrar modelo exato, revisão e versão de firmware do dispositivo inicial.
 - **Critérios de aceite:**
-  - [x] Modelo completo e versão de firmware registrados; firmware informado pelo usuário e identificação física distinguida dos dados inferidos.
-  - [ ] Especificações conhecidas ligadas a fontes verificáveis.
-  - [ ] Dados desconhecidos marcados como pendentes, sem suposições apresentadas como fatos.
-- **Progresso:** identificação básica registrada em [[planning/validation-roadmap|plano de validação técnica]]; tarefa permanece pendente até concluir a verificação das especificações e incertezas.
+  - [x] Modelo completo, identificador de revisão da etiqueta e versão de firmware registrados; firmware informado pelo usuário e identificação física distinguidos dos dados inferidos.
+  - [x] Especificações publicamente documentadas ligadas a fontes verificáveis.
+  - [x] Dados internos desconhecidos marcados como pendentes, sem suposições apresentadas como fatos.
+- **Evidência:** a etiqueta foi registrada como UN40J6400AGXZD, Version No. TH02; firmware 1550.0 informado pelo usuário. A página oficial da [Samsung Brasil](https://www.samsung.com/br/support/model/UN40J6400AGXZD/) identifica o produto como UN40J6400AG, Smart TV J6400 Series 6 de 40 polegadas Full HD, e lista o pacote USB T-HKMFUABC versão 1550.0. A documentação e os limites do que se pode concluir estão em [[planning/validation-roadmap|plano de validação técnica]]. TH02 não é tratado como revisão confirmada da placa principal.
+- **Limite:** a conclusão cobre identificação e documentação básica, não identifica SoC, RAM, armazenamento, placa principal, cadeia de boot nem viabilidade de execução nativa.
 
 ### ZUPI-002 — Definir requisitos de compatibilidade
 - **Estado:** pendente
