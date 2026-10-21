@@ -1,8 +1,8 @@
 ---
 title: Requisitos de compatibilidade do ZupiOS
 type: planning-specification
-status: draft
-version: 0.2
+status: approved
+version: 1.0
 tags:
   - zupios
   - compatibilidade
@@ -13,7 +13,7 @@ tags:
 
 ## Estado e finalidade
 
-Esta proposta organiza os requisitos do primeiro produto e é a fonte de verdade para os casos de uso e prioridades de compatibilidade. **Continua em rascunho**: não aprova arquitetura, tecnologias ou compatibilidade de qualquer dispositivo. ZUPI-002 só poderá ser concluído após revisão e aprovação explícita do mantenedor.
+Esta especificação organiza os requisitos do primeiro produto e é a fonte de verdade para os casos de uso e prioridades de compatibilidade. **Baseline de produto v1.0 aprovada pelo mantenedor em 2026-10-21**, com base na confirmação explícita nesta conversa. A aprovação fixa prioridades e direção do produto; não aprova arquitetura, tecnologias, APIs, nem declara compatibilidade de qualquer dispositivo.
 
 Os rótulos P0/P1/P2 indicam prioridade de produto, não a ordem garantida de implementação nem a declaração de que a funcionalidade já existe. Os critérios de verificação descrevem evidência futura necessária.
 
@@ -41,6 +41,8 @@ Esta especificação detalha requisitos derivados desses princípios e propõe p
 ## Casos de uso priorizados
 
 ### P0 — Núcleo necessário para um primeiro produto utilizável
+
+**Baseline aprovada:** priorizar navegação por controle remoto, ciclo de vida de aplicações, SDK próprio, reprodução de mídia quando suportada e detecção de capacidades. A categoria inicial de aplicações prioriza mídia/streaming e, em seguida, utilitários. O primeiro alvo de ecossistema são aplicações desenvolvidas para o SDK do ZupiOS; compatibilidade com aplicações de terceiros não é promessa do primeiro marco.
 
 | ID | Caso de uso | Resultado esperado | Evidência futura mínima |
 | --- | --- | --- | --- |
@@ -101,7 +103,7 @@ Metas numéricas de desempenho, memória, inicialização e consumo de energia f
 ## Dependências e relação com o backlog
 
 - **ZUPI-001:** identificação documental básica concluída; detalhes internos da TV permanecem desconhecidos.
-- **ZUPI-002:** esta proposta precisa de revisão/aprovação explícita. Após aprovação, converter requisitos prioritários em tarefas verificáveis sem duplicar esta especificação.
+- **ZUPI-002:** baseline v1.0 aprovada. Converter requisitos prioritários em tarefas verificáveis no backlog/roadmap, sem duplicar esta especificação. A divisão exata de recursos gratuitos e Premium continua em aberto.
 - **ZUPI-003:** viabilidade de execução nativa deve ser avaliada separadamente; os requisitos de produto não provam que o hardware de referência os suporte.
 - **ZUPI-004:** arquitetura permanece bloqueada até a revisão de requisitos e a análise de viabilidade.
 
@@ -111,15 +113,12 @@ Metas numéricas de desempenho, memória, inicialização e consumo de energia f
 - [x] Requisitos não funcionais e limites do primeiro marco explicitados.
 - [x] Requisitos alinhados com os ADRs aceitos sobre hardware/implantação, Premium e localização.
 - [x] Evidência futura mínima definida para cada caso de uso.
-- [ ] Proposta revisada e aprovada explicitamente pelo mantenedor.
-- [ ] Após aprovação, dependências e tarefas necessárias incorporadas ao backlog/roadmap.
+- [x] Proposta revisada e baseline v1.0 aprovada explicitamente pelo mantenedor em 2026-10-21.
+- [x] Prioridades P0/P1/P2, foco inicial de aplicações e limite de compatibilidade com terceiros registrados.
+- [x] Dependências e próxima etapa registradas no backlog/roadmap.
 
-## Questões ainda abertas para revisão
+## Decisão registrada e questão em aberto
 
-1. Os casos P0 refletem o primeiro produto desejado, especialmente navegação por controle remoto, execução de aplicações e mídia?
-2. Instalação/atualização e recuperação devem continuar em P1 ou precisam integrar o P0 do primeiro dispositivo?
-3. O primeiro marco deve priorizar aplicações próprias do SDK ou também compatibilidade com aplicações/ecossistemas existentes?
-4. Quais classes de aplicação devem ser priorizadas: mídia/streaming, utilitários, jogos ou outra categoria?
-5. Quais recursos locais opcionais devem ser gratuitos ou Premium? O ADR 0005 mantém essa divisão em aberto.
+A baseline aprovada resolve as prioridades do primeiro produto: mídia/streaming primeiro, utilitários em seguida; aplicações próprias do SDK antes de qualquer compromisso de compatibilidade com ecossistemas de terceiros. Instalação, atualização e recuperação permanecem P1 e condicionadas às capacidades comprovadas do dispositivo.
 
-As respostas devem ser registradas nesta especificação ou em um ADR se alterarem uma decisão permanente. A visão geral do produto, a visão do SDK e a arquitetura devem apontar para esta fonte de verdade, sem copiar a tabela de requisitos.
+Permanece em aberto apenas a divisão detalhada de recursos opcionais entre gratuito e Premium, conforme ADR 0005. Essa questão não pode bloquear o uso básico local nem a definição técnica do núcleo. Alterações futuras nas prioridades devem ser registradas nesta especificação ou em ADR quando mudarem uma decisão permanente. A visão geral do produto, a visão do SDK e a arquitetura devem apontar para esta fonte de verdade, sem copiar a tabela de requisitos.
