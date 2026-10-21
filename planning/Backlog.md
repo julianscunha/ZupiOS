@@ -52,15 +52,16 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
 ## P1 — Prova técnica em ambiente controlável
 
 ### ZUPI-005 — Definir contrato de carregamento de payload mínimo
-- **Estado:** pendente
+- **Estado:** concluído
 - **Objetivo:** especificar e demonstrar em QEMU como o segundo estágio recebe e transfere controle a um payload mínimo, sem assumir ainda uma arquitetura final de kernel.
 - **Dependência:** prova de boot BIOS legado em QEMU existente.
 - **Critérios de aceite:**
-  - Contrato documentado para endereço de carga, limites de tamanho, ponto de entrada e estado mínimo da CPU/memória.
-  - O carregador valida ou limita o tamanho do payload e trata explicitamente falhas de leitura/carga.
-  - Uma prova reproduzível demonstra a transferência de controle ao payload e registra um marcador observável.
-  - O teste declara claramente o que não valida sobre hardware físico, drivers ou arquitetura final.
-- **Progresso:** contrato, caso positivo e caso negativo com imagem sem o setor de payload implementados em `tests/boot-poc/`; manter pendente até executar com sucesso as cinco repetições no GitHub Actions ou em ambiente equivalente com GNU Binutils e QEMU.
+  - [x] Contrato documentado para endereço de carga, limites de tamanho, ponto de entrada e estado mínimo da CPU/memória.
+  - [x] O carregador valida ou limita o tamanho do payload e trata explicitamente falhas de leitura/carga.
+  - [x] Uma prova reproduzível demonstra a transferência de controle ao payload e registra um marcador observável.
+  - [x] O teste declara claramente o que não valida sobre hardware físico, drivers ou arquitetura final.
+  - [x] Cinco execuções consecutivas aprovadas em ambiente equivalente com GNU Binutils e QEMU, incluindo caso positivo e falha de leitura induzida.
+- **Evidência:** `bash tests/boot-poc/repeat.sh 5` terminou com código 0 em contêiner Ubuntu x86_64 com QEMU 10.2.1; 5/5 execuções aprovaram os casos positivo e negativo. `bash scripts/dev-check.sh` também terminou com código 0. O resultado é validação local; não afirma aprovação do workflow hospedado nem compatibilidade com a TV.
 - **Fonte de procedimento e evidências:** [[planning/validation-roadmap|plano de validação técnica]] e [[tests/boot-poc/README|prova de boot em QEMU]].
 
 ## Fora do backlog de implementação por enquanto
