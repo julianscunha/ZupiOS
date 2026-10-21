@@ -33,7 +33,7 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
   - [x] Itens fora do escopo inicial identificados explicitamente.
   - [ ] Proposta revisada e aprovada pelo mantenedor.
   - [ ] Dependências e critérios de teste incorporados ao backlog/roadmap após aprovação.
-- **Fonte de verdade:** [[planning/compatibility-requirements|Requisitos de compatibilidade do ZupiOS]] (rascunho v0.1). O rascunho organiza intenções existentes, mas não substitui aprovação explícita de escopo.
+- **Fonte de verdade:** [[planning/compatibility-requirements|Requisitos de compatibilidade do ZupiOS]] (rascunho v0.2). O rascunho organiza intenções existentes, mas não substitui aprovação explícita de escopo.
 
 ### ZUPI-003 — Validar viabilidade de execução nativa
 - **Estado:** pendente
