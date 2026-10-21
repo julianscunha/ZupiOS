@@ -14,7 +14,7 @@ Esta página é somente um ponto de entrada para a próxima ação. Não replica
 
 ## Próxima ação
 
-**Revisar a proposta de ZUPI-002 — requisitos de compatibilidade.** O rascunho v0.1 agrupa casos de uso, requisitos não funcionais e itens fora do escopo, mas ainda não foi aprovado. Consulte [[planning/compatibility-requirements|Requisitos de compatibilidade]] e registre mudanças nessa fonte de verdade.
+**Revisar a proposta de ZUPI-002 — requisitos de compatibilidade.** O rascunho v0.2 agrupa casos de uso, requisitos não funcionais e itens fora do escopo, mas ainda não foi aprovado. Consulte [[planning/compatibility-requirements|Requisitos de compatibilidade]] e registre mudanças nessa fonte de verdade.
 
 ## Fonte de verdade por assunto
 
