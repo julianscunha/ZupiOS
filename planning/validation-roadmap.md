@@ -101,6 +101,24 @@ A investigação de execução nativa só avança quando houver:
 
 Se esses requisitos não forem atendidos, manter a TV como alvo de estudo e compatibilidade externa. Não escrever firmware, alterar eMMC/SPI, executar procedimentos de serviço ou conectar adaptadores a pontos de teste com base em documentação de outra variante.
 
+## Ferramenta auxiliar de investigação: REA
+
+O [REA (Reverse Engineer Anything)](https://github.com/morluto/rea) foi identificado como ferramenta opcional de apoio, não como fonte de identificação da placa e nem como catálogo de esquemas elétricos. O projeto oferece análise local de firmware por meio de Binwalk e Unblob, desde que as ferramentas externas necessárias estejam instaladas e configuradas. A documentação do REA informa que a análise de firmware pode inspecionar regiões e extrair arquivos, sem exigir execução do firmware extraído; os resultados incluem evidências e limitações explícitas. Essa capacidade só é útil para o ZupiOS se um arquivo de firmware pertinente ao modelo e à variante for obtido de fonte confiável. Fonte: [README do REA](https://github.com/morluto/rea) e [guia de análise de firmware](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md).
+
+### Uso previsto no ZupiOS
+
+1. Pesquisar primeiro fontes online confiáveis para o código exato do modelo, etiquetas, códigos da placa, manuais de serviço e imagens de firmware. Registrar URL, emissor, variante declarada, versão e hash do arquivo quando obtido.
+2. Se houver um firmware adequado, preservar o original e calcular seu SHA-256 antes de analisar uma cópia. Usar o REA/Binwalk para inspecionar regiões e, se necessário, Unblob para extrair arquivos para um diretório novo. Não executar conteúdo extraído.
+3. Comparar quaisquer códigos de placa ou referências encontradas com documentação independente e específica da variante. Referências de modelos parecidos ou nomes de partição, isoladamente, não confirmam a placa instalada.
+4. Se não houver firmware confiável, usar pesquisa documental e, caso seja necessário e seguro, inspeção física qualificada da placa. A ausência de um arquivo adequado não impede a investigação e não autoriza inferências.
+
+### Limites e segurança
+
+- REA não identifica automaticamente a placa física dentro da TV e não substitui a leitura da etiqueta/serigrafia ou a inspeção da unidade.
+- Uma imagem de firmware pode pertencer a outra variante ou revisão. A origem e a correspondência com o modelo precisam ser avaliadas antes de interpretar os resultados.
+- Não baixar firmware de fonte duvidosa para uso na TV, não gravar imagens de teste, nem alterar eMMC/SPI/NVRAM. A análise deve ser offline e não destrutiva.
+- A cadeia de boot, arquitetura do SoC, memória e caminho de recuperação só podem ser considerados confirmados por evidência específica e verificável; strings, assinaturas e regiões detectadas por Binwalk são indícios, não prova de comportamento.
+
 ## Etapa 5 — Análise documental de viabilidade nativa (ZUPI-003)
 
 **Data da avaliação:** 2026-10-21  
