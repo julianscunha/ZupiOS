@@ -14,7 +14,7 @@ Esta página é somente um ponto de entrada para a próxima ação. Não replica
 
 ## Próxima ação
 
-**Validar ZUPI-005: executar a prova de payload em QEMU, incluindo cinco repetições e o caso de falha de leitura induzida.** O contrato e os dois cenários já estão implementados, mas a validação ainda não foi aprovada: o ambiente local não dispõe de GNU `as`. Não implementar kernel nem inferir compatibilidade com a TV a partir desta prova. Os critérios de aceite estão no [[planning/Backlog#zupi-005--definir-contrato-de-carregamento-de-payload-mínimo|backlog]].
+**Avançar em ZUPI-001: verificar as especificações do hardware de referência e separar fatos confirmados, hipóteses externas e dados desconhecidos.** A prova de payload ZUPI-005 foi aprovada em cinco execuções consecutivas no ambiente local equivalente; os resultados e os limites estão no [[planning/validation-roadmap|plano de validação técnica]]. Não inferir compatibilidade da TV nem executar alterações de firmware. Os critérios de aceite de ZUPI-001 estão no [[planning/Backlog#zupi-001--identificar-o-hardware-de-referência|backlog]].
 
 ## Fonte de verdade por assunto
 
