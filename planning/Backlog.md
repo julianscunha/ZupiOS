@@ -74,6 +74,7 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
 - **Dependência:** baseline ZUPI-002; pode avançar em paralelo à investigação de hardware ZUPI-003 e à decisão de arquitetura ZUPI-004.
 - **Escopo inicial:** navegação por controle remoto e foco visível; hierarquia e densidade de conteúdo a distância; identidade visual, tipografia, escala, cores e estados; comportamento responsivo a diferentes resoluções/capacidades; estados de inicialização, instalação, atualização, erro e recuperação; acessibilidade e localização; limites entre linguagem visual comum e adaptações por perfil de dispositivo. A interface também deve respeitar o orçamento de recursos e não depender de animações, efeitos ou serviços residentes caros para permanecer utilizável.
 - **Critérios de aceite:**
+  - [x] Protótipo exploratório autocontido cobre Home, Aplicações, Configurações, Mídia, falha de abertura e recuperação conceitual; instruções e limites estão em [[prototypes/tv-ui/README|protótipo de interface de TV]].
   - Princípios de design e interação documentados em uma única fonte de verdade, sem duplicar requisitos de compatibilidade existentes.
   - Fluxos prioritários mapeados, incluindo início/home, abrir e encerrar aplicação, voltar, configurações e estados de erro/recuperação.
   - Modelo de navegação por controle remoto definido, incluindo foco, seleção, retorno e tratamento de elementos indisponíveis.
