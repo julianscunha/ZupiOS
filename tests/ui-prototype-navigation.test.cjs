@@ -74,10 +74,20 @@ test('remote directional navigation includes the header profile control', () => 
   assert.match(html, /const nav=\[document\.querySelector\('#profile-button'\),document\.querySelector\('\.header-settings'\),\.\.\.a\]/, 'directional navigation must include the adjacent profile and settings controls outside #app');
 });
 
+test('profile selection enters directly and current profile is edited from the home header', () => {
+  assert.doesNotMatch(html, /btn\('Gerenciar perfis','profile','quiet'\)/);
+  assert.match(html, /data-action="open-profile-/);
+  assert.match(html, /if\(PROFILES\[i\]\.pin\).*go\('profile-unlock'\).*else go\('home'\)/);
+  assert.match(html, /data-action="edit-active-profile"/);
+  assert.match(html, /case'edit-active-profile'.*go\('profile-manage'\)/);
+  assert.doesNotMatch(html, /profile-access|edit-current-profile|pendingProfileAction==='edit'/);
+});
+
 test('profile management includes creation, editing, PIN protection and child-profile options', () => {
   for (const action of ['create-profile', 'unlock-profile']) assert.match(html, new RegExp("case['\\\"]" + action + "['\\\"]"));
   for (const selector of ['profile-form', 'profile-name-input', 'profile-pin-input', 'profile-pin-confirm', 'profile-child-input']) assert.match(html, new RegExp('id="' + selector + '"'));
   assert.match(html, /delete-profile-/);
+  assert.match(html, /Você está editando apenas o perfil conectado/);
   assert.match(html, /PIN incorreto/);
   assert.match(html, /Os PINs não coincidem/);
 });

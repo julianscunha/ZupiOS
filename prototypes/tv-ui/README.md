@@ -17,8 +17,8 @@ Abra `index.html` diretamente em um navegador moderno para a Home de demonstraç
 - A Home aceita no máximo sete atalhos, mantendo o bloco de adição na grade e reservando duas linhas de quatro posições.
 - A Home prioriza caber sem rolagem nas alturas comuns; em janelas baixas permite rolagem em vez de cortar conteúdo.
 - A barra superior exibe hora local e avatar circular com o nome do perfil logo abaixo. A versão do protótipo fica no rodapé, junto aos controles de navegação.
-- A seleção de perfil usa cartões grandes e foco destacado, inspirados em interfaces de streaming; inclui criar perfil e abrir o gerenciamento.
-- O gerenciamento permite criar, renomear, trocar avatar, definir/remover PIN de quatro dígitos, marcar perfil infantil e excluir perfis (mantendo pelo menos um). O perfil com PIN exige desbloqueio antes de entrar.
+- A seleção de perfil usa cartões grandes e foco destacado, inspirados em interfaces de streaming; inclui criar perfil. Ao clicar em um perfil, o acesso é direto à tela principal (perfis com PIN exigem desbloqueio). Na tela principal, clicar no avatar do cabeçalho abre a edição do perfil ativo; não há botão separado de gerenciamento na seleção.
+- Na edição aberta pelo avatar, o usuário só pode alterar o perfil atualmente conectado: nome, avatar, PIN de quatro dígitos, opção infantil ou exclusão. A criação de perfis fica na seleção de perfil. O perfil com PIN exige desbloqueio antes de entrar.
 - Perfis e PINs existem apenas na memória desta demonstração; não há armazenamento seguro, autenticação real nem aplicação de restrições de conteúdo infantil.
 - As opções de atalhos, perfis e avatares são mantidas somente durante a sessão da página; ainda não são persistentes.
 - TV ao vivo apresenta opções para cabo, satélite e sinal digital terrestre. A sintonia é simulada, pois nenhum sintonizador real está integrado.
