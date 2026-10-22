@@ -81,11 +81,34 @@ A interface é uma camada central do produto, mas não pode consumir recursos qu
 - Animações, efeitos e previews são melhorias opcionais, nunca pré-requisitos de interação ou legibilidade.
 - A degradação graciosa em perfil limitado deve preservar as funções básicas e a mesma lógica de navegação.
 
+## Invariantes e adaptações por perfil de dispositivo
+
+### Invariantes
+
+- Toda ação essencial deve poder ser alcançada e ativada com setas e Enter, e abandonada/retornada com Esc ou Backspace; a ação global Home permanece previsível.
+- O foco precisa ser identificável por contorno/forma e contraste, não somente por uma mudança sutil de cor.
+- Nenhum fluxo essencial pode depender de animação, rede, ponteiro ou texto que só apareça ao passar o mouse.
+- Erros e estados indisponíveis devem oferecer um destino seguro de retorno; conteúdo não pode ser descartado silenciosamente.
+- Rótulos de ações devem permanecer compreensíveis. Em nomes de perfil e conteúdo do usuário, preferir quebra de linha a cortar texto sem indicação.
+
+### Variações permitidas
+
+- Quantidade de colunas, dimensões de cartões, espaçamento e densidade podem variar por tamanho de tela e perfil de capacidade.
+- Tipografia e espaçamento podem escalar com a distância de visualização e a resolução; o foco, a ordem lógica e o significado das ações não podem mudar.
+- Animações podem ser reduzidas ou desativadas em perfis de baixo desempenho ou por preferência de acessibilidade, sem remover feedback funcional.
+- Recursos indisponíveis podem ser ocultados ou desabilitados conforme capacidades detectadas, desde que a indisponibilidade seja compreensível e o restante da navegação continue consistente.
+
+### Localização e texto extenso
+
+- O protótipo atual está fixo em português do Brasil (`pt-BR`); o seletor de idioma é demonstrativo e não troca o idioma da interface.
+- Uma implementação real deve manter os textos em catálogo de mensagens, não concatenar rótulos de interface no código de renderização, e formatar datas/horas com a localidade ativa.
+- A validação deve incluir rótulos longos, nomes de perfil extensos, acentos, strings que ocupem aproximadamente o dobro do comprimento original e pelo menos um idioma com regras de quebra diferentes. Não truncar ações essenciais para fazê-las caber.
+
 ## Protótipo exploratório
 
 O protótipo autocontido e seu estado funcional estão descritos em [[prototypes/tv-ui/README|protótipo de interface de TV]], que é a fonte de verdade para a versão demonstrativa e seus controles. A implementação atual usa HTML/CSS/JavaScript sem dependências externas, ícones SVG locais, superfícies sólidas e tipografia do sistema. A navegação por setas considera a posição dos controles; a Home permite rolagem em janelas de pouca altura e o relógio atualiza na virada do minuto.
 
-O protótipo permanece uma demonstração de fluxo, não uma implementação do ZupiOS. Perfis, edição, atalhos, sintonia e recuperação são simulados; não mede consumo de recursos nem demonstra compatibilidade com controle remoto físico ou TV. A direção visual permanece em rascunho até revisão de fluxo, inspeção em diferentes tamanhos e validação em hardware representativo.
+O protótipo permanece uma demonstração de fluxo, não uma implementação do ZupiOS. Perfis, edição, atalhos, sintonia e recuperação são simulados; não mede consumo de recursos nem demonstra compatibilidade com controle remoto físico ou TV. A direção visual permanece em rascunho até revisão de fluxo, inspeção visual em 1920×1080 e 1280×600, revisão de textos longos/localização e validação com controle remoto e TV representativos.
 
 ## Validação necessária
 

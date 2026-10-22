@@ -80,7 +80,9 @@ test('profile selection enters directly and current profile is edited from the h
   assert.match(html, /if\(PROFILES\[i\]\.pin\).*go\('profile-unlock'\).*else go\('home'\)/);
   assert.match(html, /data-action="edit-active-profile"/);
   assert.match(html, /case'edit-active-profile'.*go\('profile-manage'\)/);
-  assert.doesNotMatch(html, /profile-access|edit-current-profile|pendingProfileAction==='edit'/);
+  assert.doesNotMatch(html, /profile-access|edit-current-profile/);
+  assert.match(html, /pendingProfileAction==='edit'/);
+  assert.match(html, /case'unlock-profile'.*pendingProfileAction==='edit'.*go\('profile-manage'\)/);
 });
 
 test('profile management includes creation, editing, PIN protection and child-profile options', () => {
