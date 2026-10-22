@@ -67,11 +67,11 @@ test('priority screen flows and remote-control recovery remain represented', () 
 });
 
 test('remote directional navigation includes the header profile control', () => {
-  assert.match(html, /const nav=\[document\.querySelector\('#profile-button'\),\.\.\.a\]/, 'directional navigation must include the profile button outside #app');
+  assert.match(html, /const nav=\[document\.querySelector\('#profile-button'\),document\.querySelector\('\.header-settings'\),\.\.\.a\]/, 'directional navigation must include the adjacent profile and settings controls outside #app');
 });
 
 test('remote directional navigation includes the header profile control', () => {
-  assert.match(html, /const nav=\[document\.querySelector\('#profile-button'\),\.\.\.a\]/, 'directional navigation must include the profile button outside #app');
+  assert.match(html, /const nav=\[document\.querySelector\('#profile-button'\),document\.querySelector\('\.header-settings'\),\.\.\.a\]/, 'directional navigation must include the adjacent profile and settings controls outside #app');
 });
 
 test('every offered shortcut has an action handler', () => {
