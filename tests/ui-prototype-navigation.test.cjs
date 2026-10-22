@@ -43,7 +43,7 @@ test('inline SVG icons render valid markup without escaped quote artifacts', () 
 });
 
 test('version is current in footer, never in header, and assets remain local', () => {
-  const header = html.split('</header>')[0];
+  const header = html.match(/<header\b[\s\S]*?<\/header>/)?.[0] || '';
   const footer = html.split('<footer>')[1].split('</footer>')[0];
   assert.doesNotMatch(header, /id="version"/);
   assert.match(footer, /id="version"/);
@@ -66,12 +66,23 @@ test('priority screen flows and remote-control recovery remain represented', () 
   assert.match(html, /focusSelected\(\)/, 'rendered screen must restore focus to a selectable control');
 });
 
-test('remote directional navigation includes the header profile control', () => {
-  assert.match(html, /const nav=\[document\.querySelector\('#profile-button'\),document\.querySelector\('\.header-settings'\),\.\.\.a\]/, 'directional navigation must include the adjacent profile and settings controls outside #app');
+test('remote directional navigation includes sidebar and header controls', () => {
+  assert.ok(html.includes("const nav=[...document.querySelectorAll('#side-nav [data-action]'),...a].filter(el=>el&&el.getClientRects().length)"));
 });
 
-test('remote directional navigation includes the header profile control', () => {
-  assert.match(html, /const nav=\[document\.querySelector\('#profile-button'\),document\.querySelector\('\.header-settings'\),\.\.\.a\]/, 'directional navigation must include the adjacent profile and settings controls outside #app');
+test('sidebar is hidden before profile entry and available after authentication', () => {
+  assert.match(html, /sidebar-authenticated',!\['profiles','profile-unlock'\]\.includes\(screen\)/);
+  assert.match(html, /body:not\(\.sidebar-authenticated\) \.sidebar-nav\{display:none!important\}/);
+  assert.ok(html.includes('<nav id="side-nav" class="sidebar-nav" aria-label='));
+  assert.match(html, /class="sidebar-item" data-action="settings" aria-label=/);
+  assert.match(html, /class="sidebar-item sidebar-profile"[\s\S]*?aria-label=/);
+});
+
+test('prototype declares Portuguese locale and avatar controls have accessible names', () => {
+  assert.match(html, /<html lang="pt-BR">/);
+  assert.match(html, /aria-label="Selecionar avatar '\+\(i\+1\)/);
+  assert.match(html, /aria-pressed="'\+\(editingAvatar===avatar\)/);
+  assert.match(html, /class="profile-avatar" aria-hidden="true"/);
 });
 
 test('profile selection enters directly and current profile is edited from the home header', () => {
