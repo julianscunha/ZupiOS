@@ -82,7 +82,7 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
   - [x] Direção visual demonstrada por um conjunto pequeno de telas/fluxos representativos e revisável antes da implementação.
   - Regras de adaptação e limites de acessibilidade documentados, separando invariantes de variações permitidas.
   - Decisões que dependem de resolução, aceleração gráfica ou hardware específico identificadas como pendentes, não presumidas.
-- **Progresso da revisão (2026-10-21):** a suíte `node --test tests/ui-prototype-navigation.test.cjs` passou em 8/8 testes, incluindo verificações de presença dos fluxos prioritários, atalhos globais de retorno/Home, foco após renderização e estados simulados de indisponibilidade/sem rede. Esses testes inspecionam a lógica e o conteúdo do HTML; não substituem uma passagem interativa real em navegador, teste com controle remoto físico, validação de textos longos/idiomas nem avaliação em TV. ZUPI-006 permanece aberto até essas pendências serem avaliadas.
+- **Progresso da revisão (2026-10-21):** a suíte `node --test tests/ui-prototype-navigation.test.cjs` passou em 8/8 testes. Uma sessão real do Microsoft Edge headless controlada pelo Chrome DevTools Protocol também percorreu foco inicial, setas, Enter, Esc, Configurações, estado sem rede, falha de abertura/tentar novamente, alternância de perfil e avatar; todos os asserts passaram. O roteiro foi executado localmente e não foi adicionado como dependência ao projeto. Isso valida fluxos de navegador selecionados, mas não é uma inspeção visual completa nem substitui teste com controle remoto físico, textos longos/idiomas e avaliação em TV. ZUPI-006 permanece aberto até essas pendências serem avaliadas.
 
 ## P1 — Prova técnica em ambiente controlável
 
