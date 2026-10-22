@@ -30,6 +30,27 @@ Estas são fronteiras de projeto a investigar, não componentes já implementado
 5. **Interface e aplicações:** interface de TV e SDK consumidores de contratos estáveis, sem dependência direta de detalhes do boot.
 6. **Instalação, atualização e recuperação:** operações separadas do uso normal, com validação de compatibilidade, integridade e estratégia de retorno quando tecnicamente suportada.
 
+## Contratos mínimos entre fronteiras (rascunho para revisão)
+
+Os contratos abaixo definem responsabilidades e dados trocados, não APIs implementadas. Permanecem independentes de linguagem, kernel e formato binário; devem ser refinados somente quando um componente real exigir mais detalhe.
+
+| Fronteira | Entrada mínima | Saída / garantia | Falha observável |
+| --- | --- | --- | --- |
+| Boot → núcleo | Endereço/intervalo do payload, mapa de memória quando disponível, identificador da plataforma e origem dos dados | Transferência explícita ao ponto de entrada; o núcleo valida novamente os dados antes de confiar neles | Código/estado de falha e diagnóstico acessível pelo mecanismo disponível; nunca presumir que o handoff foi válido |
+| Núcleo → camada de plataforma | Interfaces de descoberta e operações suportadas pelo núcleo | Capacidades detectadas com estado `suportado`, `ausente` ou `desconhecido`; capacidade desconhecida não equivale a suporte | Erro tipado ou estado indisponível, sem selecionar driver por marca/modelo apenas |
+| Plataforma → serviços | Capacidades e recursos efetivamente disponíveis | Serviço declara dependências, estado de inicialização e como encerra/libera recursos | Falha identificável, dependentes informados e possibilidade de continuar quando o serviço for opcional |
+| Serviços → interface/aplicações | Operações públicas versionadas, resultado e capacidades/permissões concedidas | Resultado explícito; operação longa não deve bloquear a navegação global | Erro estável e compreensível, com recuperação/cancelamento quando seguro |
+| Sistema → instalador/atualizador/recuperação | Perfil detectado, origem do pacote, versão, dependências e evidências de integridade | Plano validado antes de alterar o sistema; compatibilidade declarada para a combinação alvo | Interromper antes de alteração destrutiva quando validação falhar; informar claramente quando recuperação não estiver garantida |
+
+### Invariantes transversais
+
+- Ausência de informação deve ser representada como desconhecida, não preenchida por inferência.
+- Toda operação entre componentes deve distinguir sucesso, indisponibilidade e falha; mensagens de diagnóstico não substituem um resultado verificável.
+- Dados fornecidos por bootloader, pacote ou dispositivo devem ser validados na fronteira que os consome.
+- Capacidades específicas do dispositivo não entram no contrato público de aplicações; são expostas por declarações de capacidade versionadas.
+- Instalação e recuperação não podem ser tratadas como garantidas até que o mecanismo tenha sido validado para o perfil correspondente.
+- Estes contratos não definem ainda estruturas binárias, syscalls, ABI, formato de pacote, política de permissões nem protocolo de boot final.
+
 ## Princípios de implementação
 
 - Manter os contratos entre camadas pequenos e verificáveis.
