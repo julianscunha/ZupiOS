@@ -55,7 +55,7 @@ test('version is current in footer, never in header, and assets remain local', (
 
 
 test('priority screen flows and remote-control recovery remain represented', () => {
-  for (const screen of ['home', 'tv', 'profiles', 'profile-edit', 'settings', 'apps', 'media', 'opening', 'recovery', 'about']) {
+  for (const screen of ['home', 'tv', 'profiles', 'profile-edit', 'profile-manage', 'profile-unlock', 'settings', 'apps', 'media', 'opening', 'recovery', 'about']) {
     assert.match(html, new RegExp(`screen===['"]${screen}['"]`), `screen ${screen} must remain implemented`);
   }
   for (const action of ['tv', 'apps', 'media', 'settings', 'recovery', 'open-demo', 'retry', 'unavailable', 'network', 'check-network', 'reset-ui']) {
@@ -72,6 +72,14 @@ test('remote directional navigation includes the header profile control', () => 
 
 test('remote directional navigation includes the header profile control', () => {
   assert.match(html, /const nav=\[document\.querySelector\('#profile-button'\),document\.querySelector\('\.header-settings'\),\.\.\.a\]/, 'directional navigation must include the adjacent profile and settings controls outside #app');
+});
+
+test('profile management includes creation, editing, PIN protection and child-profile options', () => {
+  for (const action of ['create-profile', 'unlock-profile']) assert.match(html, new RegExp("case['\\\"]" + action + "['\\\"]"));
+  for (const selector of ['profile-form', 'profile-name-input', 'profile-pin-input', 'profile-pin-confirm', 'profile-child-input']) assert.match(html, new RegExp('id="' + selector + '"'));
+  assert.match(html, /delete-profile-/);
+  assert.match(html, /PIN incorreto/);
+  assert.match(html, /Os PINs não coincidem/);
 });
 
 test('every offered shortcut has an action handler', () => {

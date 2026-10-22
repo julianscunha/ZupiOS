@@ -17,7 +17,9 @@ Abra `index.html` diretamente em um navegador moderno para a Home de demonstraç
 - A Home aceita no máximo sete atalhos, mantendo o bloco de adição na grade e reservando duas linhas de quatro posições.
 - A Home prioriza caber sem rolagem nas alturas comuns; em janelas baixas permite rolagem em vez de cortar conteúdo.
 - A barra superior exibe hora local e avatar circular com o nome do perfil logo abaixo. A versão do protótipo fica no rodapé, junto aos controles de navegação.
-- A seleção de perfil usa cartões grandes e foco destacado, inspirados em interfaces de streaming. A edição de nome/avatares permanece em Configurações > Perfis.
+- A seleção de perfil usa cartões grandes e foco destacado, inspirados em interfaces de streaming; inclui criar perfil e abrir o gerenciamento.
+- O gerenciamento permite criar, renomear, trocar avatar, definir/remover PIN de quatro dígitos, marcar perfil infantil e excluir perfis (mantendo pelo menos um). O perfil com PIN exige desbloqueio antes de entrar.
+- Perfis e PINs existem apenas na memória desta demonstração; não há armazenamento seguro, autenticação real nem aplicação de restrições de conteúdo infantil.
 - As opções de atalhos, perfis e avatares são mantidas somente durante a sessão da página; ainda não são persistentes.
 - TV ao vivo apresenta opções para cabo, satélite e sinal digital terrestre. A sintonia é simulada, pois nenhum sintonizador real está integrado.
 - O modo `?experience=tv` mostra somente o logotipo durante uma animação curta, sem logs nem barra de progresso; depois abre o seletor de perfil e segue para a Home. É uma simulação visual no navegador, não o boot real do firmware.
