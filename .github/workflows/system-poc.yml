@@ -1,0 +1,35 @@
+name: Linux system boot proof
+
+on:
+  push:
+    branches: [main, zupi-004-linux-qemu-poc]
+    paths:
+      - ".github/workflows/system-poc.yml"
+      - "tests/system-poc/**"
+  pull_request:
+    paths:
+      - ".github/workflows/system-poc.yml"
+      - "tests/system-poc/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux-kernel-initramfs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install kernel and emulation dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes linux-image-generic busybox-static cpio gzip qemu-system-x86 coreutils
+      - name: Verify selected kernel and tools
+        run: |
+          ls -lh /boot/vmlinuz-*
+          busybox | head -n 1
+          qemu-system-x86_64 --version
+      - name: Boot Linux kernel with minimal initramfs in QEMU
+        run: bash tests/system-poc/run.sh
