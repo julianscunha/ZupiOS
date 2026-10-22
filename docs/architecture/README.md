@@ -69,3 +69,33 @@ A decisão deve registrar alternativas consideradas, evidências, riscos, crité
 - [[planning/validation-roadmap|Plano de validação técnica]]
 - [[planning/decisions/0004-adaptacao-hardware-e-implantacao|ADR 0004 — Adaptação ao hardware e implantação]]
 - [[tests/boot-poc/README|Prova de boot em QEMU]]
+
+## Comparação inicial de bases e perfil de desenvolvimento (2026-10-22)
+
+Esta comparação separa a escolha do ambiente de prototipagem da escolha do produto final. É uma recomendação de engenharia para reduzir risco, não a aprovação de uma arquitetura de produção.
+
+| Alternativa | Vantagens | Custos / riscos | Uso nesta etapa |
+| --- | --- | --- | --- |
+| Kernel Linux existente + espaço de usuário mínimo | Drivers e subsistemas maduros; ferramentas de depuração; suporte a processos, memória, rede e multimídia já existente; evita criar um kernel inteiro antes de validar o produto. | Tamanho e consumo dependem da configuração; cada dispositivo ainda exige drivers e cadeia de boot compatíveis; licença GPLv2 do kernel e licenças dos demais componentes precisam ser respeitadas. | **Candidato preferido para o primeiro perfil de sistema completo em QEMU**, condicionado a definir uma imagem mínima e medir seus custos. Não declara suporte à Samsung. |
+| Kernel próprio (bare metal / no_std) | Controle direto sobre o código inicial e o ambiente; payload pequeno. | Exigiria implementar ou integrar memória virtual, escalonamento, drivers, sistema de arquivos, segurança, rede e suporte de mídia; risco elevado de desviar o projeto do SDK e da experiência de TV. | Manter apenas como experimento educacional ou prova isolada; não recomendado como base do produto sem requisito concreto que justifique o custo. |
+| Distribuição Linux existente como produto quase pronto | Acelera a obtenção de interface, serviços e ferramentas já integrados. | Pode trazer serviços, atualizações, consumo e políticas desnecessários; personalização e manutenção da distribuição tornam-se parte do produto. | Comparar depois de existir um perfil mínimo e critérios de RAM/armazenamento; não selecionar distribuição completa antecipadamente. |
+
+### Perfil de execução recomendado para o próximo marco
+
+- **Host de ferramentas:** contêiner Docker Linux, reproduzível e sem privilégios especiais.
+- **Alvo de desenvolvimento inicial:** x86_64 em QEMU, exclusivamente como perfil controlado de desenvolvimento. A prova BIOS legada existente continua separada e demonstra apenas leitura de setores.
+- **Sistema-base candidato:** kernel Linux existente com espaço de usuário mínimo; a escolha permanece provisória até compilar e iniciar uma imagem de ponta a ponta, verificar logs e registrar recursos usados.
+- **Toolchain:** usar ferramentas existentes no contêiner e fixar versões após a primeira compilação reproduzível. A imagem Docker aic-rust:1 foi confirmada com rustc 1.99.1 e cargo 1.99.1; isso comprova a presença do toolchain Rust, não a disponibilidade de QEMU, de um alvo bare-metal configurado ou de uma cadeia completa de build do kernel.
+- **Fora do marco:** driver de TV, interface gráfica final, codecs, instalação na Samsung, dual boot, atualização e recuperação em hardware físico.
+
+### Portão de validação antes de consolidar a escolha
+
+1. Construir a imagem do perfil mínimo de forma reproduzível dentro do contêiner.
+2. Inicializá-la no QEMU com configuração explicitamente registrada.
+3. Capturar marcador de inicialização e logs; falhas devem produzir código de saída não zero.
+4. Repetir o ensaio automatizado e guardar os comandos e resultados.
+5. Registrar tamanho do artefato e consumo/tempo apenas com metodologia identificada; não comparar esses valores diretamente com a TV.
+6. Rever a escolha se o custo de construção, depuração ou configuração mínima não atender aos requisitos.
+
+**Conclusão provisória:** usar Linux existente para investigar um sistema executável, em vez de começar por um kernel próprio. O passo ainda não está concluído: a imagem de sistema ponta a ponta não foi construída nem iniciada; ZUPI-004 permanece bloqueado para aprovação final enquanto a dependência de viabilidade de hardware (ZUPI-003) não for resolvida.
+
