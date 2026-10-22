@@ -61,7 +61,7 @@ echo "SYSTEM_POC_PROFILE= x86_64 / QEMU TCG / 256 MiB / serial console"
 
 set +e
 timeout --signal=TERM --kill-after=3s 20s qemu-system-x86_64 \
-  -machine pc,accel=tcg -cpu qemu64 -m 256M \
+  -machine pc,accel=tcg -cpu max -m 256M \
   -kernel "$KERNEL" -initrd "$WORK/initramfs.cpio.gz" \
   -append 'console=ttyS0 rdinit=/init panic=-1' \
   -display none -serial stdio -monitor none -no-reboot >"$LOG" 2>&1
