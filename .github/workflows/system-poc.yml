@@ -28,6 +28,8 @@ jobs:
           sudo apt-get install --yes linux-image-generic busybox-static cpio gzip qemu-system-x86 coreutils
       - name: Verify selected kernel and tools
         run: |
+          # Ubuntu's packaged kernel may be root-readable only (mode 0600).
+          sudo chmod a+r /boot/vmlinuz-*
           ls -lh /boot/vmlinuz-*
           busybox | head -n 1
           qemu-system-x86_64 --version
