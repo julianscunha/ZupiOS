@@ -54,6 +54,7 @@ O backlog contém os próximos trabalhos verificáveis. Prioridades e estimativa
   - Decisão arquitetural registrada com alternativas e justificativas.
   - Interfaces entre componentes identificadas.
   - Premissas ainda não validadas listadas.
+- **Evidência técnica parcial (2026-10-22):** o workflow [Linux system boot proof](https://github.com/julianscunha/ZupiOS/actions/runs/39781473737) passou no commit `76c6888`. O kernel Linux iniciou em QEMU com initramfs mínimo; os marcadores `ZUPIOS_SYSTEM_BOOT_OK` e `ZUPIOS_SYSTEM_SHUTDOWN` foram capturados e o QEMU encerrou com código 0. Isso valida a fatia de teste emulada, não a arquitetura final nem a execução nativa na TV. ZUPI-004 permanece bloqueado pela dependência ZUPI-003 e pela decisão arquitetural ainda não aprovada.
 
 ### ZUPI-007 — Definir orçamento de desempenho e método de medição
 - **Estado:** em andamento — protocolo inicial e caracterização temporal do ensaio QEMU documentados; linha de base do produto pendente

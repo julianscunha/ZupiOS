@@ -195,3 +195,15 @@ A prova mínima de payload em ambiente controlável foi demonstrada e repetida c
 - [[planning/Next-Steps]]
 - [[planning/decisions/0004-adaptacao-hardware-e-implantacao]]
 - [[tests/boot-poc/README]]
+
+## Evidência de boot Linux com initramfs em QEMU (2026-10-22)
+
+**Resultado: aprovado no CI hospedado; escopo limitado à prova emulada.** A execução [Linux system boot proof, run 39781473737](https://github.com/julianscunha/ZupiOS/actions/runs/39781473737), no commit `76c688873aeed557a56bafd24f3690792bdae8a4`, terminou com sucesso. O job `linux-kernel-initramfs` concluiu todas as etapas, incluindo a inicialização do kernel com initramfs mínimo em QEMU. A saída serial contém `ZUPIOS_SYSTEM_BOOT_OK`, `ZUPIOS_INITRAMFS_PID=1` e `ZUPIOS_SYSTEM_SHUTDOWN`; o log registra `SYSTEM_POC_RESULT=PASS` e `SYSTEM_POC_QEMU_EXIT=0`.
+
+A correção mais recente selecionou `-cpu max` para evitar a incompatibilidade de instruções observada com o modelo anterior e tornou o kernel legível pelo processo QEMU no runner. A execução aprovada confirma que esta configuração de CI funciona; não comprova que `-cpu max` corresponda à CPU da TV nem que a imagem seja portável para hardware físico.
+
+**O que foi demonstrado:** kernel Linux x86_64 inicializado pelo QEMU no runner GitHub Actions; execução de `/init` a partir de initramfs; emissão dos marcadores esperados e encerramento controlado.
+
+**O que não foi demonstrado:** kernel próprio do ZupiOS, drivers ou interface de produto, persistência, instalação/recuperação, boot em Samsung UN40J6400AGXZD, compatibilidade com o SoC real ou arquitetura final. A investigação nativa ZUPI-003 permanece inconclusiva e ZUPI-004 permanece bloqueado.
+
+O ensaio é reproduzido pelo workflow `.github/workflows/system-poc.yml` e pelo script `tests/system-poc/run.sh`. Consulte também [[tests/system-poc/README|Prova de boot de sistema Linux em QEMU]].
