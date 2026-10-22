@@ -28,7 +28,7 @@ O teste cria um initramfs temporário com BusyBox estático e um `/init` que reg
 
 O teste só retorna código zero quando a saída serial contém ambos os marcadores `ZUPIOS_SYSTEM_BOOT_OK` e `ZUPIOS_SYSTEM_SHUTDOWN`. A ausência de qualquer marcador, kernel ausente, dependência ausente ou timeout causa falha. O log inclui a versão do QEMU, o nome/tamanho do kernel e o tamanho do initramfs.
 
-O workflow `.github/workflows/system-poc.yml` instala as dependências em um runner Ubuntu hospedado e executa o ensaio em pushes relevantes, pull requests e acionamento manual. Não considerar o teste aprovado até confirmar o resultado real do GitHub Actions.
+O workflow `.github/workflows/system-poc.yml` usa `ubuntu-24.04`, instala as dependências e executa o ensaio em pushes relevantes, pull requests e acionamento manual. Ao final, publica por 14 dias o manifesto de versões/tamanhos e o log serial como artefato `zupios-system-boot-evidence`. A versão do kernel ainda vem do repositório de pacotes Ubuntu e não está fixada; o ensaio é reproduzível dentro do ambiente descrito, mas ainda não garante builds idênticos ao longo do tempo. Não considerar o teste aprovado até confirmar o resultado real do GitHub Actions.
 
 ## Limites
 

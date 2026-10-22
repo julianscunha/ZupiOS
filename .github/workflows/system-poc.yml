@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   linux-kernel-initramfs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - name: Checkout repository
@@ -33,5 +33,30 @@ jobs:
           ls -lh /boot/vmlinuz-*
           busybox | head -n 1
           qemu-system-x86_64 --version
+          {
+            echo "SYSTEM_POC_RUNNER_IMAGE=ubuntu-24.04"
+            echo "SYSTEM_POC_KERNEL_PACKAGES:"
+            dpkg-query -W -f='${binary:Package}=${Version}\n' 'linux-image-*' busybox-static cpio gzip qemu-system-x86 coreutils 2>/dev/null || true
+            echo "SYSTEM_POC_KERNEL_FILES:"
+            for kernel in /boot/vmlinuz-*; do
+              [ -f "$kernel" ] || continue
+              printf '%s bytes=' "$(basename "$kernel")"
+              wc -c < "$kernel"
+            done
+            echo "SYSTEM_POC_QEMU_VERSION:"
+            qemu-system-x86_64 --version | head -n 1
+            echo "SYSTEM_POC_BUSYBOX_VERSION:"
+            busybox | head -n 1
+          } > "$RUNNER_TEMP/zupios-system-poc-manifest.txt"
       - name: Boot Linux kernel with minimal initramfs in QEMU
-        run: bash tests/system-poc/run.sh
+        run: bash tests/system-poc/run.sh 2>&1 | tee "$RUNNER_TEMP/zupios-system-poc-run.log"
+      - name: Upload system boot evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zupios-system-boot-evidence
+          path: |
+            ${{ runner.temp }}/zupios-system-poc-manifest.txt
+            ${{ runner.temp }}/zupios-system-poc-run.log
+          if-no-files-found: warn
+          retention-days: 14
