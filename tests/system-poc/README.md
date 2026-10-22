@@ -22,7 +22,7 @@ Na raiz do repositório:
 bash tests/system-poc/run.sh
 ```
 
-O teste cria um initramfs temporário com BusyBox estático e um `/init` que registra um marcador na consola serial, espera brevemente e solicita desligamento. O QEMU executa em TCG, com CPU `qemu64` e 256 MiB de RAM, sem aceleração de hardware necessária.
+O teste cria um initramfs temporário com BusyBox estático e um `/init` que registra um marcador na consola serial, espera brevemente e solicita desligamento. O QEMU executa em TCG, com CPU `max` e 256 MiB de RAM, sem aceleração de hardware necessária. O modelo `max` expõe os recursos de CPU emulados necessários ao BusyBox estático fornecido pelo runner; não representa nem valida a CPU da TV.
 
 ## Aprovação
 
