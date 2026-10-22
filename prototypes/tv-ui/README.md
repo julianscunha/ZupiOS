@@ -4,7 +4,7 @@
 
 ## Executar
 
-Abra `index.html` diretamente em um navegador moderno. Não requer instalação, servidor, dependências externas ou rede.
+Abra `index.html` diretamente em um navegador moderno para a Home de demonstração. Para ver a experiência inicial de TV — logotipo animado, seletor de perfil e Home — abra `index.html?experience=tv`. Não requer instalação, servidor, dependências externas ou rede.
 
 ## Alterações nesta versão
 
@@ -12,15 +12,15 @@ Abra `index.html` diretamente em um navegador moderno. Não requer instalação,
 - Ícones SVG inline, tipografia de sistema, estados de foco/pressão consistentes e respeito à preferência de movimento reduzido.
 - Em janelas com pouca altura, a Home permite rolagem vertical em vez de cortar conteúdo. O relógio atualiza na virada do minuto.
 
-- TV ao vivo, Aplicações e Mídia são as áreas principais. Configurações aparece como um botão compacto com apenas a engrenagem, com Ajuda logo abaixo.
+- TV ao vivo, Aplicações e Mídia são as áreas principais. Configurações fica ao lado do perfil no cabeçalho; Ajuda e recuperação fica dentro de Configurações.
 - A área de atalhos usa um bloco de adição com sinal de mais, sem instruções ou botões de remoção ocupando espaço. Em Configurações, o usuário pode alternar entre os layouts Equilibrado, Compacto e Atalhos em destaque.
 - A Home aceita no máximo sete atalhos, mantendo o bloco de adição na grade e reservando duas linhas de quatro posições.
 - A Home prioriza caber sem rolagem nas alturas comuns; em janelas baixas permite rolagem em vez de cortar conteúdo.
 - A barra superior exibe hora local e avatar circular com o nome do perfil logo abaixo. A versão do protótipo fica no rodapé, junto aos controles de navegação.
-- A tela Perfis permite alternar entre Principal e Convidado e escolher entre dez avatares ilustrativos.
+- A seleção de perfil usa cartões grandes e foco destacado, inspirados em interfaces de streaming. A edição de nome/avatares permanece em Configurações > Perfis.
 - As opções de atalhos, perfis e avatares são mantidas somente durante a sessão da página; ainda não são persistentes.
 - TV ao vivo apresenta opções para cabo, satélite e sinal digital terrestre. A sintonia é simulada, pois nenhum sintonizador real está integrado.
-- Ajuda também tem um botão próprio abaixo da engrenagem na tela inicial; Ajuda e recuperação continua acessível em Configurações > Sistema.
+- O modo `?experience=tv` mostra somente o logotipo durante uma animação curta, sem logs nem barra de progresso; depois abre o seletor de perfil e segue para a Home. É uma simulação visual no navegador, não o boot real do firmware.
 - A faixa dourada Premium permanece sob o logotipo. A edição é configurada pela constante `EDITION` no script.
 
 ## Controles

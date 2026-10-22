@@ -55,7 +55,7 @@ test('version is current in footer, never in header, and assets remain local', (
 
 
 test('priority screen flows and remote-control recovery remain represented', () => {
-  for (const screen of ['home', 'tv', 'profiles', 'settings', 'apps', 'media', 'opening', 'recovery', 'about']) {
+  for (const screen of ['home', 'tv', 'profiles', 'profile-edit', 'settings', 'apps', 'media', 'opening', 'recovery', 'about']) {
     assert.match(html, new RegExp(`screen===['"]${screen}['"]`), `screen ${screen} must remain implemented`);
   }
   for (const action of ['tv', 'apps', 'media', 'settings', 'recovery', 'open-demo', 'retry', 'unavailable', 'network', 'check-network', 'reset-ui']) {
