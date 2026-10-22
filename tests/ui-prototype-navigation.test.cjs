@@ -66,6 +66,10 @@ test('priority screen flows and remote-control recovery remain represented', () 
   assert.match(html, /focusSelected\(\)/, 'rendered screen must restore focus to a selectable control');
 });
 
+test('remote directional navigation includes the header profile control', () => {
+  assert.match(html, /const nav=\[document\.querySelector\('#profile-button'\),\.\.\.a\]/, 'directional navigation must include the profile button outside #app');
+});
+
 test('prototype exposes explicit simulated offline and failed-opening states', () => {
   assert.match(html, /Modo sem rede simulado/);
   assert.match(html, /A aplicação de demonstração não está instalada/);

@@ -115,6 +115,6 @@ document.addEventListener('click',e=>{const t=e.target.closest('button[data-acti
 document.addEventListener('keydown',e=>{const a=items();if(!a.length)return;if(['ArrowDown','ArrowRight','ArrowUp','ArrowLeft','Enter',' ','Escape','Backspace','Home'].includes(e.key))e.preventDefault();
 if(e.key==='h'||e.key==='H'||e.key==='Home'){home();return}if(e.key==='Escape'||e.key==='Backspace'){if(screen==='recovery'||screen==='about')go('settings');else if(screen!=='home')home();return}
 if(e.key==='Enter'||e.key===' '){const el=document.activeElement;if(el&&el.matches('button[data-action]'))act(el.dataset.action);return}
-if(['ArrowDown','ArrowRight','ArrowUp','ArrowLeft'].includes(e.key)){const i=a.indexOf(document.activeElement);selected=i<0?0:i;selected=findDirectionalIndex(a,selected,({ArrowRight:'right',ArrowLeft:'left',ArrowDown:'down',ArrowUp:'up'})[e.key]);focusSelected()}});
+if(['ArrowDown','ArrowRight','ArrowUp','ArrowLeft'].includes(e.key)){const nav=[document.querySelector('#profile-button'),...a];const i=nav.indexOf(document.activeElement);const current=i<0?1:i;const next=findDirectionalIndex(nav,current,({ArrowRight:'right',ArrowLeft:'left',ArrowDown:'down',ArrowUp:'up'})[e.key]);nav[next].focus({preventScroll:true});selected=Math.max(0,items().indexOf(nav[next]))}});
 render()})();
 </script></body></html>
